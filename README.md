@@ -2,7 +2,7 @@ ___
 # DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
 ___
 
-# eYY-CO2060-project-template
+# eYY-co2060-project-template
 
 This is a sample repository you can use for your Software Systems Design Project. Once you followed these instructions, remove the text and add a brief introduction to here.
 
@@ -46,7 +46,7 @@ These projects will be automatically added into [https://projects.ce.pdn.ac.lk](
       "email": "email@eng.pdn.ac.lk"
     }
   ],
-  "tags": ["Web", "Software Systems"]
+  "tags": ["Web", "Software Systems", "CO2060"]
 }
 ```
 
