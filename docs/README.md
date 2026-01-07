@@ -3,11 +3,11 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and project title
-repository-name: eYY-3yp-project-template
+repository-name: eYY-co2060-project-template
 title: Project Template
 ---
 
-[comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
+[comment]: # "This is the standard layout for the project, but you can clean this and use your own template, and add more information required for your own project"
 
 # Project Title
 
@@ -27,11 +27,10 @@ title: Project Template
 #### Table of Contents
 1. [Introduction](#introduction)
 2. [Solution Architecture](#solution-architecture )
-3. [Hardware & Software Designs](#hardware-and-software-designs)
+3. [Software Designs](#hardware-and-software-designs)
 4. [Testing](#testing)
-5. [Detailed budget](#detailed-budget)
-6. [Conclusion](#conclusion)
-7. [Links](#links)
+5. [Conclusion](#conclusion)
+6. [Links](#links)
 
 ## Introduction
 
@@ -42,21 +41,13 @@ Description of the real world problem and solution, impact
 
 High level diagram + description
 
-## Hardware and Software Designs
+## Software Designs
 
 Detailed designs with many sub-sections
 
 ## Testing
 
-Testing done on hardware and software, detailed + summarized results
-
-## Detailed budget
-
-All items and costs
-
-| Item          | Quantity  | Unit Cost  | Total  |
-| ------------- |:---------:|:----------:|-------:|
-| Sample item   | 5         | 10 LKR     | 50 LKR |
+Testing done on software : detailed + summarized results
 
 ## Conclusion
 
