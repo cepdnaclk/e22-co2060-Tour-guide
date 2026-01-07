@@ -10,9 +10,13 @@ title: Project Template
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template, and add more information required for your own project"
 
 <!-- Once you fill the index.json file inside /docs/data, please make sure the syntax is correct. (You can use this tool to identify syntax errors)
+
 Please include the "correct" email address of your supervisors. (You can find them from https://people.ce.pdn.ac.lk/ )
+
 Please include an appropriate cover page image ( cover_page.jpg ) and a thumbnail image ( thumbnail.jpg ) in the same folder as the index.json (i.e., /docs/data ). The cover page image must be cropped to 940×352 and the thumbnail image must be cropped to 640×360 . Use https://croppola.com/ for cropping and https://squoosh.app/ to reduce the file size.
+
 If your followed all the given instructions correctly, your repository will be automatically added to the department's project web site (Update daily)
+
 A HTML template integrated with the given GitHub repository templates, based on github.com/cepdnaclk/eYY-project-theme . If you like to remove this default theme and make your own web page, you can remove the file, docs/_config.yml and create the site using HTML. -->
 
 # Project Title
