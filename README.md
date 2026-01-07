@@ -4,7 +4,7 @@ ___
 
 # eYY-CO2060-project-template
 
-This is a sample repository you can use for your Embedded Systems project. Once you followed these instructions, remove the text and add a brief introduction to here.
+This is a sample repository you can use for your Software Systems Design Project. Once you followed these instructions, remove the text and add a brief introduction to here.
 
 ### Enable GitHub Pages
 
