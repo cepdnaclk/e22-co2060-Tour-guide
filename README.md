@@ -2,7 +2,7 @@ ___
 # DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
 ___
 
-# eYY-3yp-project-template
+# eYY-CO2060-project-template
 
 This is a sample repository you can use for your Embedded Systems project. Once you followed these instructions, remove the text and add a brief introduction to here.
 
@@ -46,7 +46,7 @@ These projects will be automatically added into [https://projects.ce.pdn.ac.lk](
       "email": "email@eng.pdn.ac.lk"
     }
   ],
-  "tags": ["Web", "Embedded Systems"]
+  "tags": ["Web", "Software Systems"]
 }
 ```
 
