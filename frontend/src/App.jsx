@@ -14,11 +14,6 @@ import Wilpattu from "./pages/attractions/wilpattu";
 import SaltPans from "./pages/attractions/saltpans";
 import KalpitiyaFort from "./pages/attractions/kalpitiyafort";
 
-function Tourism() { return <div className="p-6">Tourism</div>; }
-function Delights() { return <div className="p-6">Delights</div>; }
-function Fancy() { return <div className="p-6">Fancy</div>; }
-
-
 export default function App() {
   return (
     <>
