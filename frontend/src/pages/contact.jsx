@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function contact() {
-  return (
-    <div>contact</div>
-  )
-}
-
-export default contact
-=======
 import React, { useEffect } from "react";
 
 export default function contact() {
@@ -260,6 +249,3 @@ export default function contact() {
   );
 }
 
-
-
->>>>>>> 0a28ab45e7c7c957b2e4619201cf7ee6395b140b
