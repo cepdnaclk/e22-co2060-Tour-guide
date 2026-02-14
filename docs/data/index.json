@@ -1,32 +1,33 @@
 {
     "team": [
         {
-            "name": "Team Member Name 1",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "H.M.C.H.Herath",
+            "email": "e22138@eng.pdn.ac.lk",
+            "eNumber": "E/22/138"
         },
         {
-            "name": "Team Member Name 2",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "D.M.P.M.Disanayaka ",
+            "email": "e22084@eng.pdn.ac.lk",
+            "eNumber": "E/22/084"
         },
         {
-            "name": "Team Member Name 3",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
-        }
+            "name": "T.Thivision",
+            "email": "e22400@eng.pdn.ac.lk",
+            "eNumber": "E/22/400"
+        },
+        {
+            "name": "I.Neilavan",
+            "email": "e22250@eng.pdn.ac.lk",
+            "eNumber": "E/22/250"
+        },
     ],
     "supervisors": [
         {
-            "name": "Dr. Supervisor 1",
-            "email": "email@eng.pdn.ac.lk"
+            "name": "Chamika",
+            "email": "e21415@eng.pdn.ac.lk"
         },
-        {
-            "name": "Supervisor 2",
-            "email": "email@eng.pdn.ac.lk"
-        }
     ],
-    "tags": ["Web", "Software Systems", "CO2060"],
+    "tags": ["Trip-Advisor", "Software Systems", "CO2060", "Super Four"],
     "image":"cover_page.jpg",
     "thumbnail":"thumbnail.jpg"
 }
