@@ -4,7 +4,7 @@ import { Home, Info, Phone, Plane, UtensilsCrossed, Gem, Menu, X } from "lucide-
 
 const navLinkClass = ({ isActive }) =>
   `text-sm font-medium uppercase tracking-wide transition-colors hover:translate-y-[-1px] transition-transform
-   ${isActive ? "text-" : "text-gray-700 hover:text-gray-500"}`;
+   ${isActive ? "text-black" : "text-gray-700 hover:text-gray-500"}`;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
