@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/tourism/puttalam/wilpattu" element={<Wilpattu />} />
         <Route path="/tourism/puttalam/salt-pans" element={<SaltPans />} />
         <Route path="/tourism/puttalam/kalpitiya-fort" element={<KalpitiyaFort />} />
-
+        <Route path="/" element={<Home />} />
       </Routes>
     </>
   );
