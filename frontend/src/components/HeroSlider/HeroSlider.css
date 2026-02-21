@@ -1,0 +1,57 @@
+/* 1. Remove default browser margins and top gap */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-wrapper {
+    width: 100%;
+    padding: 20px; /* This creates the "box" feel away from screen edges */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff; /* Matches your body background */
+}
+
+.hero-carousel-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Limits the width so it looks like a box */
+    height: 550px;
+    overflow: hidden;
+    transition: background-image 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px; /* Rounded corners for the box */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Adds depth */
+}
+
+/* 2. Remove margin from the H1 to prevent "Margin Collapsing" gap */
+.hero-overlay-text h1 {
+    margin-top: 0; 
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+}
+
+.hero-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    width: 90%;
+}

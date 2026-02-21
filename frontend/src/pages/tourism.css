@@ -1,0 +1,43 @@
+/* 1. The Outer Container */
+.tourism-page-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. The Header Section - This solves the alignment problem */
+.tourism-intro-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;    /* Forces horizontal center */
+    justify-content: center !important;
+    text-align: center !important;     /* Centers the text lines */
+    width: 100% !important;            /* Ensures it spans the whole screen */
+    padding: 20px 20px 40px 20px;      /* Adds nice spacing top/bottom */
+    background-color: #ffffff;         /* Light grey background like your image */
+}
+
+/* 3. The Large Title */
+.tourism-main-title {
+    font-size: 3rem !important;        /* Makes it large */
+    font-family: 'Georgia', serif;     /* Elegant serif font */
+    color: #2a2929 !important;         /* Dark grey color */
+    margin: 0 0 15px 0 !important;
+    font-weight: bold;
+}
+
+/* 4. The Subtitle */
+.tourism-main-subtitle {
+    font-size: 1.2rem !important;      /* Larger than standard text */
+    color: #777777 !important;         /* Lighter grey */
+    max-width: 800px;                  /* Prevents text from stretching too wide */
+    line-height: 1.6;
+    margin: 0 auto !important;         /* Centers the block itself */
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 768px) {
+    .tourism-main-title {
+        font-size: 2rem !important;
+    }
+}

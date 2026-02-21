@@ -1,0 +1,83 @@
+/* Footer Main Background */
+.main-footer {
+    background-color: #0b1c2b;
+    color: #fff;
+    padding: 20px 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Centered since there is only one column now */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Contact List Styling */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    color: #b0c4de;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.contact-list i {
+    color: #fff;
+    margin-right: 15px;
+    padding-top: 4px;
+    width: 20px; /* Keeps icons aligned */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between; /* Copyright left, Design right */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #8c9fae;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+}
