@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutPage() {
+  const navigate = useNavigate();
   const featuresData = [
     {
       icon: (
@@ -170,9 +172,12 @@ export default function AboutPage() {
           <div className="relative inline-block rounded-full p-0.5 overflow-hidden button-wrapper">
             {/* Spinning gradient behind the button */}
             <div className="absolute inset-0 bg-[conic-gradient(from_0deg,_#00F5FF,_#00F5FF30,_#00F5FF)] animate-spin-slow rounded-full"></div>
-            <button className="relative z-10 bg-gray-800 text-white rounded-full px-8 py-3 font-medium text-sm hover:bg-gray-700 transition-colors duration-300">
-              DISCOVER OUR GUIDES TODAY
-            </button>
+           <button
+               onClick={() => navigate("/")}
+               className="relative z-10 bg-gray-800 text-white rounded-full px-8 py-3 font-medium text-sm hover:bg-gray-700 transition-colors duration-300"
+          >
+            DISCOVER OUR GUIDES TODAY
+          </button>
           </div>
         </div>
 
@@ -188,5 +193,6 @@ export default function AboutPage() {
         `}</style>
       </section>
     </>
+    
   );
 }
