@@ -106,7 +106,7 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Perfect  • Built with React</p>
+        <p>© {new Date().getFullYear()} Perfect Guide • Built with React</p>
       </footer>
     </div>
   );
