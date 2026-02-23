@@ -1,10 +1,75 @@
 @import "tailwindcss";
 
-@layer components{
-    .flex-between{
-        @apply flex justify-between items-center;
-    }
+@layer components {
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+
+  .home {
+    @apply min-h-screen bg-gray-50 text-gray-900;
+  }
+
+ 
+  .hero {
+    @apply relative w-full overflow-hidden border-b border-gray-200;
+  }
+
+  .heroImage {
+    @apply w-full h-[420px] object-cover;
+  }
+
+  .heroOverlay {
+    @apply absolute inset-0 flex flex-col justify-center gap-3 px-8;
+    background: linear-gradient(
+      to right,
+      rgba(255,255,255,0.9),
+      rgba(255,255,255,0.6),
+      rgba(255,255,255,0.2)
+    );
+  }
+
+  .heroTitle {
+    @apply text-5xl font-bold tracking-wide;
+  }
+
+  .heroButtons {
+    @apply flex gap-4 mt-3;
+  }
+
+  .heroBtn {
+    @apply bg-black text-white px-5 py-2 rounded-xl font-semibold hover:opacity-90 transition;
+  }
+
+
+  .districtSection {
+    @apply max-w-6xl mx-auto px-6 py-10;
+  }
+
+  
+  .districtGrid {
+    @apply grid grid-cols-3 gap-8;
+  }
+
+  .districtCard {
+    @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer;
+  }
+
+  .districtImage {
+    @apply w-full h-[240px] object-cover;
+  }
+
+  .districtLabel {
+    @apply p-4 text-lg font-bold;
+  }
+
+
+  .footer {
+    @apply text-center py-6 border-t border-gray-200 text-gray-500 bg-white;
+  }
 }
+
 
 #loader {
   position: fixed;
