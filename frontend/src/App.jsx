@@ -6,7 +6,7 @@ import About from "./pages/about.jsx"
 import Contact from "./pages/contact.jsx"
 import Tourism from "./pages/tourism.jsx"
 import Delights from "./pages/delights.jsx"
-import Fancy from "./pages/fancy.jsx"
+import TripPlan from "./pages/tripplan.jsx"
 
 import Puttalam from "./pages/districts/puttalam";
 
@@ -24,7 +24,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/tourism" element={<Tourism />} />
         <Route path="/delights" element={<Delights />} />
-        <Route path="/fancy" element={<Fancy />} />
+        <Route path="/tripplan" element={<TripPlan />} />
 
         <Route path="/tourism/puttalam" element={<Puttalam />} />
 
