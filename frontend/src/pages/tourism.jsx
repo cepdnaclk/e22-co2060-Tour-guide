@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSlider from '../components/HeroSlider/HeroSlider';
 import DestinationGrid from '../components/DestinationGrid/DestinationGrid';
 import Footer from '../components/Footer/Footer';
-import './Tourism.css'; 
+import './tourism.css'; 
 
 const tourism = () => {
   return (
