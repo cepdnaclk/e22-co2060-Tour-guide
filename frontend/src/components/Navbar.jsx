@@ -59,7 +59,7 @@ export default function Navbar() {
             </span>
           </NavLink>
 
-          <NavLink to="/fancy" className={navLinkClass}>
+          <NavLink to="/tripplan" className={navLinkClass}>
             <span className="flex items-center gap-2">
               <Calendar className="h-5 w-5" /> Trip Plan
             </span>

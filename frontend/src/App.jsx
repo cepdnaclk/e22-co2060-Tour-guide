@@ -32,6 +32,7 @@ export default function App() {
         <Route path="/tourism/puttalam/salt-pans" element={<SaltPans />} />
         <Route path="/tourism/puttalam/kalpitiya-fort" element={<KalpitiyaFort />} />
         <Route path="/" element={<Home />} />
+        <Route path="/attractions/:id" element={<div style={{ padding: 20 }}>Attraction Details Page (build next)</div>} />
       </Routes>
     </>
   );
