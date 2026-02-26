@@ -53,7 +53,7 @@ export default function Tourism() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search beaches, forts, temples..."
-                  className="w-full px-5 py-3 rounded-xl outline-none text-black text-lg border border-gray-200 focus:ring-2 focus:ring-black"
+                  className="w-full px-5 py-3 rounded-xl outline-none text-black-900 text-lg font-semibold border border-gray-200 focus:ring-2 focus:ring-black"
                 />
               
             </div>
