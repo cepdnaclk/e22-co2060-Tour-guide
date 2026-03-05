@@ -1,3 +1,9 @@
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+
+
+backend/functions/serviceAccountKey.json.json
+backend/functions/serviceAccountKey.json
+serviceAccountKey*.json
+*.serviceAccount*.json
