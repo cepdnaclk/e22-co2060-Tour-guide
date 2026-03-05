@@ -1,9 +1,12 @@
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+<<<<<<< HEAD
 
 
 backend/functions/serviceAccountKey.json.json
 backend/functions/serviceAccountKey.json
 serviceAccountKey*.json
 *.serviceAccount*.json
+=======
+>>>>>>> 076b809bdedb4284a06b3c21efd9d73013fb9aa6

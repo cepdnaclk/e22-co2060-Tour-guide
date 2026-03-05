@@ -1,4 +1,5 @@
 // src/pages/tourism.jsx
+<<<<<<< HEAD
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserLocation } from "../hooks/useUserLocation";
@@ -7,6 +8,10 @@ import { useUserLocation } from "../hooks/useUserLocation";
 // because your page already uses backend API (/nearby/places).
 // You can remove these imports later if you want.
 // import { getFirestore, collection, getDocs } from "firebase/firestore";
+=======
+import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+>>>>>>> 076b809bdedb4284a06b3c21efd9d73013fb9aa6
 
 const categories = [
   { key: "beach", label: "Beaches", image: "/beach.jpg" },
@@ -17,10 +22,13 @@ const categories = [
   { key: "city", label: "City & Shopping", image: "/kandy.jpg" },
 ];
 
+<<<<<<< HEAD
 const API_BASE = "http://127.0.0.1:5001/trip-advisor-e5679/us-central1/api";
 
 
 
+=======
+>>>>>>> 076b809bdedb4284a06b3c21efd9d73013fb9aa6
 // Demo attractions (later you can move to src/data/attractions.js)
 const attractions = [
   { id: "galle-fort", name: "Galle Fort", category: "heritage", rating: 4.7, time: "2–3 hours", image: "/galle.jpg" },
@@ -33,6 +41,7 @@ const attractions = [
 
 export default function Tourism() {
   const navigate = useNavigate();
+<<<<<<< HEAD
 
   // ✅ FIX: hook must be inside the component (not top-level)
   const { coords, error: locError } = useUserLocation();
@@ -56,6 +65,11 @@ export default function Tourism() {
       .finally(() => setLoadingNearby(false));
   }, [coords]);
 
+=======
+  const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
+
+>>>>>>> 076b809bdedb4284a06b3c21efd9d73013fb9aa6
   const filtered = useMemo(() => {
     return attractions.filter((a) => {
       const matchText = a.name.toLowerCase().includes(query.toLowerCase());
@@ -79,6 +93,7 @@ export default function Tourism() {
 
             {/* Search */}
             <div className="mt-6 max-w-2xl w-full">
+<<<<<<< HEAD
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -86,6 +101,15 @@ export default function Tourism() {
                 // ✅ FIX: text-black-900 is not a Tailwind class
                 className="w-full px-5 py-3 rounded-xl outline-none text-gray-900 text-lg font-semibold border border-gray-200 focus:ring-2 focus:ring-black placeholder:text-gray-600"
               />
+=======
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search beaches, forts, temples..."
+                  className="w-full px-5 py-3 rounded-xl outline-none text-black text-lg border border-gray-200 focus:ring-2 focus:ring-black"
+                />
+              
+>>>>>>> 076b809bdedb4284a06b3c21efd9d73013fb9aa6
             </div>
 
             {/* Quick buttons */}
@@ -135,6 +159,7 @@ export default function Tourism() {
         </div>
       </header>
 
+<<<<<<< HEAD
       {/* ✅ ADDED: Nearby Suggestions popup (ONLY shows when location is ON) */}
       {coords && (
         <section className="max-w-6xl mx-auto px-6 -mt-6">
@@ -186,6 +211,8 @@ export default function Tourism() {
         </section>
       )}
 
+=======
+>>>>>>> 076b809bdedb4284a06b3c21efd9d73013fb9aa6
       {/* CATEGORIES */}
       <section className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex items-end justify-between gap-4 flex-wrap">
