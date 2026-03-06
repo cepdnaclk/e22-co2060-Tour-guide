@@ -1,6 +1,7 @@
-// src/pages/tourism.jsx
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUserLocation } from "../hooks/useUserLocation";
+
 
 const categories = [
   { key: "beach", label: "Beaches", image: "/beach.jpg" },
@@ -10,6 +11,11 @@ const categories = [
   { key: "waterfall", label: "Waterfalls", image: "/sunset.jpeg" },
   { key: "city", label: "City & Shopping", image: "/kandy.jpg" },
 ];
+
+const API_BASE = "http://127.0.0.1:5001/trip-advisor-e5679/us-central1/api";
+
+
+
 
 // Demo attractions (later you can move to src/data/attractions.js)
 const attractions = [
@@ -23,8 +29,31 @@ const attractions = [
 
 export default function Tourism() {
   const navigate = useNavigate();
+
+
+  // ✅ FIX: hook must be inside the component (not top-level)
+  const { coords, error: locError } = useUserLocation();
+
+
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+
+  // ✅ existing nearby state (keep)
+  const [nearbyPlaces, setNearbyPlaces] = useState([]);
+  const [loadingNearby, setLoadingNearby] = useState(false);
+
+  // ✅ existing nearby fetch (keep)
+  useEffect(() => {
+    if (!coords) return;
+
+    setLoadingNearby(true);
+    fetch(`${API_BASE}/nearby/places?lat=${coords.lat}&lng=${coords.lng}`)
+      .then((r) => r.json())
+      .then((data) => setNearbyPlaces(data.results || []))
+      .catch(() => setNearbyPlaces([]))
+      .finally(() => setLoadingNearby(false));
+  }, [coords]);
+
 
   const filtered = useMemo(() => {
     return attractions.filter((a) => {
@@ -49,6 +78,8 @@ export default function Tourism() {
 
             {/* Search */}
             <div className="mt-6 max-w-2xl w-full">
+
+              
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
@@ -56,6 +87,7 @@ export default function Tourism() {
                   className="w-full px-5 py-3 rounded-xl outline-none text-black text-lg border border-gray-200 focus:ring-2 focus:ring-black"
                 />
               
+
             </div>
 
             {/* Quick buttons */}
@@ -104,6 +136,59 @@ export default function Tourism() {
           </div>
         </div>
       </header>
+
+
+      {/* ✅ ADDED: Nearby Suggestions popup (ONLY shows when location is ON) */}
+      {coords && (
+        <section className="max-w-6xl mx-auto px-6 -mt-6">
+          <div className="bg-white rounded-2xl shadow-2xl p-5 border border-gray-100">
+            <div className="flex items-end justify-between gap-4 flex-wrap">
+              <div>
+                <h2 className="text-xl font-bold">Nearby Suggestions</h2>
+                <p className="text-gray-600 mt-1">
+                  Places near you based on your current location.
+                </p>
+              </div>
+            </div>
+
+            {loadingNearby && <p className="text-gray-600 mt-3">Loading nearby places...</p>}
+
+            {!loadingNearby && nearbyPlaces.length === 0 && (
+              <p className="text-gray-600 mt-3">No nearby places found.</p>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+              {nearbyPlaces.slice(0, 9).map((p, i) => (
+                <div key={p.id || p.xid || i} className="rounded-2xl bg-gray-50 p-4 border border-gray-100">
+                  <div className="font-bold text-lg">{p.name || "Unnamed place"}</div>
+                  {(p.vicinity || p.region || p.category) && (
+                    <div className="text-sm text-gray-600 mt-1">
+                      {p.vicinity || p.region || (p.category ? `Type: ${p.category}` : "")}
+                    </div>
+                  )}
+
+                  {/* Optional: if backend returns distanceKm */}
+                  {typeof p.distanceKm === "number" && (
+                    <div className="text-sm text-gray-600 mt-2">~ {p.distanceKm.toFixed(1)} km away</div>
+                  )}
+
+                  {/* Optional: open a details page if you have it */}
+                  {/* <button
+                    className="mt-3 px-4 py-2 rounded-xl bg-black text-white font-semibold hover:opacity-90"
+                    onClick={() => navigate(`/place/${p.id || p.xid}`)}
+                  >
+                    View
+                  </button> */}
+                </div>
+              ))}
+            </div>
+
+            {/* If location permission is ON but there is an error message */}
+            {locError && <p className="text-red-600 mt-4">{locError}</p>}
+          </div>
+        </section>
+      )}
+
 
       {/* CATEGORIES */}
       <section className="max-w-6xl mx-auto px-6 py-10">
