@@ -1,0 +1,1112 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-09T11:28:15Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/251744054",
+        "building": "yes",
+        "name": "Sarasavi Uyana",
+        "public_transport": "station",
+        "railway": "station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5965289,
+          7.2600133
+        ]
+      },
+      "id": "way/251744054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/258496237",
+        "addr:city": "Kandy",
+        "addr:street": "SWRD Bandaranaike Mawatha",
+        "building": "train_station",
+        "layer": "1",
+        "name": "Kandy",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q6361715",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6322495,
+          7.2894743
+        ]
+      },
+      "id": "way/258496237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/373858003",
+        "area": "yes",
+        "bench": "yes",
+        "name": "Kandy",
+        "public_transport": "platform",
+        "railway": "platform",
+        "shelter": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6314651,
+          7.2889713
+        ]
+      },
+      "id": "way/373858003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/549927029",
+        "area": "yes",
+        "building": "yes",
+        "name": "Mahaiyawa",
+        "operator": "Sri Lanka Government Railway",
+        "public_transport": "station",
+        "railway": "station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6341705,
+          7.3037251
+        ]
+      },
+      "id": "way/549927029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2343128696",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Yakgahapitiya Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.667033,
+          7.3014847
+        ]
+      },
+      "id": "node/2343128696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2913824001",
+        "description": "Sir John Randles generously donated the land on which Kingswood College was established in Kandy. In recognition of his contribution, this railway halt was named Randles Hill Railway Halt.",
+        "name": "Randles Hill",
+        "railway": "halt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6180787,
+          7.2786883
+        ]
+      },
+      "id": "node/2913824001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2918228321",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peradeniya",
+        "public_transport": "platform",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5929841,
+          7.2633517
+        ]
+      },
+      "id": "node/2918228321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3735600416",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Balagolla Kovil",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7144027,
+          7.2867356
+        ]
+      },
+      "id": "node/3735600416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3870564063",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Maligawa",
+        "public_transport": "platform",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6385716,
+          7.2933422
+        ]
+      },
+      "id": "node/3870564063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019273061",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mahaiyawa",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6347215,
+          7.3038601
+        ]
+      },
+      "id": "node/4019273061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019273063",
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hemamali Bus Stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6364836,
+          7.2983954
+        ]
+      },
+      "id": "node/4019273063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019464969",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Good Shepherd",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6313384,
+          7.2913271
+        ]
+      },
+      "id": "node/4019464969"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019464971",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Goods Shed",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6296878,
+          7.2893
+        ]
+      },
+      "id": "node/4019464971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019465032",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "High School",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6270216,
+          7.2866303
+        ]
+      },
+      "id": "node/4019465032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4034331783",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rajawatta",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6025536,
+          7.268028
+        ]
+      },
+      "id": "node/4034331783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4034331784",
+        "name": "Rajawatta",
+        "railway": "halt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6028685,
+          7.2676046
+        ]
+      },
+      "id": "node/4034331784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035870281",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "lake round",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6377204,
+          7.291147
+        ]
+      },
+      "id": "node/4035870281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035870282",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hillwood",
+        "public_transport": "platform",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.639915,
+          7.290258
+        ]
+      },
+      "id": "node/4035870282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035898204",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hotel Suisse",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6436345,
+          7.2893593
+        ]
+      },
+      "id": "node/4035898204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035947053",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Berewetts",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6544569,
+          7.2802297
+        ]
+      },
+      "id": "node/4035947053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036057936",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Regal",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6232789,
+          7.2835522
+        ]
+      },
+      "id": "node/4036057936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036074921",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Suwasewana",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6202185,
+          7.2809674
+        ]
+      },
+      "id": "node/4036074921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036074925",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Dhanasiri",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6193181,
+          7.2802581
+        ]
+      },
+      "id": "node/4036074925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4196862091",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peradeniya Hospital",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.600071,
+          7.2676394
+        ]
+      },
+      "id": "node/4196862091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4430347570",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Pachchakaatuwa",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.7053828,
+          7.2847345
+        ]
+      },
+      "id": "node/4430347570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4430347575",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Warapitiya",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6864512,
+          7.2814822
+        ]
+      },
+      "id": "node/4430347575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4430347576",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "New Town",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6841665,
+          7.2809112
+        ]
+      },
+      "id": "node/4430347576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4430347577",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Police College",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6835858,
+          7.2804396
+        ]
+      },
+      "id": "node/4430347577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4430347584",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Kalapura Junction",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6762095,
+          7.2798494
+        ]
+      },
+      "id": "node/4430347584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4707700975",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Shanika Hotel stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.708973,
+          7.2875032
+        ]
+      },
+      "id": "node/4707700975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4713806031",
+        "name": "Asgiriya",
+        "railway": "station",
+        "train": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6352522,
+          7.2978431
+        ]
+      },
+      "id": "node/4713806031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4765958955",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6766705,
+          7.2797407
+        ]
+      },
+      "id": "node/4765958955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905874622",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6267786,
+          7.2844934
+        ]
+      },
+      "id": "node/4905874622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905878721",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6200664,
+          7.2796319
+        ]
+      },
+      "id": "node/4905878721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905878921",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6316153,
+          7.2880917
+        ]
+      },
+      "id": "node/4905878921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4906042421",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.634632,
+          7.2930553
+        ]
+      },
+      "id": "node/4906042421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5108419680",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Elhena Junction",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6704013,
+          7.2617031
+        ]
+      },
+      "id": "node/5108419680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5185758922",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Route 662",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6318676,
+          7.2898445
+        ]
+      },
+      "id": "node/5185758922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7243050840",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6661378,
+          7.267774
+        ]
+      },
+      "id": "node/7243050840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562937",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mahaiyawa",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6358331,
+          7.3073725
+        ]
+      },
+      "id": "node/8003562937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562938",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6370698,
+          7.3080067
+        ]
+      },
+      "id": "node/8003562938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562939",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6377091,
+          7.3078783
+        ]
+      },
+      "id": "node/8003562939"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562940",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Galkaduwa Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6396416,
+          7.3097849
+        ]
+      },
+      "id": "node/8003562940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562941",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Maha Wanguwa Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6422453,
+          7.3082538
+        ]
+      },
+      "id": "node/8003562941"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562942",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Nilantha Stores Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6425871,
+          7.3099919
+        ]
+      },
+      "id": "node/8003562942"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562943",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Technical College Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6456302,
+          7.3105821
+        ]
+      },
+      "id": "node/8003562943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562944",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.647839,
+          7.3098882
+        ]
+      },
+      "id": "node/8003562944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562945",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6467314,
+          7.3104035
+        ]
+      },
+      "id": "node/8003562945"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003562946",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.643571,
+          7.3105571
+        ]
+      },
+      "id": "node/8003562946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003620717",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6348273,
+          7.305296
+        ]
+      },
+      "id": "node/8003620717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003620718",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Trinity College Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6363665,
+          7.3005714
+        ]
+      },
+      "id": "node/8003620718"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003620719",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.637335,
+          7.2973477
+        ]
+      },
+      "id": "node/8003620719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8678116399",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6793614,
+          7.2790141
+        ]
+      },
+      "id": "node/8678116399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9131345978",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peradeniya",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5928729,
+          7.2647459
+        ]
+      },
+      "id": "node/9131345978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9407276993",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Children's park",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6476803,
+          7.2868633
+        ]
+      },
+      "id": "node/9407276993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9407277011",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mahamaya",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6458435,
+          7.2876674
+        ]
+      },
+      "id": "node/9407277011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9407305323",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Lakeside",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6451526,
+          7.2875984
+        ]
+      },
+      "id": "node/9407305323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10696036148",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Kandy-Dambulla",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6331277,
+          7.290927
+        ]
+      },
+      "id": "node/10696036148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10701759821",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "network": "621",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6710237,
+          7.2869555
+        ]
+      },
+      "id": "node/10701759821"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11019897606",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5969985,
+          7.2680323
+        ]
+      },
+      "id": "node/11019897606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11021340305",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name:en": "Bus to Dambulla",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6329369,
+          7.2905681
+        ]
+      },
+      "id": "node/11021340305"
+    }
+  ]
+}

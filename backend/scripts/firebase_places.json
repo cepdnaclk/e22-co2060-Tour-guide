@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Sarasavi Uyana",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2600133,
+    "lng": 80.5965289,
+    "isActive": true
+  },
+  {
+    "name": "Kandy",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2894743,
+    "lng": 80.6322495,
+    "isActive": true
+  },
+  {
+    "name": "Mahaiyawa",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.3037251,
+    "lng": 80.6341705,
+    "isActive": true
+  },
+  {
+    "name": "Asgiriya",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2978431,
+    "lng": 80.6352522,
+    "isActive": true
+  }
+]
