@@ -1,0 +1,1323 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-12T06:52:59Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/251744054",
+        "building": "yes",
+        "name": "Sarasavi Uyana",
+        "public_transport": "station",
+        "railway": "station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5965289,
+          7.2600133
+        ]
+      },
+      "id": "way/251744054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/369163686",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Suwasevana Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6204558,
+          7.2816792
+        ]
+      },
+      "id": "way/369163686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/540031521",
+        "building": "yes",
+        "name": "Goreys Garage",
+        "shop": "car_repair",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6154575,
+          7.2638583
+        ]
+      },
+      "id": "way/540031521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/541050700",
+        "addr:city": "hablagosh",
+        "addr:housenumber": "4592",
+        "addr:postcode": "85129",
+        "addr:street": "quish lane",
+        "amenity": "hospital",
+        "building": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "hablagosh hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6199138,
+          7.2721622
+        ]
+      },
+      "id": "way/541050700"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/572962990",
+        "addr:city": "Kandy",
+        "addr:postcode": "20000",
+        "addr:street": "William Gopallawa Mawatha",
+        "alt_name": "Kandy Teaching Hospital",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "The National Hospital Kandy",
+        "name:si": "ජාතික රෝහල මහනුවර",
+        "old_name": "Kandy Genearal Hospital",
+        "phone": "+94812222261",
+        "website": "http://www.kandy-hospital.health.gov.lk/",
+        "wikidata": "Q7691278",
+        "wikipedia": "en:National Hospital (Teaching), Kandy",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.631418,
+          7.2865161
+        ]
+      },
+      "id": "way/572962990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/609233689",
+        "building": "yes",
+        "name": "Meewatura Motor Works",
+        "phone": "+94812388643",
+        "shop": "car_repair",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5916797,
+          7.246832
+        ]
+      },
+      "id": "way/609233689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/912224600",
+        "amenity": "hospital",
+        "building": "hospital",
+        "healthcare": "hospital",
+        "name": "Asiri Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6114696,
+          7.2743293
+        ]
+      },
+      "id": "way/912224600"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1029882742",
+        "amenity": "fuel",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6200052,
+          7.2794224
+        ]
+      },
+      "id": "way/1029882742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1176188739",
+        "name": "Koshinna",
+        "public_transport": "station",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5950443,
+          7.2335858
+        ]
+      },
+      "id": "node/1176188739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1855295872",
+        "addr:city": "Peradeniya",
+        "amenity": "fuel",
+        "compressed_air": "yes",
+        "name": "Ceypetco",
+        "operator": "Ceypetco"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5929366,
+          7.2637022
+        ]
+      },
+      "id": "node/1855295872"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2074229771",
+        "highway": "bus_stop",
+        "name": "Polgahamula"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5824791,
+          7.2660179
+        ]
+      },
+      "id": "node/2074229771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2087548638",
+        "amenity": "hospital",
+        "check_date": "2024-08-30",
+        "healthcare": "hospital",
+        "name": "Peradeniya Teaching Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5981261,
+          7.266409
+        ]
+      },
+      "id": "node/2087548638"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2828331566",
+        "amenity": "hospital",
+        "check_date": "2024-08-31",
+        "name": "Peradeniya Dental Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.599262,
+          7.266579
+        ]
+      },
+      "id": "node/2828331566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2828417380",
+        "amenity": "fuel",
+        "fuel:diesel": "yes",
+        "fuel:gasoline": "yes",
+        "fuel:lpg": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "fuel:super_diesel": "yes",
+        "name": "Laugh Gas Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6199885,
+          7.27948
+        ]
+      },
+      "id": "node/2828417380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2907699791",
+        "name": "Willys Auto Shop",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5850144,
+          7.2654974
+        ]
+      },
+      "id": "node/2907699791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2907701112",
+        "name": "Negambo Auto Parts",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5841525,
+          7.2653449
+        ]
+      },
+      "id": "node/2907701112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2907701895",
+        "name": "Car Trim Shop",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5844766,
+          7.2652497
+        ]
+      },
+      "id": "node/2907701895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2908792931",
+        "addr:city": "Kiribathkumbura",
+        "name": "Car Repair and Scanning service",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.575483,
+          7.2675519
+        ]
+      },
+      "id": "node/2908792931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2908792932",
+        "addr:city": "Kiribathkumbura",
+        "name": "Thilak Motors and Emergency Car Carrier Service",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5739182,
+          7.2675669
+        ]
+      },
+      "id": "node/2908792932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2909252079",
+        "addr:city": "Peradeniya",
+        "amenity": "police",
+        "name": "Police Post"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5926205,
+          7.2659223
+        ]
+      },
+      "id": "node/2909252079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2909253766",
+        "amenity": "pharmacy",
+        "check_date": "2024-08-22",
+        "name": "Seetha Pharmacy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5914691,
+          7.2657307
+        ]
+      },
+      "id": "node/2909253766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2918228321",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peradeniya",
+        "public_transport": "platform",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5929841,
+          7.2633517
+        ]
+      },
+      "id": "node/2918228321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3033945896",
+        "amenity": "fuel",
+        "brand": "Ceypetco",
+        "brand:wikidata": "Q5065795",
+        "brand:wikipedia": "en:Ceylon Petroleum Corporation",
+        "compressed_air": "yes",
+        "name": "Ceypetco"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5910188,
+          7.276308
+        ]
+      },
+      "id": "node/3033945896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3092762743",
+        "name": "Peradeniya Junction",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "wikidata": "Q17514310"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5901975,
+          7.2573002
+        ]
+      },
+      "id": "node/3092762743"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3757010195",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Angunawela",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5933859,
+          7.2405339
+        ]
+      },
+      "id": "node/3757010195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3758461475",
+        "highway": "bus_stop",
+        "local_ref": "Naranwala",
+        "name": "Naranwala"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5787459,
+          7.2334385
+        ]
+      },
+      "id": "node/3758461475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3758657239",
+        "highway": "bus_stop",
+        "name": "Alapalawala"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5782841,
+          7.2385179
+        ]
+      },
+      "id": "node/3758657239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3758657242",
+        "highway": "bus_stop",
+        "name": "YaleGoda"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5807602,
+          7.2483483
+        ]
+      },
+      "id": "node/3758657242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3758657247",
+        "highway": "bus_stop",
+        "name": "Hendeniya"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5795746,
+          7.2511793
+        ]
+      },
+      "id": "node/3758657247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3758657250",
+        "highway": "bus_stop",
+        "name": "Panideniya"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5896705,
+          7.2549762
+        ]
+      },
+      "id": "node/3758657250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019465032",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "High School",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6270216,
+          7.2866303
+        ]
+      },
+      "id": "node/4019465032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019465034",
+        "addr:city": "kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "fuel",
+        "name": "IOC Fuel Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6267696,
+          7.2862905
+        ]
+      },
+      "id": "node/4019465034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4025916241",
+        "highway": "bus_stop",
+        "name": "Kaluwala"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6222241,
+          7.2707109
+        ]
+      },
+      "id": "node/4025916241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4025916249",
+        "highway": "bus_stop",
+        "name": "Elagolla"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6201442,
+          7.2693527
+        ]
+      },
+      "id": "node/4025916249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4025970924",
+        "highway": "bus_stop",
+        "name": "Bowalawatta"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6177824,
+          7.2618051
+        ]
+      },
+      "id": "node/4025970924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4034331783",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Rajawatta",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6025536,
+          7.268028
+        ]
+      },
+      "id": "node/4034331783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4034332095",
+        "addr:city": "Gatambe",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "police",
+        "name": "Peradeniya Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6021821,
+          7.2676399
+        ]
+      },
+      "id": "node/4034332095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4034346074",
+        "bench": "yes",
+        "highway": "bus_stop",
+        "name": "Galaha Junction",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.595891,
+          7.265722
+        ]
+      },
+      "id": "node/4034346074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4034346075",
+        "highway": "bus_stop",
+        "name": "Galaha Junction",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5960579,
+          7.2656239
+        ]
+      },
+      "id": "node/4034346075"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036057936",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Regal",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6232789,
+          7.2835522
+        ]
+      },
+      "id": "node/4036057936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036074921",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Suwasewana",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6202185,
+          7.2809674
+        ]
+      },
+      "id": "node/4036074921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036074925",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Dhanasiri",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6193181,
+          7.2802581
+        ]
+      },
+      "id": "node/4036074925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4038188658",
+        "highway": "bus_stop",
+        "name": "Dangolla Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6047583,
+          7.2700953
+        ]
+      },
+      "id": "node/4038188658"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4089531740",
+        "addr:city": "Kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "fuel",
+        "brand": "Lanka IOC",
+        "brand:wikidata": "Q30595420",
+        "compressed_air": "yes",
+        "name": "Lanka IOC"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6099479,
+          7.2740349
+        ]
+      },
+      "id": "node/4089531740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4089660797",
+        "addr:city": "Kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "pharmacy",
+        "name": "Royal Pharmacy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6209569,
+          7.2816733
+        ]
+      },
+      "id": "node/4089660797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4089673111",
+        "addr:city": "Kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "hospital",
+        "name": "Suwasewana Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6215994,
+          7.2819521
+        ]
+      },
+      "id": "node/4089673111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4196862091",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peradeniya Hospital",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.600071,
+          7.2676394
+        ]
+      },
+      "id": "node/4196862091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4428689848",
+        "bench": "yes",
+        "bin": "no",
+        "check_date:shelter": "2024-08-22",
+        "highway": "bus_stop",
+        "name": "Kiribathkumbura",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5765206,
+          7.267752
+        ]
+      },
+      "id": "node/4428689848"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4605310842",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Owala Junction",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5787172,
+          7.2685517
+        ]
+      },
+      "id": "node/4605310842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4605316487",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Kehelwala",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5805065,
+          7.268662
+        ]
+      },
+      "id": "node/4605316487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905866724",
+        "highway": "bus_stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6231992,
+          7.281947
+        ]
+      },
+      "id": "node/4905866724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905874622",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6267786,
+          7.2844934
+        ]
+      },
+      "id": "node/4905874622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905878721",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6200664,
+          7.2796319
+        ]
+      },
+      "id": "node/4905878721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4906133321",
+        "highway": "bus_stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6218983,
+          7.2671468
+        ]
+      },
+      "id": "node/4906133321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5228638084",
+        "amenity": "fuel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6256332,
+          7.2834028
+        ]
+      },
+      "id": "node/5228638084"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5228638659",
+        "amenity": "bus_station",
+        "bus": "yes",
+        "name": "Kandy South Depot.",
+        "operator": "Sri Lanka Transport Board",
+        "public_transport": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.625082,
+          7.285611
+        ]
+      },
+      "id": "node/5228638659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6326673486",
+        "highway": "bus_stop",
+        "name:en": "Shuttle stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5936029,
+          7.2758608
+        ]
+      },
+      "id": "node/6326673486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6498438905",
+        "name": "Peradeniya Junction",
+        "railway": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5893918,
+          7.2556021
+        ]
+      },
+      "id": "node/6498438905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6559942487",
+        "highway": "bus_stop",
+        "name:en": "Shuttle bus station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5971282,
+          7.2695695
+        ]
+      },
+      "id": "node/6559942487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8496299002",
+        "addr:city": "Peradeniya",
+        "addr:postcode": "20400",
+        "addr:street": "Meewathura Road",
+        "currency:EUR": "yes",
+        "currency:GBP": "yes",
+        "currency:LKR": "yes",
+        "currency:USD": "yes",
+        "email": "meewathuramotors@gmail.com",
+        "name": "Meewatura Motors",
+        "opening_hours": "Mo-Sa 09:00-17:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+94812388643",
+        "service:vehicle:alignment": "yes",
+        "service:vehicle:batteries": "yes",
+        "service:vehicle:body_repair": "yes",
+        "service:vehicle:brakes": "yes",
+        "service:vehicle:car_parts": "yes",
+        "service:vehicle:car_repair": "yes",
+        "service:vehicle:diagnostics": "yes",
+        "service:vehicle:electrical": "yes",
+        "service:vehicle:glass": "yes",
+        "service:vehicle:inspection": "yes",
+        "service:vehicle:muffler": "yes",
+        "service:vehicle:oil_change": "yes",
+        "service:vehicle:painting": "yes",
+        "service:vehicle:repairs": "yes",
+        "service:vehicle:truck_repair": "yes",
+        "service:vehicle:wheels": "yes",
+        "shop": "car_repair",
+        "website": "https://meewathuramotors.business.site/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5918167,
+          7.2468638
+        ]
+      },
+      "id": "node/8496299002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8595831008",
+        "addr:city": "Kandy",
+        "addr:street": "Gannoruwa Road",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Suwasevana hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5918036,
+          7.2734056
+        ]
+      },
+      "id": "node/8595831008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8737701243",
+        "name": "Silencer Works",
+        "operator": "Meewathura Motors",
+        "phone": "+94812388643",
+        "service:vehicle:muffler": "yes",
+        "service:vehicle:silencer": "yes",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5917323,
+          7.2473321
+        ]
+      },
+      "id": "node/8737701243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9131306590",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5887851,
+          7.2651413
+        ]
+      },
+      "id": "node/9131306590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9131345978",
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Peradeniya",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5928729,
+          7.2647459
+        ]
+      },
+      "id": "node/9131345978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10686158877",
+        "description": "After 6PM walk to the Peradeniya bus stop at the T-junction 1 km northeast of here.",
+        "highway": "bus_stop",
+        "name": "Bus to Kandy (until 6PM)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5891141,
+          7.2563934
+        ]
+      },
+      "id": "node/10686158877"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10697283332",
+        "addr:city": "Kandy",
+        "addr:housenumber": "679",
+        "addr:street": "Peradeniya Road",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "New Lanka Medicare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6206401,
+          7.2809399
+        ]
+      },
+      "id": "node/10697283332"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10868006288",
+        "bench": "yes",
+        "bin": "no",
+        "highway": "bus_stop",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5965148,
+          7.2675696
+        ]
+      },
+      "id": "node/10868006288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11019897606",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5969985,
+          7.2680323
+        ]
+      },
+      "id": "node/11019897606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11721522330",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6216691,
+          7.281883
+        ]
+      },
+      "id": "node/11721522330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11754464123",
+        "amenity": "hospital",
+        "healthcare": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6206084,
+          7.2817247
+        ]
+      },
+      "id": "node/11754464123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12125830939",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Royal Mall Pharmacy",
+        "survey:date": "2024-08-22"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6132777,
+          7.2742191
+        ]
+      },
+      "id": "node/12125830939"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12438152001",
+        "highway": "bus_stop",
+        "name": "Tuck Tuck Stop for Kandy Krush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6373016,
+          7.2864229
+        ]
+      },
+      "id": "node/12438152001"
+    }
+  ]
+}

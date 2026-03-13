@@ -1,0 +1,418 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-12T06:18:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/369163686",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Suwasevana Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6204558,
+          7.2816792
+        ]
+      },
+      "id": "way/369163686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/396388491",
+        "addr:city": "Kandy",
+        "addr:street": "Lamagaraya Road",
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "name": "Osu Sala (SPC)",
+        "operator": "State Pharmaceuticals Corporation (SPC)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6333836,
+          7.29272
+        ]
+      },
+      "id": "way/396388491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/540435653",
+        "addr:city": "Kandy",
+        "addr:housenumber": "40",
+        "addr:postcode": "20000",
+        "addr:street": "Sangaraja Mawatha,",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Lakeside Adventist Hospital",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6459895,
+          7.2874078
+        ]
+      },
+      "id": "way/540435653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/572962990",
+        "addr:city": "Kandy",
+        "addr:postcode": "20000",
+        "addr:street": "William Gopallawa Mawatha",
+        "alt_name": "Kandy Teaching Hospital",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "The National Hospital Kandy",
+        "name:si": "ජාතික රෝහල මහනුවර",
+        "old_name": "Kandy Genearal Hospital",
+        "phone": "+94812222261",
+        "website": "http://www.kandy-hospital.health.gov.lk/",
+        "wikidata": "Q7691278",
+        "wikipedia": "en:National Hospital (Teaching), Kandy",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.631418,
+          7.2865161
+        ]
+      },
+      "id": "way/572962990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1077610724",
+        "amenity": "pharmacy",
+        "building": "commercial",
+        "building:levels": "1",
+        "healthcare": "pharmacy",
+        "height": "3",
+        "name": "Nihals medical",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6369009,
+          7.2960538
+        ]
+      },
+      "id": "way/1077610724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1225790935",
+        "addr:city": "Kandy",
+        "addr:street": "Lamagaraya Road",
+        "amenity": "police",
+        "name": "Kandy Police Station",
+        "operator": "Police Dept. of Sri Lanka",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6336486,
+          7.292961
+        ]
+      },
+      "id": "way/1225790935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1477375959",
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6296464,
+          7.2956395
+        ]
+      },
+      "id": "way/1477375959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1837428785",
+        "addr:city": "Kandy",
+        "addr:street": "D.S. Senanayake Veediya",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Lanka",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6380338,
+          7.2945244
+        ]
+      },
+      "id": "node/1837428785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4089660797",
+        "addr:city": "Kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "pharmacy",
+        "name": "Royal Pharmacy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6209569,
+          7.2816733
+        ]
+      },
+      "id": "node/4089660797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4089673111",
+        "addr:city": "Kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "hospital",
+        "name": "Suwasewana Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6215994,
+          7.2819521
+        ]
+      },
+      "id": "node/4089673111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5173638392",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Kandy Nursing Home"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6450197,
+          7.2910283
+        ]
+      },
+      "id": "node/5173638392"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5565526622",
+        "addr:housenumber": "27b",
+        "addr:street": "George De Silva Mawatha",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Venus",
+        "phone": "812204310"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6231653,
+          7.2874428
+        ]
+      },
+      "id": "node/5565526622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6370311702",
+        "amenity": "police",
+        "name": "Sri Dalada Maligawa Police Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6424306,
+          7.2928906
+        ]
+      },
+      "id": "node/6370311702"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6486247788",
+        "addr:city": "Kandy",
+        "addr:street": "Sri Wickrema Rajasinghe Mawatha",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6374051,
+          7.2921802
+        ]
+      },
+      "id": "node/6486247788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6602152851",
+        "amenity": "police",
+        "name": "Police Dogs Training Headquaters"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6314385,
+          7.2979744
+        ]
+      },
+      "id": "node/6602152851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6611417521",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Kandy Nursing Home"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.64486,
+          7.291136
+        ]
+      },
+      "id": "node/6611417521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7085261329",
+        "amenity": "police",
+        "name": "Tourist Police"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.643421,
+          7.2908395
+        ]
+      },
+      "id": "node/7085261329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10697283332",
+        "addr:city": "Kandy",
+        "addr:housenumber": "679",
+        "addr:street": "Peradeniya Road",
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "New Lanka Medicare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6206401,
+          7.2809399
+        ]
+      },
+      "id": "node/10697283332"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10801196505",
+        "amenity": "police",
+        "name:en": "Security check but entry is free"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6416971,
+          7.2930364
+        ]
+      },
+      "id": "node/10801196505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11721522330",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6216691,
+          7.281883
+        ]
+      },
+      "id": "node/11721522330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11754464123",
+        "amenity": "hospital",
+        "healthcare": "hospital"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6206084,
+          7.2817247
+        ]
+      },
+      "id": "node/11754464123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12565747901",
+        "amenity": "pharmacy",
+        "name": "Bowatte. Ayurvedic pharmacy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6363052,
+          7.294478
+        ]
+      },
+      "id": "node/12565747901"
+    }
+  ]
+}

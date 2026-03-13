@@ -223,6 +223,13 @@ function NearbySuggestionsPopup({
             places={groupedPlaces.repairsAndRentals}
             onOpenRoute={onOpenRoute}
           />
+
+          <CategoryRow
+             title="Emergency & Services"
+             icon="🏥"
+             places={groupedPlaces.emergencyServices}
+             onOpenRoute={onOpenRoute}
+          />
         </div>
       </div>
     </div>
@@ -285,6 +292,9 @@ export default function HomePage() {
           "car_repair",
           "bike_repair",
           "mechanic",
+          "pharmacy",
+          "police_station",
+          "hospital",
         ];
 
         const results = snapshot.docs
@@ -314,10 +324,18 @@ export default function HomePage() {
           .sort((a, b) => a.distanceKm - b.distanceKm)
           .slice(0, 30);
 
-        setNearbyHomePlaces(results);
-        if (results.length > 0) {
-          setShowPopup(true);
-        }
+       
+          setNearbyHomePlaces(results);
+
+          const popupAlreadyShown = sessionStorage.getItem("nearbySuggestionsShown");
+
+          if (results.length > 0 && !popupAlreadyShown) {
+           setShowPopup(true);
+           sessionStorage.setItem("nearbySuggestionsShown", "true");
+          }
+
+
+
       } catch (error) {
         console.error("Failed to load nearby places:", error);
         setNearbyHomePlaces([]);
@@ -362,6 +380,9 @@ export default function HomePage() {
           "mechanic",
         ].includes(getType(p))
       ),
+      emergencyServices: nearbyHomePlaces.filter((p) =>
+        ["pharmacy", "police_station", "hospital"].includes(getType(p))
+    )
     };
   }, [nearbyHomePlaces]);
 
@@ -420,6 +441,13 @@ export default function HomePage() {
             >
               Trip Plan
             </button>
+
+             <button
+              onClick={() => setShowPopup(true)}
+              className="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition"
+             >
+              Nearby Suggestions
+             </button>
           </div>
         </div>
       </header>
