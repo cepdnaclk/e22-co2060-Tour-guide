@@ -1,5 +1,5 @@
 // src/pages/home.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 import { useUserLocation } from "../hooks/useUserLocation";
@@ -7,7 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 // District placeholder images (from /public)
-const colomboImg = "/kandy.jpg";
+const colomboImg = "/Colombo.jpg";
 const gampahaImg = "/kandy.jpg";
 const kalutaraImg = "/kandy.jpg";
 const kandyImg = "/kandy.jpg";
@@ -82,12 +82,167 @@ function getNearbyPlaceImage(place) {
   return place.imageUrl || null;
 }
 
+function PlaceCard({ place, onOpenRoute }) {
+  return (
+    <div className="min-w-[240px] max-w-[240px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden flex-shrink-0">
+      <img
+        src={getNearbyPlaceImage(place) || "/kandy.jpg"}
+        alt={place.name}
+        onError={(e) => {
+          e.currentTarget.src = "/kandy.jpg";
+        }}
+        className="w-full h-[150px] object-cover"
+      />
+
+      <div className="p-4">
+        <h3 className="font-bold text-base line-clamp-1">{place.name}</h3>
+
+        <p className="text-sm text-gray-600 mt-1 capitalize">
+          {(place.placeType || place.category || "place").replaceAll("_", " ")}
+        </p>
+
+        {typeof place.distanceKm === "number" && (
+          <p className="text-sm text-gray-500 mt-1">
+            ~ {place.distanceKm.toFixed(1)} km away
+          </p>
+        )}
+
+        <button
+          onClick={() => onOpenRoute(place)}
+          className="mt-3 w-full rounded-xl bg-blue-600 text-white py-2 font-semibold hover:bg-blue-700 transition"
+        >
+          Open Route
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function CategoryRow({ title, icon, places, onOpenRoute }) {
+  if (!places || places.length === 0) return null;
+
+  return (
+    <div className="mb-8">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xl">{icon}</span>
+        <h2 className="text-lg sm:text-xl font-bold">{title}</h2>
+      </div>
+
+      <div className="flex gap-4 overflow-x-auto pb-2">
+        {places.map((place, index) => (
+          <PlaceCard
+            key={place.id || `${title}-${index}`}
+            place={place}
+            onOpenRoute={onOpenRoute}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function NearbySuggestionsPopup({
+  groupedPlaces,
+  onClose,
+  onOpenRoute,
+  loading,
+  locError,
+}) {
+  return (
+    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
+      <div className="w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl">
+        <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-5 sm:px-6 py-4 flex items-start justify-between">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold">
+              📍 Nearby Suggestions
+            </h1>
+            <p className="text-gray-600 mt-1 text-sm sm:text-base">
+              Tourism, food, transport, fuel, rentals and repairs within 10 km.
+            </p>
+          </div>
+
+          <button
+            onClick={onClose}
+            className="ml-4 text-2xl leading-none text-gray-600 hover:text-black"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="p-5 sm:p-6">
+          {loading && (
+            <p className="text-gray-600">Loading nearby suggestions...</p>
+          )}
+
+          {locError && <p className="text-red-600">{locError}</p>}
+
+          {!loading &&
+            !locError &&
+            Object.values(groupedPlaces).every((arr) => arr.length === 0) && (
+              <p className="text-gray-600">No nearby places found.</p>
+            )}
+
+          <CategoryRow
+            title="Tourism"
+            icon="🏞"
+            places={groupedPlaces.tourism}
+            onOpenRoute={onOpenRoute}
+          />
+
+          <CategoryRow
+            title="Food & Restaurants"
+            icon="🍔"
+            places={groupedPlaces.food}
+            onOpenRoute={onOpenRoute}
+          />
+
+          <CategoryRow
+            title="Stay"
+            icon="🏨"
+            places={groupedPlaces.stay}
+            onOpenRoute={onOpenRoute}
+          />
+
+          <CategoryRow
+            title="Fuel Stations"
+            icon="⛽"
+            places={groupedPlaces.fuel}
+            onOpenRoute={onOpenRoute}
+          />
+
+          <CategoryRow
+            title="Transport"
+            icon="🚍"
+            places={groupedPlaces.transport}
+            onOpenRoute={onOpenRoute}
+          />
+
+          <CategoryRow
+            title="Repair & Rentals"
+            icon="🔧"
+            places={groupedPlaces.repairsAndRentals}
+            onOpenRoute={onOpenRoute}
+          />
+
+          <CategoryRow
+             title="Emergency & Services"
+             icon="🏥"
+             places={groupedPlaces.emergencyServices}
+             onOpenRoute={onOpenRoute}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const navigate = useNavigate();
   const { coords, error: locError } = useUserLocation();
 
   const [nearbyHomePlaces, setNearbyHomePlaces] = useState([]);
   const [loadingNearbyHome, setLoadingNearbyHome] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const heroImages = ["/beach.jpg", "/lagoon.jpeg", "/sunset.jpeg"];
   const [heroIndex, setHeroIndex] = useState(0);
@@ -129,6 +284,7 @@ export default function HomePage() {
           "guest_house",
           "hostel",
           "bus_stand",
+          "railway_station",
           "petrol_shed",
           "fuel",
           "car_rental",
@@ -136,6 +292,9 @@ export default function HomePage() {
           "car_repair",
           "bike_repair",
           "mechanic",
+          "pharmacy",
+          "police_station",
+          "hospital",
         ];
 
         const results = snapshot.docs
@@ -155,15 +314,28 @@ export default function HomePage() {
           .filter((p) => !Number.isNaN(p.lat) && !Number.isNaN(p.lng))
           .filter((p) => p.distanceKm <= 10)
           .filter((p) => {
-            const type = String(p.placeType || p.category || "")
+            const type = String(
+              p.placeType || p.placetype || p.category || ""
+            )
               .toLowerCase()
               .trim();
             return allowedTypes.includes(type);
           })
           .sort((a, b) => a.distanceKm - b.distanceKm)
-          .slice(0, 12);
+          .slice(0, 30);
 
-        setNearbyHomePlaces(results);
+       
+          setNearbyHomePlaces(results);
+
+          const popupAlreadyShown = sessionStorage.getItem("nearbySuggestionsShown");
+
+          if (results.length > 0 && !popupAlreadyShown) {
+           setShowPopup(true);
+           sessionStorage.setItem("nearbySuggestionsShown", "true");
+          }
+
+
+
       } catch (error) {
         console.error("Failed to load nearby places:", error);
         setNearbyHomePlaces([]);
@@ -174,6 +346,45 @@ export default function HomePage() {
 
     loadNearbyPlaces();
   }, [coords]);
+
+  const groupedPlaces = useMemo(() => {
+    const getType = (p) =>
+      String(p.placeType || p.placetype || p.category || "")
+        .toLowerCase()
+        .trim();
+
+    return {
+      tourism: nearbyHomePlaces.filter((p) =>
+        ["tourism", "heritage", "attraction", "museum", "viewpoint"].includes(
+          getType(p)
+        )
+      ),
+      food: nearbyHomePlaces.filter((p) =>
+        ["food", "restaurant", "cafe", "fast_food"].includes(getType(p))
+      ),
+      stay: nearbyHomePlaces.filter((p) =>
+        ["stay", "hotel", "guest_house", "hostel"].includes(getType(p))
+      ),
+      fuel: nearbyHomePlaces.filter((p) =>
+        ["petrol_shed", "fuel"].includes(getType(p))
+      ),
+      transport: nearbyHomePlaces.filter((p) =>
+        ["bus_stand", "railway_station"].includes(getType(p))
+      ),
+      repairsAndRentals: nearbyHomePlaces.filter((p) =>
+        [
+          "car_rental",
+          "bike_rental",
+          "car_repair",
+          "bike_repair",
+          "mechanic",
+        ].includes(getType(p))
+      ),
+      emergencyServices: nearbyHomePlaces.filter((p) =>
+        ["pharmacy", "police_station", "hospital"].includes(getType(p))
+    )
+    };
+  }, [nearbyHomePlaces]);
 
   const openDirections = (place) => {
     if (!coords || !place || !place.lat || !place.lng) return;
@@ -230,66 +441,41 @@ export default function HomePage() {
             >
               Trip Plan
             </button>
+
+             <button
+              onClick={() => setShowPopup(true)}
+              className="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition"
+             >
+              Nearby Suggestions
+             </button>
           </div>
         </div>
       </header>
 
-      {coords && (
+      {!coords && !locError && (
         <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-4">
           <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-5 border border-gray-100">
-            <h2 className="text-xl sm:text-2xl font-bold">Nearby Around You</h2>
-            <p className="text-gray-600 mt-1 text-sm sm:text-base">
-              Tourist spots, food, transport, fuel, rentals, and repair places within 10 km.
-            </p>
-
-            {loadingNearbyHome && (
-              <p className="text-gray-600 mt-3">Loading nearby suggestions...</p>
-            )}
-
-            {!loadingNearbyHome && nearbyHomePlaces.length === 0 && (
-              <p className="text-gray-600 mt-3">No nearby places found.</p>
-            )}
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
-              {nearbyHomePlaces.map((p, i) => (
-                <button
-                  key={p.id || i}
-                  onClick={() => openDirections(p)}
-                  className="rounded-2xl border border-gray-100 bg-gray-50 overflow-hidden text-left shadow-sm hover:shadow-lg transition"
-                >
-                  <img
-                    src={getNearbyPlaceImage(p) || "/kandy.jpg"}
-                    alt={p.name}
-                    onError={(e) => {
-                      e.currentTarget.src = "/kandy.jpg";
-                    }}
-                    className="w-full h-[180px] object-cover"
-                  />
-
-                  <div className="p-4">
-                    <div className="font-bold text-lg">{p.name}</div>
-
-                    <div className="text-sm text-gray-600 mt-1">
-                      {(p.placeType || p.category || "").replaceAll("_", " ")}
-                    </div>
-
-                    {typeof p.distanceKm === "number" && (
-                      <div className="text-sm text-gray-600 mt-2">
-                        ~ {p.distanceKm.toFixed(1)} km away
-                      </div>
-                    )}
-
-                    <div className="mt-3 inline-block text-sm font-semibold text-blue-600">
-                      Open Route
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            {locError && <p className="text-red-600 mt-4">{locError}</p>}
+            <p className="text-gray-600">Waiting for your location...</p>
           </div>
         </section>
+      )}
+
+      {locError && (
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-4">
+          <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-5 border border-gray-100">
+            <p className="text-red-600">{locError}</p>
+          </div>
+        </section>
+      )}
+
+      {showPopup && (
+        <NearbySuggestionsPopup
+          groupedPlaces={groupedPlaces}
+          onClose={() => setShowPopup(false)}
+          onOpenRoute={openDirections}
+          loading={loadingNearbyHome}
+          locError={locError}
+        />
       )}
 
       <section className="districtSection px-4 sm:px-6 md:px-0">
@@ -316,8 +502,9 @@ export default function HomePage() {
 
       <footer className="footer px-4">
         <p>
-          © {new Date().getFullYear()} Perfect Guide. Discover the best places, food, and
-          experiences across Sri Lanka. Plan smarter trips with local insights.
+          © {new Date().getFullYear()} Perfect Guide. Discover the best places,
+          food, and experiences across Sri Lanka. Plan smarter trips with local
+          insights.
         </p>
       </footer>
     </div>

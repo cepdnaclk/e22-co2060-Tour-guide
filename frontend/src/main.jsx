@@ -4,7 +4,7 @@ import App from './App.jsx'
 import { BrowserRouter } from "react-router-dom"
 
 import "./firebase";
-
+import "leaflet/dist/leaflet.css";
 
 
 const root= createRoot(document.getElementById('root'))

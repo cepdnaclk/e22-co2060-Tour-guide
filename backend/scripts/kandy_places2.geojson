@@ -1,0 +1,960 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-03-09T11:09:59Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/286531937",
+        "air_conditioning": "no",
+        "amenity": "bus_station",
+        "building": "roof",
+        "bus": "yes",
+        "internet_access": "no",
+        "is_in": "Kandy",
+        "name": "Central Bus Station",
+        "operator": "Sri Lanka Transport Board",
+        "public_transport": "station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.63383,
+          7.2895946
+        ]
+      },
+      "id": "way/286531937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/573398087",
+        "amenity": "fuel",
+        "brand": "Ceptco",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6360705,
+          7.2945755
+        ]
+      },
+      "id": "way/573398087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/573411925",
+        "amenity": "fuel",
+        "name": "IOC",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.636741,
+          7.2968766
+        ]
+      },
+      "id": "way/573411925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/775669862",
+        "amenity": "bus_station",
+        "bus": "yes",
+        "name": "Kandy Clocktower Bus Stop",
+        "public_transport": "station",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6341619,
+          7.2928719
+        ]
+      },
+      "id": "way/775669862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1029882742",
+        "amenity": "fuel",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6200052,
+          7.2794224
+        ]
+      },
+      "id": "way/1029882742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1185533512",
+        "building": "yes",
+        "name": "Kandy Empire",
+        "shop": "car_repair",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6492978,
+          7.2926806
+        ]
+      },
+      "id": "way/1185533512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2343128696",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Yakgahapitiya Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.667033,
+          7.3014847
+        ]
+      },
+      "id": "node/2343128696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2382171710",
+        "amenity": "fuel",
+        "name": "Ailapperuma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6491228,
+          7.2927086
+        ]
+      },
+      "id": "node/2382171710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2828417380",
+        "amenity": "fuel",
+        "fuel:diesel": "yes",
+        "fuel:gasoline": "yes",
+        "fuel:lpg": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "fuel:super_diesel": "yes",
+        "name": "Laugh Gas Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6199885,
+          7.27948
+        ]
+      },
+      "id": "node/2828417380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3870564063",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Maligawa",
+        "public_transport": "platform",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6385716,
+          7.2933422
+        ]
+      },
+      "id": "node/3870564063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3998841902",
+        "highway": "bus_stop",
+        "name": "Gohagoda Bus Stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6122743,
+          7.3039172
+        ]
+      },
+      "id": "node/3998841902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019273061",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mahaiyawa",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6347215,
+          7.3038601
+        ]
+      },
+      "id": "node/4019273061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019273063",
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hemamali Bus Stop",
+        "public_transport": "platform",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6364836,
+          7.2983954
+        ]
+      },
+      "id": "node/4019273063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019464969",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Good Shepherd",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6313384,
+          7.2913271
+        ]
+      },
+      "id": "node/4019464969"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019464970",
+        "addr:city": "Kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "fuel",
+        "brand": "Ceypetco",
+        "brand:wikidata": "Q5065795",
+        "name": "Ceypetco Fuel Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6310716,
+          7.2907975
+        ]
+      },
+      "id": "node/4019464970"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019464971",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Goods Shed",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6296878,
+          7.2893
+        ]
+      },
+      "id": "node/4019464971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019465032",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "High School",
+        "public_transport": "platform",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6270216,
+          7.2866303
+        ]
+      },
+      "id": "node/4019465032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4019465034",
+        "addr:city": "kandy",
+        "addr:street": "Colombo-Kandy Road",
+        "amenity": "fuel",
+        "name": "IOC Fuel Station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6267696,
+          7.2862905
+        ]
+      },
+      "id": "node/4019465034"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035870281",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "lake round",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6377204,
+          7.291147
+        ]
+      },
+      "id": "node/4035870281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035870282",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hillwood",
+        "public_transport": "platform",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.639915,
+          7.290258
+        ]
+      },
+      "id": "node/4035870282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035898204",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Hotel Suisse",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6436345,
+          7.2893593
+        ]
+      },
+      "id": "node/4035898204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4035947053",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Berewetts",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6544569,
+          7.2802297
+        ]
+      },
+      "id": "node/4035947053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036057936",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Regal",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6232789,
+          7.2835522
+        ]
+      },
+      "id": "node/4036057936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036074921",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Suwasewana",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6202185,
+          7.2809674
+        ]
+      },
+      "id": "node/4036074921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4036074925",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Dhanasiri",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6193181,
+          7.2802581
+        ]
+      },
+      "id": "node/4036074925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4448732092",
+        "amenity": "bus_station",
+        "bus": "yes",
+        "name": "Kandy - Colombo Intercity Bus Stop",
+        "public_transport": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6336749,
+          7.2916085
+        ]
+      },
+      "id": "node/4448732092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4477383396",
+        "highway": "bus_stop",
+        "name:en": "Jambugahamula"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6102671,
+          7.2994671
+        ]
+      },
+      "id": "node/4477383396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905866724",
+        "highway": "bus_stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6231992,
+          7.281947
+        ]
+      },
+      "id": "node/4905866724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905874622",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6267786,
+          7.2844934
+        ]
+      },
+      "id": "node/4905874622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905878721",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6200664,
+          7.2796319
+        ]
+      },
+      "id": "node/4905878721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4905878921",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6316153,
+          7.2880917
+        ]
+      },
+      "id": "node/4905878921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4906042421",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.634632,
+          7.2930553
+        ]
+      },
+      "id": "node/4906042421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5120237599",
+        "highway": "bus_stop",
+        "name": "Halloluwa Junction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6071374,
+          7.2906305
+        ]
+      },
+      "id": "node/5120237599"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5185758922",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Route 662",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6318676,
+          7.2898445
+        ]
+      },
+      "id": "node/5185758922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5228638084",
+        "amenity": "fuel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6256332,
+          7.2834028
+        ]
+      },
+      "id": "node/5228638084"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5228638659",
+        "amenity": "bus_station",
+        "bus": "yes",
+        "name": "Kandy South Depot.",
+        "operator": "Sri Lanka Transport Board",
+        "public_transport": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.625082,
+          7.285611
+        ]
+      },
+      "id": "node/5228638659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5563614621",
+        "highway": "bus_stop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6248662,
+          7.2933727
+        ]
+      },
+      "id": "node/5563614621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5564087623",
+        "addr:city": "Kandy",
+        "addr:street": "Kumara Veediya",
+        "amenity": "fuel",
+        "name": "Ceypecto",
+        "opening_hours": "Mo-Su 06:30-22:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6359134,
+          7.2960715
+        ]
+      },
+      "id": "node/5564087623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6373864226",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6647364,
+          7.2835504
+        ]
+      },
+      "id": "node/6373864226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6373864487",
+        "name:en": "Auto Body Styling",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6647458,
+          7.2835379
+        ]
+      },
+      "id": "node/6373864487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7086141482",
+        "amenity": "fuel",
+        "brand": "Lanka IOC",
+        "name": "Filling Station Tennekumbura"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6635917,
+          7.2847097
+        ]
+      },
+      "id": "node/7086141482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003620718",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Trinity College Bus Stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6363665,
+          7.3005714
+        ]
+      },
+      "id": "node/8003620718"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003620719",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.637335,
+          7.2973477
+        ]
+      },
+      "id": "node/8003620719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8415418899",
+        "amenity": "car_rental",
+        "name": "Kandy Rent A Car"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6653303,
+          7.283171
+        ]
+      },
+      "id": "node/8415418899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8415418900",
+        "amenity": "car_rental",
+        "name": "Sameera Rent A Car"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6643734,
+          7.28358
+        ]
+      },
+      "id": "node/8415418900"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8418237924",
+        "name": "Sunrise Car Service Station",
+        "shop": "car_repair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6621446,
+          7.2851372
+        ]
+      },
+      "id": "node/8418237924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9407276993",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Children's park",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6476803,
+          7.2868633
+        ]
+      },
+      "id": "node/9407276993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9407277011",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Mahamaya",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6458435,
+          7.2876674
+        ]
+      },
+      "id": "node/9407277011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9407305323",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Lakeside",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6451526,
+          7.2875984
+        ]
+      },
+      "id": "node/9407305323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10696036148",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Kandy-Dambulla",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6331277,
+          7.290927
+        ]
+      },
+      "id": "node/10696036148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11017501505",
+        "amenity": "bus_station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.635045,
+          7.2916159
+        ]
+      },
+      "id": "node/11017501505"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11021340305",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name:en": "Bus to Dambulla",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6329369,
+          7.2905681
+        ]
+      },
+      "id": "node/11021340305"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11659171769",
+        "amenity": "bus_station",
+        "bus": "yes",
+        "internet_access": "yes",
+        "name": "Bogamabara Bus Terminal - Long Distance",
+        "name:si": "බෝගමබර බස් පර්යන්තය - දිගු දුර",
+        "operator": "CPPTA",
+        "public_transport": "station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.633769,
+          7.2897854
+        ]
+      },
+      "id": "node/11659171769"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12438152001",
+        "highway": "bus_stop",
+        "name": "Tuck Tuck Stop for Kandy Krush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.6373016,
+          7.2864229
+        ]
+      },
+      "id": "node/12438152001"
+    }
+  ]
+}

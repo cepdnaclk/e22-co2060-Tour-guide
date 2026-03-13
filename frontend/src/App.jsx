@@ -8,8 +8,9 @@ import Tourism from "./pages/tourism.jsx"
 import Delights from "./pages/delights.jsx"
 import TripPlan from "./pages/tripplan.jsx"
 
-import Puttalam from "./pages/districts/puttalam";
 
+
+import DistrictPage from "./pages/DistrictPage";
 
 
 export default function App() {
@@ -24,7 +25,8 @@ export default function App() {
         <Route path="/delights" element={<Delights />} />
         <Route path="/tripplan" element={<TripPlan />} />
 
-        <Route path="/tourism/puttalam" element={<Puttalam />} />
+           
+        <Route path="/district/:slug" element={<DistrictPage />} />
 
 
         <Route path="/" element={<Home />} />

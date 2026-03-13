@@ -1,0 +1,578 @@
+[
+  {
+    "name": "Sarasavi Uyana",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2600133,
+    "lng": 80.5965289,
+    "isActive": true
+  },
+  {
+    "name": "Suwasevana Hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2816792,
+    "lng": 80.6204558,
+    "isActive": true
+  },
+  {
+    "name": "Goreys Garage",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2638583,
+    "lng": 80.6154575,
+    "isActive": true
+  },
+  {
+    "name": "hablagosh hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2721622,
+    "lng": 80.6199138,
+    "isActive": true
+  },
+  {
+    "name": "The National Hospital Kandy",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2865161,
+    "lng": 80.631418,
+    "isActive": true
+  },
+  {
+    "name": "Meewatura Motor Works",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.246832,
+    "lng": 80.5916797,
+    "isActive": true
+  },
+  {
+    "name": "Asiri Hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2743293,
+    "lng": 80.6114696,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.2794224,
+    "lng": 80.6200052,
+    "isActive": true
+  },
+  {
+    "name": "Koshinna",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2335858,
+    "lng": 80.5950443,
+    "isActive": true
+  },
+  {
+    "name": "Ceypetco",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.2637022,
+    "lng": 80.5929366,
+    "isActive": true
+  },
+  {
+    "name": "Polgahamula",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2660179,
+    "lng": 80.5824791,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya Teaching Hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.266409,
+    "lng": 80.5981261,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya Dental Hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.266579,
+    "lng": 80.599262,
+    "isActive": true
+  },
+  {
+    "name": "Laugh Gas Station",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.27948,
+    "lng": 80.6199885,
+    "isActive": true
+  },
+  {
+    "name": "Willys Auto Shop",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2654974,
+    "lng": 80.5850144,
+    "isActive": true
+  },
+  {
+    "name": "Negambo Auto Parts",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2653449,
+    "lng": 80.5841525,
+    "isActive": true
+  },
+  {
+    "name": "Car Trim Shop",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2652497,
+    "lng": 80.5844766,
+    "isActive": true
+  },
+  {
+    "name": "Car Repair and Scanning service",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2675519,
+    "lng": 80.575483,
+    "isActive": true
+  },
+  {
+    "name": "Thilak Motors and Emergency Car Carrier Service",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2675669,
+    "lng": 80.5739182,
+    "isActive": true
+  },
+  {
+    "name": "Police Post",
+    "district": "kandy",
+    "placeType": "police_station",
+    "lat": 7.2659223,
+    "lng": 80.5926205,
+    "isActive": true
+  },
+  {
+    "name": "Seetha Pharmacy",
+    "district": "kandy",
+    "placeType": "pharmacy",
+    "lat": 7.2657307,
+    "lng": 80.5914691,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2633517,
+    "lng": 80.5929841,
+    "isActive": true
+  },
+  {
+    "name": "Ceypetco",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.276308,
+    "lng": 80.5910188,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya Junction",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2573002,
+    "lng": 80.5901975,
+    "isActive": true
+  },
+  {
+    "name": "Angunawela",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2405339,
+    "lng": 80.5933859,
+    "isActive": true
+  },
+  {
+    "name": "Naranwala",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2334385,
+    "lng": 80.5787459,
+    "isActive": true
+  },
+  {
+    "name": "Alapalawala",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2385179,
+    "lng": 80.5782841,
+    "isActive": true
+  },
+  {
+    "name": "YaleGoda",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2483483,
+    "lng": 80.5807602,
+    "isActive": true
+  },
+  {
+    "name": "Hendeniya",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2511793,
+    "lng": 80.5795746,
+    "isActive": true
+  },
+  {
+    "name": "Panideniya",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2549762,
+    "lng": 80.5896705,
+    "isActive": true
+  },
+  {
+    "name": "High School",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2866303,
+    "lng": 80.6270216,
+    "isActive": true
+  },
+  {
+    "name": "IOC Fuel Station",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.2862905,
+    "lng": 80.6267696,
+    "isActive": true
+  },
+  {
+    "name": "Kaluwala",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2707109,
+    "lng": 80.6222241,
+    "isActive": true
+  },
+  {
+    "name": "Elagolla",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2693527,
+    "lng": 80.6201442,
+    "isActive": true
+  },
+  {
+    "name": "Bowalawatta",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2618051,
+    "lng": 80.6177824,
+    "isActive": true
+  },
+  {
+    "name": "Rajawatta",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.268028,
+    "lng": 80.6025536,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya Police Station",
+    "district": "kandy",
+    "placeType": "police_station",
+    "lat": 7.2676399,
+    "lng": 80.6021821,
+    "isActive": true
+  },
+  {
+    "name": "Galaha Junction",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.265722,
+    "lng": 80.595891,
+    "isActive": true
+  },
+  {
+    "name": "Galaha Junction",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2656239,
+    "lng": 80.5960579,
+    "isActive": true
+  },
+  {
+    "name": "Regal",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2835522,
+    "lng": 80.6232789,
+    "isActive": true
+  },
+  {
+    "name": "Suwasewana",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2809674,
+    "lng": 80.6202185,
+    "isActive": true
+  },
+  {
+    "name": "Dhanasiri",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2802581,
+    "lng": 80.6193181,
+    "isActive": true
+  },
+  {
+    "name": "Dangolla Junction",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2700953,
+    "lng": 80.6047583,
+    "isActive": true
+  },
+  {
+    "name": "Lanka IOC",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.2740349,
+    "lng": 80.6099479,
+    "isActive": true
+  },
+  {
+    "name": "Royal Pharmacy",
+    "district": "kandy",
+    "placeType": "pharmacy",
+    "lat": 7.2816733,
+    "lng": 80.6209569,
+    "isActive": true
+  },
+  {
+    "name": "Suwasewana Hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2819521,
+    "lng": 80.6215994,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya Hospital",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2676394,
+    "lng": 80.600071,
+    "isActive": true
+  },
+  {
+    "name": "Kiribathkumbura",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.267752,
+    "lng": 80.5765206,
+    "isActive": true
+  },
+  {
+    "name": "Owala Junction",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2685517,
+    "lng": 80.5787172,
+    "isActive": true
+  },
+  {
+    "name": "Kehelwala",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.268662,
+    "lng": 80.5805065,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.281947,
+    "lng": 80.6231992,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2844934,
+    "lng": 80.6267786,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2796319,
+    "lng": 80.6200664,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2671468,
+    "lng": 80.6218983,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "petrol_shed",
+    "lat": 7.2834028,
+    "lng": 80.6256332,
+    "isActive": true
+  },
+  {
+    "name": "Kandy South Depot.",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.285611,
+    "lng": 80.625082,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2758608,
+    "lng": 80.5936029,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya Junction",
+    "district": "kandy",
+    "placeType": "railway_station",
+    "lat": 7.2556021,
+    "lng": 80.5893918,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2695695,
+    "lng": 80.5971282,
+    "isActive": true
+  },
+  {
+    "name": "Meewatura Motors",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2468638,
+    "lng": 80.5918167,
+    "isActive": true
+  },
+  {
+    "name": "Suwasevana hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2734056,
+    "lng": 80.5918036,
+    "isActive": true
+  },
+  {
+    "name": "Silencer Works",
+    "district": "kandy",
+    "placeType": "car_repair",
+    "lat": 7.2473321,
+    "lng": 80.5917323,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2651413,
+    "lng": 80.5887851,
+    "isActive": true
+  },
+  {
+    "name": "Peradeniya",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2647459,
+    "lng": 80.5928729,
+    "isActive": true
+  },
+  {
+    "name": "Bus to Kandy (until 6PM)",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2563934,
+    "lng": 80.5891141,
+    "isActive": true
+  },
+  {
+    "name": "New Lanka Medicare",
+    "district": "kandy",
+    "placeType": "pharmacy",
+    "lat": 7.2809399,
+    "lng": 80.6206401,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2675696,
+    "lng": 80.5965148,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2680323,
+    "lng": 80.5969985,
+    "isActive": true
+  },
+  {
+    "name": "Hospital",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.281883,
+    "lng": 80.6216691,
+    "isActive": true
+  },
+  {
+    "name": "Unknown Place",
+    "district": "kandy",
+    "placeType": "hospital",
+    "lat": 7.2817247,
+    "lng": 80.6206084,
+    "isActive": true
+  },
+  {
+    "name": "Royal Mall Pharmacy",
+    "district": "kandy",
+    "placeType": "pharmacy",
+    "lat": 7.2742191,
+    "lng": 80.6132777,
+    "isActive": true
+  },
+  {
+    "name": "Tuck Tuck Stop for Kandy Krush",
+    "district": "kandy",
+    "placeType": "bus_stand",
+    "lat": 7.2864229,
+    "lng": 80.6373016,
+    "isActive": true
+  }
+]
