@@ -5,6 +5,10 @@ import "../index.css";
 import { useUserLocation } from "../hooks/useUserLocation";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import { Map } from "lucide-react";
+
+
+
 
 // District placeholder images (from /public)
 const colomboImg = "/Colombo.jpg";
@@ -94,11 +98,11 @@ function PlaceCard({ place, onOpenRoute }) {
         className="w-full h-[150px] object-cover"
       />
 
-      <div className="p-4">
+      <div className="p-4 relative min-h-[130px]">
         <h3 className="font-bold text-base line-clamp-1">{place.name}</h3>
 
         <p className="text-sm text-gray-600 mt-1 capitalize">
-          {(place.placeType || place.category || "place").replaceAll("_", " ")}
+          {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
         </p>
 
         {typeof place.distanceKm === "number" && (
@@ -108,11 +112,12 @@ function PlaceCard({ place, onOpenRoute }) {
         )}
 
         <button
-          onClick={() => onOpenRoute(place)}
-          className="mt-3 w-full rounded-xl bg-blue-600 text-white py-2 font-semibold hover:bg-blue-700 transition"
-        >
-          Open Route
-        </button>
+  onClick={() => onOpenRoute(place)}
+  title="View on map"
+  className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
+>
+  <Map size={20} />
+</button>
       </div>
     </div>
   );

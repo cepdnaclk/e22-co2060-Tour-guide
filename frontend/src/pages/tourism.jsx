@@ -1,5 +1,9 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageNavigation from "../components/PageNavigation";
+
+
+
 
 const categories = [
   { key: "beach", label: "Beaches", image: "/beach.jpg" },
@@ -38,6 +42,9 @@ export default function Tourism() {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* HERO */}
       <header className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
+
+          <PageNavigation className="mb-6" />
+          
         <div className="relative rounded-2xl overflow-hidden shadow-xl">
           <img
             src="/beach.jpg"

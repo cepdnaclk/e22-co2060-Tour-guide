@@ -1,8 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import PlacesMap from "../components/PlacesMap";
+import PageNavigation from "../components/PageNavigation";
+import { Map } from "lucide-react";
+
 
 function formatDistrictName(slug) {
   if (!slug) return "";
@@ -65,19 +68,20 @@ function PlaceCard({ place }) {
         className="w-full h-[150px] object-cover"
       />
 
-      <div className="p-4">
+      <div className="p-4 relative min-h-[110px]">
         <h3 className="font-bold text-base line-clamp-1">{place.name}</h3>
 
         <p className="text-sm text-gray-600 mt-1 capitalize">
-          {(place.placeType || place.category || "place").replaceAll("_", " ")}
+          {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
         </p>
 
         <button
-          onClick={openDirections}
-          className="mt-3 w-full rounded-xl bg-blue-600 text-white py-2 font-semibold hover:bg-blue-700 transition"
-        >
-          Open Route
-        </button>
+  onClick={openDirections}
+  title="View on map"
+  className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
+>
+  <Map size={20} />
+</button>
       </div>
     </div>
   );
@@ -129,6 +133,9 @@ export default function DistrictPage() {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [searchParams] = useSearchParams();
+  const selectedCategory = searchParams.get("category");
+
   const [openMaps, setOpenMaps] = useState({
     tourism: false,
     food: false,
@@ -179,6 +186,34 @@ export default function DistrictPage() {
       loadDistrictPlaces();
     }
   }, [slug]);
+
+
+  useEffect(() => {
+  if (loading || !selectedCategory) return;
+
+  const categoryRefMap = {
+    tourism: tourismRef,
+    food: foodRef,
+    stay: stayRef,
+    fuel: fuelRef,
+    transport: transportRef,
+    repairs: repairRef,
+    emergency: emergencyRef,
+  };
+
+  const targetRef = categoryRefMap[selectedCategory];
+
+  if (targetRef?.current) {
+    setTimeout(() => {
+      targetRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 300);
+  }
+}, [loading, selectedCategory]);
+
+
 
   const groupedPlaces = useMemo(() => {
     const getType = (p) =>
@@ -268,6 +303,10 @@ export default function DistrictPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+         
+          <PageNavigation className="mb-6" />
+
+        
         <div className="bg-white rounded-2xl shadow p-4 sm:p-5 mb-6">
           <div className="flex flex-wrap gap-3">
             {chips.map((chip) => (

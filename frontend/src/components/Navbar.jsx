@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, Info, Phone, Plane, UtensilsCrossed, Calendar, Menu, X } from "lucide-react";
+import { Home, Info, Phone, Plane, Backpack, Calendar, Menu, X } from "lucide-react";
 
 const navLinkClass = ({ isActive }) =>
   `text-sm font-medium uppercase tracking-wide transition-colors hover:translate-y-[-1px] transition-transform
@@ -53,9 +53,9 @@ export default function Navbar() {
             </span>
           </NavLink>
 
-          <NavLink to="/delights" className={navLinkClass}>
+          <NavLink to="/Explore" className={navLinkClass}>
             <span className="flex items-center gap-2">
-              <UtensilsCrossed className="h-5 w-5" /> Delights
+              <Backpack className="h-5 w-5" /> Explore
             </span>
           </NavLink>
 
@@ -106,9 +106,9 @@ export default function Navbar() {
               </span>
             </NavLink>
 
-            <NavLink to="/delights" onClick={() => setOpen(false)} className={navLinkClass}>
+            <NavLink to="/Explore" onClick={() => setOpen(false)} className={navLinkClass}>
               <span className="flex items-center gap-2">
-                <UtensilsCrossed className="h-5 w-5" /> Delights
+                <Backpack className="h-5 w-5" /> Explore
               </span>
             </NavLink>
 
