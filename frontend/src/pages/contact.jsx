@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import PageNavigation from "../components/PageNavigation";
+
+
 
 export default function Contact() {
   useEffect(() => {
@@ -13,6 +16,9 @@ export default function Contact() {
       <main>
         {/* Header */}
         <section className="px-6 py-14 text-center" data-aos="fade-up">
+
+          <PageNavigation className="mb-6" />
+          
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Get In Touch With Us
           </h1>

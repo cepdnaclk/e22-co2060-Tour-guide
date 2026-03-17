@@ -1,5 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PageNavigation from "../components/PageNavigation";
+
+
 
 export default function AboutPage() {
   const navigate = useNavigate();
@@ -101,6 +104,9 @@ export default function AboutPage() {
 
       {/* ABOUT SECTION */}
       <section className="py-20 px-4 bg-black flex flex-col items-center gap-6 relative">
+
+        <PageNavigation className="mb-6" />
+        
         <button className="px-4 h-8 border border-gray-800 text-slate-200 text-xs rounded-lg">
           Features
         </button>

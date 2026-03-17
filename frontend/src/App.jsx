@@ -5,7 +5,7 @@ import Home from "./pages/home.jsx"
 import About from "./pages/about.jsx"
 import Contact from "./pages/contact.jsx"
 import Tourism from "./pages/tourism.jsx"
-import Delights from "./pages/delights.jsx"
+import Explore from "./pages/Explore.jsx"
 import TripPlan from "./pages/tripplan.jsx"
 
 
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/tourism" element={<Tourism />} />
-        <Route path="/delights" element={<Delights />} />
+        <Route path="/Explore" element={<Explore />} />
         <Route path="/tripplan" element={<TripPlan />} />
 
            
