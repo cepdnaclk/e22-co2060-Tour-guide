@@ -1,4 +1,3 @@
-// src/pages/home.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
@@ -6,9 +5,7 @@ import { useUserLocation } from "../hooks/useUserLocation";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import { Map } from "lucide-react";
-
-
-
+import { useAuth } from "../context/AuthContext";
 
 // District placeholder images (from /public)
 const colomboImg = "/Colombo.jpg";
@@ -82,6 +79,29 @@ function distanceKm(aLat, aLng, bLat, bLng) {
   return R * c;
 }
 
+function parseCoordinate(value) {
+  if (value == null) return null;
+
+  if (typeof value === "number") {
+    return Number.isFinite(value) ? value : null;
+  }
+
+  if (typeof value === "string") {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  // Firestore GeoPoint-like support
+  if (typeof value === "object") {
+    if (typeof value.latitude === "number") return value.latitude;
+    if (typeof value.longitude === "number") return value.longitude;
+    if (typeof value._lat === "number") return value._lat;
+    if (typeof value._long === "number") return value._long;
+  }
+
+  return null;
+}
+
 function getNearbyPlaceImage(place) {
   return place.imageUrl || null;
 }
@@ -112,12 +132,12 @@ function PlaceCard({ place, onOpenRoute }) {
         )}
 
         <button
-  onClick={() => onOpenRoute(place)}
-  title="View on map"
-  className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
->
-  <Map size={20} />
-</button>
+          onClick={() => onOpenRoute(place)}
+          title="View on map"
+          className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
+        >
+          <Map size={20} />
+        </button>
       </div>
     </div>
   );
@@ -230,10 +250,10 @@ function NearbySuggestionsPopup({
           />
 
           <CategoryRow
-             title="Emergency & Services"
-             icon="🏥"
-             places={groupedPlaces.emergencyServices}
-             onOpenRoute={onOpenRoute}
+            title="Emergency & Services"
+            icon="🏥"
+            places={groupedPlaces.emergencyServices}
+            onOpenRoute={onOpenRoute}
           />
         </div>
       </div>
@@ -243,6 +263,7 @@ function NearbySuggestionsPopup({
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
   const { coords, error: locError } = useUserLocation();
 
   const [nearbyHomePlaces, setNearbyHomePlaces] = useState([]);
@@ -267,6 +288,8 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!coords) return;
+
+    console.log("Current user coords:", coords);
 
     const loadNearbyPlaces = async () => {
       try {
@@ -304,20 +327,22 @@ export default function HomePage() {
 
         const results = snapshot.docs
           .map((doc) => ({ id: doc.id, ...doc.data() }))
+          .map((p) => {
+            const lat = parseCoordinate(p.lat);
+            const lng = parseCoordinate(p.lng);
+
+            return {
+              ...p,
+              lat,
+              lng,
+            };
+          })
           .filter((p) => p.lat != null && p.lng != null)
           .map((p) => ({
             ...p,
-            lat: Number(p.lat),
-            lng: Number(p.lng),
-            distanceKm: distanceKm(
-              coords.lat,
-              coords.lng,
-              Number(p.lat),
-              Number(p.lng)
-            ),
+            distanceKm: distanceKm(coords.lat, coords.lng, p.lat, p.lng),
           }))
-          .filter((p) => !Number.isNaN(p.lat) && !Number.isNaN(p.lng))
-          .filter((p) => p.distanceKm <= 10)
+          .filter((p) => !Number.isNaN(p.distanceKm))
           .filter((p) => {
             const type = String(
               p.placeType || p.placetype || p.category || ""
@@ -326,21 +351,20 @@ export default function HomePage() {
               .trim();
             return allowedTypes.includes(type);
           })
+          .filter((p) => p.distanceKm <= 10)
           .sort((a, b) => a.distanceKm - b.distanceKm)
           .slice(0, 30);
 
-       
-          setNearbyHomePlaces(results);
+        console.log("Nearby results:", results);
 
-          const popupAlreadyShown = sessionStorage.getItem("nearbySuggestionsShown");
+        setNearbyHomePlaces(results);
 
-          if (results.length > 0 && !popupAlreadyShown) {
-           setShowPopup(true);
-           sessionStorage.setItem("nearbySuggestionsShown", "true");
-          }
+        const popupAlreadyShown = sessionStorage.getItem("nearbySuggestionsShown");
 
-
-
+        if (results.length > 0 && !popupAlreadyShown) {
+          setShowPopup(true);
+          sessionStorage.setItem("nearbySuggestionsShown", "true");
+        }
       } catch (error) {
         console.error("Failed to load nearby places:", error);
         setNearbyHomePlaces([]);
@@ -387,12 +411,12 @@ export default function HomePage() {
       ),
       emergencyServices: nearbyHomePlaces.filter((p) =>
         ["pharmacy", "police_station", "hospital"].includes(getType(p))
-    )
+      ),
     };
   }, [nearbyHomePlaces]);
 
   const openDirections = (place) => {
-    if (!coords || !place || !place.lat || !place.lng) return;
+    if (!coords || !place || place.lat == null || place.lng == null) return;
 
     const url = `https://www.google.com/maps/dir/?api=1&origin=${coords.lat},${coords.lng}&destination=${place.lat},${place.lng}&travelmode=driving`;
     window.open(url, "_blank");
@@ -441,25 +465,27 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => navigate("/Explore")}
+              onClick={() => navigate("/explore")}
               className="w-full sm:w-auto bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
             >
-              Explore 
+              Explore
             </button>
+
+            {currentUser && (
+              <button
+                onClick={() => navigate("/tripplan")}
+                className="w-full sm:w-auto bg-black text-white px-6 py-3 rounded-xl font-semibold border border-white hover:bg-gray-800 transition"
+              >
+                Trip Plan
+              </button>
+            )}
 
             <button
-              onClick={() => navigate("/tripplan")}
-              className="w-full sm:w-auto bg-black text-white px-6 py-3 rounded-xl font-semibold border border-white hover:bg-gray-800 transition"
-            >
-              Trip Plan
-            </button>
-
-             <button
               onClick={() => setShowPopup(true)}
               className="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition"
-             >
+            >
               Nearby Suggestions
-             </button>
+            </button>
           </div>
         </div>
       </header>
