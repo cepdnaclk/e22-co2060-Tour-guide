@@ -437,7 +437,14 @@ export default function HomePage() {
               onClick={() => navigate("/tourism")}
               className="w-full sm:w-auto bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
             >
-              Explore Tourism
+              Tourism
+            </button>
+
+            <button
+              onClick={() => navigate("/Explore")}
+              className="w-full sm:w-auto bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
+            >
+              Explore 
             </button>
 
             <button
