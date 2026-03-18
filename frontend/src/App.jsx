@@ -10,6 +10,7 @@ import TripPlan from "./pages/tripplan.jsx";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import DistrictPage from "./pages/DistrictPage";
+import Chat from "./pages/chat.jsx";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/tripplan" element={<TripPlan />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/district/:slug" element={<DistrictPage />} />
         <Route
           path="/attractions/:id"

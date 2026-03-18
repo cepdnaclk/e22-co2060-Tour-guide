@@ -12,6 +12,7 @@ import {
   LogIn,
   UserPlus,
   LogOut,
+  MessageCircle,
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
@@ -36,8 +37,7 @@ export default function Navbar() {
   return (
     <header className="w-full border-b border-gray-200 bg-white">
       <nav className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 md:grid md:max-w-[1500px] md:grid-cols-[1fr_auto_1fr]">
-        
-        {/* LEFT (moved closer to center) */}
+        {/* LEFT */}
         <div className="hidden items-center gap-5 md:flex lg:gap-8 justify-self-end pr-4">
           <NavLink to="/" className={navLinkClass}>
             <span className="flex items-center gap-2">
@@ -59,6 +59,15 @@ export default function Navbar() {
               Contact Us
             </span>
           </NavLink>
+
+          {currentUser && (
+          <NavLink to="/chat" className={navLinkClass}>
+            <span className="flex items-center gap-2">
+              <MessageCircle className="h-5 w-5" />
+              Chat
+            </span>
+          </NavLink>
+          )}
         </div>
 
         {/* CENTER LOGO */}
@@ -71,7 +80,6 @@ export default function Navbar() {
 
         {/* RIGHT */}
         <div className="relative hidden h-full w-full max-w-[520px] md:flex justify-self-start pl-4">
-          
           {/* Main links */}
           <div className="flex h-full items-center gap-5 lg:gap-8">
             <NavLink to="/tourism" className={navLinkClass}>
@@ -165,6 +173,15 @@ export default function Navbar() {
                 Contact Us
               </span>
             </NavLink>
+
+            {currentUser && (
+            <NavLink to="/chat" onClick={() => setOpen(false)} className={navLinkClass}>
+              <span className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5" />
+                Chat
+              </span>
+            </NavLink>
+            )}
 
             <hr />
 
