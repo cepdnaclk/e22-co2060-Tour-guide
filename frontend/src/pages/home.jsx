@@ -9,30 +9,30 @@ import { useAuth } from "../context/AuthContext";
 
 // District placeholder images (from /public)
 const colomboImg = "/Colombo.jpg";
-const gampahaImg = "/kandy.jpg";
-const kalutaraImg = "/kandy.jpg";
+const gampahaImg = "/gampaha.jpg";
+const kalutaraImg = "/kaluthara.jpg";
 const kandyImg = "/kandy.jpg";
-const mataleImg = "/kandy.jpg";
-const nuwaraEliyaImg = "/kandy.jpg";
+const mataleImg = "/mathale.jpg";
+const nuwaraEliyaImg = "/nuwaraeliya.jpg";
 const galleImg = "/galle.jpg";
-const mataraImg = "/kandy.jpg";
-const hambantotaImg = "/kandy.jpg";
-const jaffnaImg = "/kandy.jpg";
-const kilinochchiImg = "/kandy.jpg";
-const mannarImg = "/kandy.jpg";
-const mullaitivuImg = "/kandy.jpg";
-const vavuniyaImg = "/kandy.jpg";
-const trincoImg = "/kandy.jpg";
-const batticaloaImg = "/kandy.jpg";
-const amparaImg = "/kandy.jpg";
-const puttalamImg = "/kandy.jpg";
-const kurunegalaImg = "/kandy.jpg";
-const anuradhapuraImg = "/kandy.jpg";
-const polonnaruwaImg = "/kandy.jpg";
-const badullaImg = "/kandy.jpg";
-const monaragalaImg = "/kandy.jpg";
-const ratnapuraImg = "/kandy.jpg";
-const kegalleImg = "/kandy.jpg";
+const mataraImg = "/mathara.jpg";
+const hambantotaImg = "/hambanthota.jpg";
+const jaffnaImg = "/jaffna.jpg";
+const kilinochchiImg = "/kilinochchi.jpg";
+const mannarImg = "/mannar.jpg";
+const mullaitivuImg = "/mulathiv.jpg";
+const vavuniyaImg = "/vavuniya.jpg";
+const trincoImg = "/trinco.jpg";
+const batticaloaImg = "/batticoloa.jpg";
+const amparaImg = "/ampara.jpg";
+const puttalamImg = "/puttalama.jpg";
+const kurunegalaImg = "/kurunegala.jpg";
+const anuradhapuraImg = "/anuradhapura.jpg";
+const polonnaruwaImg = "/polonnaruwa.jpg";
+const badullaImg = "/badulla.jpg";
+const monaragalaImg = "/monaragala.jpg";
+const ratnapuraImg = "/rathnapura.jpg";
+const kegalleImg = "/kegalle.jpg";
 
 const districts = [
   { name: "Colombo", slug: "colombo", image: colomboImg },
