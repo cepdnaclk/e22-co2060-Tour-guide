@@ -23,11 +23,12 @@ A HTML template integrated with the given GitHub repository templates, based on 
 
 # Team
 
-| eNumber  | Name         | Email                                         |
-| -------- | ------------ | ---------- |
-| eXXXXXXX | Student Name | [student@email.com](mailto:student@email.com) |
-| eXXXXXXX | Student Name | [student@email.com](mailto:student@email.com) |
-| eXXXXXXX | Student Name | [student@email.com](mailto:student@email.com) |
+| eNumber  | Name                | Email                                         |
+| -------- | ------------------- | ---------- |
+| e/22/084 | D.M.P.M.Disanayaka  | [e22084@eng.pdn.ac.lk](mailto:student@email.com) |
+| e/22/138 | H.M.C.H.Herath      | [e22138@eng.pdn.ac.lk](mailto:student@email.com) |
+| e/22/250 | I.Neilavan          | [e22250@eng.pdn.ac.lk](mailto:student@email.com) |
+| e/22/400 | T.Thivision         | [e22400@eng.pdn.ac.lk](mailto:student@email.com) |
 
 ---
 <!-- Image (photo/drawing of the final hardware) should be here -->
