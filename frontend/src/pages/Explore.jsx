@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { loadPlaces } from "../services/placeService";
 import { Map, Compass } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
 import PageNavigation from "../components/PageNavigation";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 
 function getPlaceImage(place) {
   return place.imageUrl || "/kandy.jpg";
@@ -12,7 +12,8 @@ function getPlaceImage(place) {
 function getType(place) {
   return String(place.placeType || place.placetype || place.category || "")
     .toLowerCase()
-    .trim();
+    .trim()
+    .replace(/\s+/g, "_");
 }
 
 function normalizeDistrictSlug(place) {
@@ -52,7 +53,8 @@ function PlaceCard({ place }) {
         <h3 className="font-bold text-base line-clamp-1">{place.name}</h3>
 
         <p className="text-sm text-gray-600 mt-1 capitalize">
-          {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
+          {String(place.placeType || place.placetype || place.category || "place")
+            .replaceAll("_", " ")}
         </p>
 
         {(place.districtName || place.district) && (
@@ -138,6 +140,7 @@ function CategoryRow({
 
 export default function ExplorePage() {
   const navigate = useNavigate();
+  const isOnline = useOnlineStatus();
 
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -157,20 +160,20 @@ export default function ExplorePage() {
   });
 
   useEffect(() => {
-    const loadPlaces = async () => {
+    const fetchPlaces = async () => {
       try {
         setLoading(true);
 
-        const snapshot = await getDocs(collection(db, "places"));
+        const allPlaces = await loadPlaces();
+        console.log("All places loaded in Explore:", allPlaces);
 
-        const data = snapshot.docs
-          .map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }))
-          .filter((p) => p.isActive !== false && p.isactive !== false);
+        const activePlaces = allPlaces.filter(
+          (p) => p.isActive !== false && p.isactive !== false
+        );
 
-        setPlaces(data);
+        console.log("Active places in Explore:", activePlaces);
+
+        setPlaces(activePlaces);
       } catch (error) {
         console.error("Failed to load places:", error);
         setPlaces([]);
@@ -179,13 +182,13 @@ export default function ExplorePage() {
       }
     };
 
-    loadPlaces();
+    fetchPlaces();
   }, []);
 
   const filteredPlaces = useMemo(() => {
     const searchTerm = query.toLowerCase().trim();
 
-    return places.filter((p) => {
+    const results = places.filter((p) => {
       const name = String(p.name || "").toLowerCase();
       const district = String(p.districtName || p.district || "").toLowerCase();
       const type = getType(p);
@@ -205,31 +208,37 @@ export default function ExplorePage() {
       }
 
       if (activeCategory === "stay") {
-        return ["stay", "hotel", "guest_house", "hostel"].includes(type);
+        return ["stay", "hotel", "guest_house", "hostel", "accommodation"].includes(type);
       }
 
       if (activeCategory === "fuel") {
-        return ["petrol_shed", "fuel"].includes(type);
+        return ["petrol_shed", "fuel", "fuel_station"].includes(type);
       }
 
       if (activeCategory === "transport") {
-        return ["bus_stand", "railway_station"].includes(type);
+        return ["bus_stand", "railway_station", "bus_station", "train_station", "transport"].includes(type);
       }
 
       if (activeCategory === "rentals") {
-        return ["car_rental", "bike_rental"].includes(type);
+        return ["car_rental", "bike_rental", "rental"].includes(type);
       }
 
       if (activeCategory === "repairs") {
-        return ["car_repair", "bike_repair", "mechanic"].includes(type);
+        return ["car_repair", "bike_repair", "mechanic", "repair_shop", "repair"].includes(type);
       }
 
       if (activeCategory === "services") {
-        return ["hospital", "pharmacy", "police_station"].includes(type);
+        return ["hospital", "pharmacy", "police_station", "clinic"].includes(type);
       }
 
       return true;
     });
+
+    console.log("Filtered Explore places:", results);
+    console.log("Active category:", activeCategory);
+    console.log("Search query:", query);
+
+    return results;
   }, [places, query, activeCategory]);
 
   const groupedPlaces = useMemo(() => {
@@ -238,21 +247,23 @@ export default function ExplorePage() {
         ["food", "restaurant", "cafe", "fast_food"].includes(getType(p))
       ),
       stay: filteredPlaces.filter((p) =>
-        ["stay", "hotel", "guest_house", "hostel"].includes(getType(p))
+        ["stay", "hotel", "guest_house", "hostel", "accommodation"].includes(getType(p))
       ),
       fuel: filteredPlaces.filter((p) =>
-        ["petrol_shed", "fuel"].includes(getType(p))
+        ["petrol_shed", "fuel", "fuel_station"].includes(getType(p))
       ),
       transport: filteredPlaces.filter((p) =>
-        ["bus_stand", "railway_station"].includes(getType(p))
+        ["bus_stand", "railway_station", "bus_station", "train_station", "transport"].includes(getType(p))
       ),
       rentals: filteredPlaces.filter((p) =>
-        ["car_rental", "bike_rental"].includes(getType(p))
+        ["car_rental", "bike_rental", "rental"].includes(getType(p))
       ),
       repairs: filteredPlaces.filter((p) =>
-        ["car_repair", "bike_repair", "mechanic"].includes(getType(p))
+        ["car_repair", "bike_repair", "mechanic", "repair_shop", "repair"].includes(getType(p))
       ),
-      hospitals: filteredPlaces.filter((p) => getType(p) === "hospital"),
+      hospitals: filteredPlaces.filter((p) =>
+        ["hospital", "clinic"].includes(getType(p))
+      ),
       pharmacies: filteredPlaces.filter((p) => getType(p) === "pharmacy"),
       police: filteredPlaces.filter((p) => getType(p) === "police_station"),
     };
@@ -376,6 +387,12 @@ export default function ExplorePage() {
       </header>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        {!isOnline && (
+          <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-xl mb-6">
+            Offline mode: showing saved data
+          </div>
+        )}
+
         <div>
           <h2 className="text-2xl font-bold">Browse Travel Essentials</h2>
           <p className="text-gray-600 mt-1">

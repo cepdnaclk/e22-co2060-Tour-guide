@@ -1,11 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { loadPlaces } from "../services/placeService";
 import PlacesMap from "../components/PlacesMap";
 import PageNavigation from "../components/PageNavigation";
 import { Map } from "lucide-react";
-
+import useOnlineStatus from "../hooks/useOnlineStatus";
 
 function formatDistrictName(slug) {
   if (!slug) return "";
@@ -76,12 +75,12 @@ function PlaceCard({ place }) {
         </p>
 
         <button
-  onClick={openDirections}
-  title="View on map"
-  className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
->
-  <Map size={20} />
-</button>
+          onClick={openDirections}
+          title="View on map"
+          className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
+        >
+          <Map size={20} />
+        </button>
       </div>
     </div>
   );
@@ -129,6 +128,7 @@ function CategorySection({
 export default function DistrictPage() {
   const { slug } = useParams();
   const districtName = formatDistrictName(slug);
+  const isOnline = useOnlineStatus();
 
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -160,20 +160,18 @@ export default function DistrictPage() {
       try {
         setLoading(true);
 
-        const snapshot = await getDocs(collection(db, "places"));
+        const allPlaces = await loadPlaces();
 
-        const data = snapshot.docs
-          .map((doc) => ({ id: doc.id, ...doc.data() }))
-          .filter((p) => {
-            const district = String(p.district || p.districtName || "")
-              .toLowerCase()
-              .trim()
-              .replace(/\s+/g, "-");
+        const filteredPlaces = allPlaces.filter((p) => {
+          const district = String(p.district || p.districtName || "")
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, "-");
 
-            return district === slug;
-          });
+          return district === slug;
+        });
 
-        setPlaces(data);
+        setPlaces(filteredPlaces);
       } catch (error) {
         console.error("Failed to load district places:", error);
         setPlaces([]);
@@ -187,33 +185,30 @@ export default function DistrictPage() {
     }
   }, [slug]);
 
-
   useEffect(() => {
-  if (loading || !selectedCategory) return;
+    if (loading || !selectedCategory) return;
 
-  const categoryRefMap = {
-    tourism: tourismRef,
-    food: foodRef,
-    stay: stayRef,
-    fuel: fuelRef,
-    transport: transportRef,
-    repairs: repairRef,
-    emergency: emergencyRef,
-  };
+    const categoryRefMap = {
+      tourism: tourismRef,
+      food: foodRef,
+      stay: stayRef,
+      fuel: fuelRef,
+      transport: transportRef,
+      repairs: repairRef,
+      emergency: emergencyRef,
+    };
 
-  const targetRef = categoryRefMap[selectedCategory];
+    const targetRef = categoryRefMap[selectedCategory];
 
-  if (targetRef?.current) {
-    setTimeout(() => {
-      targetRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 300);
-  }
-}, [loading, selectedCategory]);
-
-
+    if (targetRef?.current) {
+      setTimeout(() => {
+        targetRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 300);
+    }
+  }, [loading, selectedCategory]);
 
   const groupedPlaces = useMemo(() => {
     const getType = (p) =>
@@ -303,10 +298,14 @@ export default function DistrictPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-         
-          <PageNavigation className="mb-6" />
+        <PageNavigation className="mb-6" />
 
-        
+        {!isOnline && (
+          <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-xl mb-4">
+            Offline mode: showing saved data
+          </div>
+        )}
+
         <div className="bg-white rounded-2xl shadow p-4 sm:p-5 mb-6">
           <div className="flex flex-wrap gap-3">
             {chips.map((chip) => (

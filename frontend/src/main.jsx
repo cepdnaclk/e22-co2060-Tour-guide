@@ -6,6 +6,9 @@ import { AuthProvider } from "./context/AuthContext";
 
 import "./firebase";
 import "leaflet/dist/leaflet.css";
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({ immediate: true });
 
 const root = createRoot(document.getElementById("root"));
 
