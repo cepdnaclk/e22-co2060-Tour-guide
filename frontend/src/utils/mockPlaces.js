@@ -1,0 +1,113 @@
+export const MOCK_PLACES = [
+  {
+    id: "p1",
+    name: "Temple of the Sacred Tooth Relic",
+    district: "Kandy",
+    lat: 7.2936,
+    lng: 80.6413,
+    categories: ["Religious", "Historical"],
+    ticketPrice: 2000, // LKR
+    openingHours: { open: 5.5, close: 20.0 }, // 5:30 AM to 8:00 PM
+    rating: 4.8,
+    popularity: 95,
+    estimatedVisitTime: 90, // minutes
+  },
+  {
+    id: "p2",
+    name: "Peradeniya Royal Botanical Gardens",
+    district: "Kandy",
+    lat: 7.2681,
+    lng: 80.5968,
+    categories: ["Nature", "Family", "Relaxation", "Photography"],
+    ticketPrice: 3000,
+    openingHours: { open: 7.5, close: 17.5 },
+    rating: 4.7,
+    popularity: 90,
+    estimatedVisitTime: 120,
+  },
+  {
+    id: "p3",
+    name: "Kandy Lake",
+    district: "Kandy",
+    lat: 7.2915,
+    lng: 80.6415,
+    categories: ["Nature", "Relaxation", "Couples"],
+    ticketPrice: 0,
+    openingHours: { open: 0, close: 24 }, // Always open
+    rating: 4.5,
+    popularity: 85,
+    estimatedVisitTime: 60,
+  },
+  {
+    id: "p4",
+    name: "Kurunegala Elephant Rock (Ethagala)",
+    district: "Kurunegala",
+    lat: 7.4870,
+    lng: 80.3653,
+    categories: ["Historical", "Photography", "Religious"],
+    ticketPrice: 0,
+    openingHours: { open: 6.0, close: 18.0 },
+    rating: 4.4,
+    popularity: 80,
+    estimatedVisitTime: 90,
+  },
+  {
+    id: "p5",
+    name: "Kurunegala Lake",
+    district: "Kurunegala",
+    lat: 7.4851,
+    lng: 80.3695,
+    categories: ["Nature", "Relaxation", "Couples"],
+    ticketPrice: 0,
+    openingHours: { open: 0, close: 24 },
+    rating: 4.3,
+    popularity: 75,
+    estimatedVisitTime: 60,
+  },
+  {
+    id: "p6",
+    name: "Ridi Viharaya",
+    district: "Kurunegala",
+    lat: 7.5501,
+    lng: 80.4682,
+    categories: ["Religious", "Historical"],
+    ticketPrice: 500,
+    openingHours: { open: 7.0, close: 18.0 },
+    rating: 4.6,
+    popularity: 65,
+    estimatedVisitTime: 60,
+  },
+  {
+    id: "p7",
+    name: "Sigiriya Rock Fortress",
+    district: "Matale", // Often en-route or nearby Kurunegala/Dambulla
+    lat: 7.9570,
+    lng: 80.7603,
+    categories: ["Historical", "Adventure", "Photography"],
+    ticketPrice: 10500, // 30 USD
+    openingHours: { open: 7.0, close: 17.0 },
+    rating: 4.9,
+    popularity: 100,
+    estimatedVisitTime: 180,
+  },
+  {
+    id: "p8",
+    name: "Dambulla Cave Temple",
+    district: "Matale",
+    lat: 7.8566,
+    lng: 80.6485,
+    categories: ["Religious", "Historical"],
+    ticketPrice: 2000,
+    openingHours: { open: 7.0, close: 19.0 },
+    rating: 4.7,
+    popularity: 90,
+    estimatedVisitTime: 90,
+  }
+];
+
+export const MOCK_DISTRICTS = {
+  "Kandy": { lat: 7.2906, lng: 80.6337 },
+  "Kurunegala": { lat: 7.4818, lng: 80.3609 },
+  "Colombo": { lat: 6.9271, lng: 79.8612 },
+  "Matale": { lat: 7.4728, lng: 80.6234 }
+};
