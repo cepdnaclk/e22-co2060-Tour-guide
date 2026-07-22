@@ -9,3 +9,4 @@ backend/functions/serviceAccountKey.json
 serviceAccountKey*.json
 *.serviceAccount*.json
 
+node_modules

@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "express": "^5.2.1",
-    "react-router-dom": "^7.13.0"
+    "idb": "^8.0.3",
+    "react-router-dom": "^7.13.0",
+    "vite-plugin-pwa": "^1.2.0"
   }
 }
