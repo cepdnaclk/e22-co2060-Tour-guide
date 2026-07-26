@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 export default function SignupPage() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -65,7 +66,8 @@ export default function SignupPage() {
         });
       }
 
-      navigate("/");
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
     } catch (err) {
       console.error("Signup failed:", err);
       setError(err.message);

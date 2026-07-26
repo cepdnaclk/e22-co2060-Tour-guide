@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import DistrictPage from "./pages/DistrictPage";
 import Chat from "./pages/chat.jsx";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   return (
@@ -21,12 +22,12 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/tourism" element={<Tourism />} />
-        <Route path="/Explore" element={<Explore />} />
-        <Route path="/tripplan" element={<TripPlan />} />
+        <Route path="/tourism" element={<ProtectedRoute><Tourism /></ProtectedRoute>} />
+        <Route path="/explore" element={<ProtectedRoute><Explore /></ProtectedRoute>} />
+        <Route path="/tripplan" element={<ProtectedRoute><TripPlan /></ProtectedRoute>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path="/chat" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
         <Route path="/district/:slug" element={<DistrictPage />} />
         <Route
           path="/attractions/:id"

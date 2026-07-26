@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { auth } from "../firebase";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -41,7 +42,8 @@ const Login = () => {
       setLoading(true);
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       setSuccess("Login successful.");
-      navigate("/");
+      const from = location.state?.from?.pathname || "/";
+      navigate(from, { replace: true });
     } catch (err) {
       switch (err.code) {
         case "auth/invalid-email":
@@ -192,6 +194,7 @@ const Login = () => {
           Don&apos;t have an account?{" "}
           <Link
             to="/signup"
+            state={location.state}
             className="text-blue-600 font-medium hover:text-blue-700"
           >
             Sign Up

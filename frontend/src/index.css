@@ -1,21 +1,117 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: "Inter", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", sans-serif;
+  --color-warm-beige: #F8FAFC;
+  --color-warm-accent: #FFFFFF;
+  --color-earth-dark: #0F172A;
+  --color-earth-medium: #475569;
+  --color-earth-light: #94A3B8;
+  --color-brand-teal: #3B82F6;
+  --color-brand-teal-light: #E0F2FE;
+}
 
+@layer base {
 
+  html,
+  body {
+    background-color: var(--color-warm-beige) !important;
+    color: var(--color-earth-dark) !important;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans) !important;
+    font-weight: 700 !important;
+    color: var(--color-earth-dark) !important;
+  }
+}
+
+/* Global utility overrides to map standard colors to our warm minimalist theme */
+
+/* Backgrounds */
+.bg-white {
+  background-color: #FFFFFF !important;
+}
+
+.bg-gray-50,
+.bg-slate-50,
+.bg-gray-100,
+.bg-slate-100 {
+  background-color: #F8FAFC !important;
+}
+
+.bg-black {
+  background-color: #0F172A !important;
+}
+
+.bg-blue-600,
+.bg-indigo-600 {
+  background-color: #0D9488 !important;
+}
+
+.hover\:bg-gray-800:hover,
+.hover\:bg-gray-200:hover,
+.hover\:bg-blue-700:hover,
+.hover\:bg-indigo-700:hover {
+  background-color: #0F766E !important;
+}
+
+/* Text Colors */
+.text-gray-900,
+.text-gray-800,
+.text-black,
+.text-slate-900 {
+  color: #0F172A !important;
+}
+
+.text-gray-700,
+.text-gray-600,
+.text-gray-500,
+.text-slate-700,
+.text-slate-600 {
+  color: #475569 !important;
+}
+
+.text-blue-600,
+.text-indigo-600 {
+  color: #0D9488 !important;
+}
+
+.hover\:text-blue-700:hover,
+.hover\:text-indigo-700:hover,
+.hover\:text-blue-600:hover {
+  color: #0F766E !important;
+}
+
+/* Borders */
+.border-gray-200,
+.border-slate-100,
+.border-gray-100,
+.border-slate-200 {
+  border-color: #F1F5F9 !important;
+}
+
+/* Component Overrides for Perfect Guide project */
 @layer components {
-
   .flex-between {
     @apply flex justify-between items-center;
   }
 
-
   .home {
-    @apply min-h-screen bg-gray-50 text-gray-900;
+    min-height: 100vh;
+    background-color: var(--color-warm-beige) !important;
+    color: var(--color-earth-dark) !important;
   }
 
- 
   .hero {
-    @apply relative w-full overflow-hidden border-b border-gray-200;
+    @apply relative w-full overflow-hidden border-b border-slate-100;
   }
 
   .heroImage {
@@ -24,16 +120,15 @@
 
   .heroOverlay {
     @apply absolute inset-0 flex flex-col justify-center gap-3 px-8;
-    background: linear-gradient(
-      to right,
-      rgba(255,255,255,0.9),
-      rgba(255,255,255,0.6),
-      rgba(255,255,255,0.2)
-    );
+    background: linear-gradient(to right,
+        rgba(248, 250, 252, 0.95),
+        rgba(248, 250, 252, 0.7),
+        rgba(248, 250, 252, 0.2));
   }
 
   .heroTitle {
-    @apply text-5xl font-bold tracking-wide;
+    font-family: var(--font-sans);
+    @apply text-5xl font-bold tracking-wide text-earth-dark;
   }
 
   .heroButtons {
@@ -41,21 +136,21 @@
   }
 
   .heroBtn {
-    @apply bg-black text-white px-5 py-2 rounded-xl font-semibold hover:opacity-90 transition;
+    @apply bg-brand-teal text-white px-5 py-2.5 rounded-full font-medium hover:bg-teal-700 transition;
   }
-
 
   .districtSection {
     @apply max-w-6xl mx-auto px-6 py-10;
   }
 
-  
   .districtGrid {
     @apply grid grid-cols-3 gap-8;
   }
 
   .districtCard {
-    @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer;
+    background-color: #FFFFFF !important;
+    border: 1px solid #F1F5F9;
+    @apply rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition transform hover:-translate-y-1 cursor-pointer;
   }
 
   .districtImage {
@@ -63,21 +158,24 @@
   }
 
   .districtLabel {
+    font-family: var(--font-sans);
+    color: #0F172A;
     @apply p-4 text-lg font-bold;
   }
 
-
   .footer {
-    @apply text-center py-6 border-t border-gray-200 text-gray-500 bg-white;
+    background-color: #FFFFFF !important;
+    border-top: 1px solid #F1F5F9 !important;
+    color: #475569 !important;
+    @apply text-center py-6;
   }
 }
-
 
 #loader {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: var(--color-warm-beige);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,8 +189,8 @@
 }
 
 .spinner {
-  border: 6px solid #eee;
-  border-top: 6px solid #3498db;
+  border: 6px solid var(--color-warm-accent);
+  border-top: 6px solid var(--color-brand-teal);
   border-radius: 50%;
   width: 50px;
   height: 50px;
