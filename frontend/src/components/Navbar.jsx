@@ -16,9 +16,10 @@ import {
 import { useAuth } from "../context/AuthContext";
 
 const navLinkClass = ({ isActive }) =>
-  `flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium tracking-wide transition-all duration-250 hover:translate-y-[-1px] ${isActive
-    ? "text-brand-pink bg-pink-100/95 border border-pink-200/50 font-semibold"
-    : "text-earth-medium hover:text-brand-pink hover:bg-pink-100/40 border border-transparent"
+  `flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium tracking-wide transition-all duration-250 hover:translate-y-[-1px] ${
+    isActive
+      ? "text-brand-pink bg-pink-100/95 border border-pink-200/50 font-semibold"
+      : "text-earth-medium hover:text-brand-pink hover:bg-pink-100/40 border border-transparent"
   }`;
 
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
       <nav className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 md:grid md:max-w-[1500px] md:grid-cols-[1fr_auto_1fr]">
         {/* LEFT: Public Links & Chat */}
         <div className="hidden items-center gap-2 md:flex justify-self-end pr-4">
-          <NavLink to="/" className={navLinkClass}>
+          <NavLink to="/home" className={navLinkClass}>
             <span className="flex items-center gap-2">
               <Home className="h-4 w-4" />
               Home
@@ -83,7 +84,7 @@ export default function Navbar() {
 
         {/* CENTER LOGO */}
         <NavLink
-          to="/"
+          to="/home"
           className="font-sans text-2xl font-bold uppercase tracking-wider text-earth-dark md:justify-self-center sm:text-3xl hover:opacity-90 transition-opacity"
         >
           Perfect Guide
@@ -141,10 +142,10 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80">
                   <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-brand-teal to-teal-700 flex items-center justify-center text-white text-[10px] font-bold">
-                    {(currentUser.displayName || currentUser.email || 'U')[0].toUpperCase()}
+                    {(currentUser.displayName || currentUser.email || "U")[0].toUpperCase()}
                   </div>
                   <span className="max-w-[100px] truncate text-sm font-semibold text-earth-dark">
-                    {currentUser.displayName || currentUser.email.split('@')[0]}
+                    {currentUser.displayName || currentUser.email.split("@")[0]}
                   </span>
                 </div>
 
@@ -175,8 +176,10 @@ export default function Navbar() {
           <div className="flex flex-col gap-5 px-5 py-6">
             {/* Public links */}
             <div className="flex flex-col gap-2">
-              <span className="text-[11px] font-bold text-earth-light uppercase tracking-widest px-2">Public Pages</span>
-              <NavLink to="/" onClick={() => setOpen(false)} className={navLinkClass}>
+              <span className="text-[11px] font-bold text-earth-light uppercase tracking-widest px-2">
+                Public Pages
+              </span>
+              <NavLink to="/home" onClick={() => setOpen(false)} className={navLinkClass}>
                 <Home className="h-4 w-4" />
                 Home
               </NavLink>
@@ -205,7 +208,9 @@ export default function Navbar() {
 
             {/* Features */}
             <div className="flex flex-col gap-2">
-              <span className="text-[11px] font-bold text-earth-light uppercase tracking-widest px-2">Features</span>
+              <span className="text-[11px] font-bold text-earth-light uppercase tracking-widest px-2">
+                Features
+              </span>
               <NavLink
                 to="/tourism"
                 onClick={(e) => handleProtectedClick(e, "/tourism")}
@@ -251,10 +256,12 @@ export default function Navbar() {
                 <div className="flex flex-col gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-teal to-teal-700 flex items-center justify-center text-white text-sm font-bold">
-                      {(currentUser.displayName || currentUser.email || 'U')[0].toUpperCase()}
+                      {(currentUser.displayName || currentUser.email || "U")[0].toUpperCase()}
                     </div>
                     <div className="flex flex-col min-w-0">
-                      <span className="text-[11px] font-medium text-earth-light uppercase">Logged In As</span>
+                      <span className="text-[11px] font-medium text-earth-light uppercase">
+                        Logged In As
+                      </span>
                       <span className="text-sm font-semibold text-earth-dark truncate">
                         {currentUser.displayName || currentUser.email}
                       </span>

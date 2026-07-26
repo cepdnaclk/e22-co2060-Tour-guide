@@ -1,6 +1,7 @@
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
 
+import Landing from "./pages/landing.jsx"; // Import new landing page
 import Home from "./pages/home.jsx";
 import About from "./pages/about.jsx";
 import Contact from "./pages/contact.jsx";
@@ -14,12 +15,23 @@ import Chat from "./pages/chat.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
+  const location = useLocation();
+
+  // Hide Navbar on Landing, Login, and Signup pages
+  const hideNavbarOn = ["/", "/login", "/signup"];
+  const shouldHideNavbar = hideNavbarOn.includes(location.pathname);
+
   return (
     <>
-      <Navbar />
+      {!shouldHideNavbar && <Navbar />}
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* Full-screen Hero Landing Page */}
+        <Route path="/" element={<Landing />} />
+
+        {/* Home page updated to /home */}
+        <Route path="/home" element={<Home />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/tourism" element={<ProtectedRoute><Tourism /></ProtectedRoute>} />
