@@ -1,0 +1,323 @@
+[
+  {
+    "name": "Yala National Park",
+    "district": "Hambantota",
+    "placeType": "wildlife",
+    "description": "Sri Lanka's most famous national park, renowned for having one of the highest leopard densities in the world, alongside elephants, sloth bears, and diverse bird species.",
+    "imageUrl": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Yala+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.3697,
+    "lng": 81.5204
+  },
+  {
+    "name": "Udawalawe National Park",
+    "district": "Ratnapura",
+    "placeType": "wildlife",
+    "description": "An important habitat for Sri Lankan elephants, this national park offers unparalleled opportunities to observe herds roaming freely around its vast reservoir.",
+    "imageUrl": "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Udawalawe+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.4716,
+    "lng": 80.8872
+  },
+  {
+    "name": "Wilpattu National Park",
+    "district": "Anuradhapura",
+    "placeType": "wildlife",
+    "description": "Sri Lanka's largest national park, characterized by a unique network of natural sand-rimmed water basins (Villus) and a pristine, wild leopard population.",
+    "imageUrl": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Wilpattu+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 8.4328,
+    "lng": 80.0036
+  },
+  {
+    "name": "Minneriya National Park",
+    "district": "Polonnaruwa",
+    "placeType": "wildlife",
+    "description": "Famous for 'The Gathering'—the largest seasonal congregation of Asian elephants in the world, taking place along the dry grassy banks of the Minneriya tank.",
+    "imageUrl": "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Minneriya+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 8.0336,
+    "lng": 80.8222
+  },
+  {
+    "name": "Kaudulla National Park",
+    "district": "Polonnaruwa",
+    "placeType": "wildlife",
+    "description": "A key elephant corridor park adjacent to Minneriya, home to dense woods, grasslands, and vast herds of wild elephants.",
+    "imageUrl": "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Kaudulla+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 8.1417,
+    "lng": 80.9167
+  },
+  {
+    "name": "Sinharaja Forest Reserve",
+    "district": "Ratnapura",
+    "placeType": "wildlife",
+    "description": "A UNESCO World Heritage primary tropical rainforest, boasting remarkable biodiversity with endemic birds, trees, amphibians, and reptiles.",
+    "imageUrl": "https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Sinharaja+Forest+Reserve+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.4167,
+    "lng": 80.4667
+  },
+  {
+    "name": "Horton Plains National Park",
+    "district": "Nuwara Eliya",
+    "placeType": "wildlife",
+    "description": "A protected cloud forest highland plateau featuring rolling grasslands, dramatic cliffs like World's End, montane forest ecosystems, and sambar deer.",
+    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Horton+Plains+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.8028,
+    "lng": 80.8092
+  },
+  {
+    "name": "Bundala National Park",
+    "district": "Hambantota",
+    "placeType": "wildlife",
+    "description": "An internationally acclaimed RAMSAR wetland site that serves as a wintering ground for thousands of migratory waterfowl, including greater flamingos.",
+    "imageUrl": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Bundala+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.1783,
+    "lng": 81.2269
+  },
+  {
+    "name": "Wasgamuwa National Park",
+    "district": "Matale",
+    "placeType": "wildlife",
+    "description": "A pristine sanctuary located along the Mahaweli River, famous for large herds of wild elephants, sloth bears, marsh crocodiles, and ancient ruins.",
+    "imageUrl": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Wasgamuwa+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.7333,
+    "lng": 80.9500
+  },
+  {
+    "name": "Kumana National Park",
+    "district": "Ampara",
+    "placeType": "wildlife",
+    "description": "Renowned for its natural mangrove swamp lake (Kumana Villu), this eastern park is one of Sri Lanka's most significant bird nesting and breeding grounds.",
+    "imageUrl": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Kumana+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.5167,
+    "lng": 81.7000
+  },
+  {
+    "name": "Gal Oya National Park",
+    "district": "Ampara",
+    "placeType": "wildlife",
+    "description": "A unique wildlife sanctuary centered around the Senanayake Samudraya, famous for boat safaris where wild elephants can be seen swimming between islands.",
+    "imageUrl": "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Gal+Oya+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.2167,
+    "lng": 81.4667
+  },
+  {
+    "name": "Pigeon Island National Park",
+    "district": "Trincomalee",
+    "placeType": "wildlife",
+    "description": "One of Sri Lanka's two marine national parks, containing pristine coral reefs, blacktip reef sharks, sea turtles, and colorful tropical fish.",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Pigeon+Island+National+Park+Sri+Lanka",
+    "isActive": true,
+    "lat": 8.7208,
+    "lng": 81.2033
+  },
+  {
+    "name": "Knuckles Conservation Forest",
+    "district": "Kandy",
+    "placeType": "wildlife",
+    "description": "A rugged UNESCO World Heritage mountain range named for its fist-like peaks, featuring rich cloud forest trails, endemic species, and mountain streams.",
+    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Knuckles+Mountain+Range+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.4608,
+    "lng": 80.8142
+  },
+  {
+    "name": "Royal Botanical Gardens, Peradeniya",
+    "district": "Kandy",
+    "placeType": "wildlife",
+    "description": "Sri Lanka's premier 147-acre botanical garden, housing over 4,000 plant species including giant bamboo, royal palms, and a famed orchid house.",
+    "imageUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Royal+Botanical+Gardens+Peradeniya",
+    "isActive": true,
+    "lat": 7.2683,
+    "lng": 80.5964
+  },
+  {
+    "name": "Hakgala Botanical Garden",
+    "district": "Nuwara Eliya",
+    "placeType": "wildlife",
+    "description": "The second largest botanical garden in Sri Lanka, nestled under the Hakgala Rock, famous for cold-climate roses, ferns, and subtropical flora.",
+    "imageUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Hakgala+Botanical+Garden+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9258,
+    "lng": 80.8203
+  },
+  {
+    "name": "Seetawaka Wet Zone Botanical Garden",
+    "district": "Colombo",
+    "placeType": "wildlife",
+    "description": "A modern botanical garden in Avissawella dedicated to conserving wet-zone rainforest flora, featuring scenic lakes, glasshouses, and manicured lawns.",
+    "imageUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Seetawaka+Botanical+Garden+Avissawella",
+    "isActive": true,
+    "lat": 6.9531,
+    "lng": 80.2078
+  },
+  {
+    "name": "Mirijjawila Dry Zone Botanical Garden",
+    "district": "Hambantota",
+    "placeType": "wildlife",
+    "description": "Sri Lanka's first dry-zone botanical garden, focusing on preserving arid-climate plants, herbal vegetation, and native dry-forest trees.",
+    "imageUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Mirijjawila+Botanical+Garden+Hambantota",
+    "isActive": true,
+    "lat": 6.1558,
+    "lng": 81.0853
+  },
+  {
+    "name": "National Zoological Gardens of Sri Lanka (Dehiwala Zoo)",
+    "district": "Colombo",
+    "placeType": "wildlife",
+    "description": "One of the oldest zoos in Asia, housing an extensive collection of indigenous and exotic mammals, birds, reptiles, and a walk-through aquarium.",
+    "imageUrl": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Dehiwala+Zoological+Gardens+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.8569,
+    "lng": 79.8753
+  },
+  {
+    "name": "Ridigama Safari Park",
+    "district": "Hambantota",
+    "placeType": "wildlife",
+    "description": "Sri Lanka's first open-concept safari park, spanning 500 acres where visitors take guided bus tours through open drive-thru animal enclosures.",
+    "imageUrl": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Ridigama+Safari+Park+Hambantota",
+    "isActive": true,
+    "lat": 6.2089,
+    "lng": 80.9639
+  },
+  {
+    "name": "Pinnawala Elephant Orphanage",
+    "district": "Kegalle",
+    "placeType": "wildlife",
+    "description": "A famous captive breeding and conservation facility for orphaned wild Asian elephants, popular for witnessing daily herd baths in the Ma Oya river.",
+    "imageUrl": "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Pinnawala+Elephant+Orphanage+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.3014,
+    "lng": 80.3872
+  },
+  {
+    "name": "Udawalawe Elephant Transit Home (ETH)",
+    "district": "Ratnapura",
+    "placeType": "wildlife",
+    "description": "A conservation facility supported by Born Free Foundation that rehabilitates orphaned elephant calves before re-releasing them into Udawalawe National Park.",
+    "imageUrl": "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Elephant+Transit+Home+Udawalawe",
+    "isActive": true,
+    "lat": 6.4764,
+    "lng": 80.8925
+  },
+  {
+    "name": "Muthurajawela Wetland Sanctuary",
+    "district": "Gampaha",
+    "placeType": "wildlife",
+    "description": "A coastal brackish marsh ecosystem offering boat safaris to spot water monitor lizards, kingfishers, egrets, and estuarine crocodiles.",
+    "imageUrl": "https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Muthurajawela+Wetland+Sanctuary",
+    "isActive": true,
+    "lat": 7.0428,
+    "lng": 79.8656
+  },
+  [
+    {
+      "name": "Water World Kelaniya & Bird Park",
+      "district": "Gampaha",
+      "placeType": "aquarium",
+      "description": "Sri Lanka's premier public aquatic park featuring over 500 species of marine and freshwater fish, South Asia's first underwater tunnel, and an adjacent exotic bird park.",
+      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Water+World+Kelaniya+Sri+Lanka",
+      "isActive": true,
+      "lat": 6.9631,
+      "lng": 79.9192
+    },
+    {
+      "name": "Birds Park Hambantota",
+      "district": "Hambantota",
+      "placeType": "wildlife",
+      "description": "One of Asia's largest bird parks and research centers, spanning 35 acres with over 3,200 exotic and endemic birds across five dedicated ecological walk-through aviaries.",
+      "imageUrl": "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Birds+Park+Hambantota+Sri+Lanka",
+      "isActive": true,
+      "lat": 6.1344,
+      "lng": 81.1219
+    },
+    {
+      "name": "Kosgoda Sea Turtle Conservation Project",
+      "district": "Galle",
+      "placeType": "aquarium",
+      "description": "A pioneering marine sanctuary and hatchery dedicated to protecting endangered sea turtle species, featuring observation tanks for rescued marine turtles and hatchlings.",
+      "imageUrl": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Kosgoda+Sea+Turtle+Conservation+Project",
+      "isActive": true,
+      "lat": 6.3325,
+      "lng": 80.0336
+    },
+    {
+      "name": "Bentota Turtle Hatchery & Marine Center",
+      "district": "Galle",
+      "placeType": "aquarium",
+      "description": "A coastal marine life conservation center along the southwest beach strip providing shelter, medical care, and release programs for sea turtles.",
+      "imageUrl": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Bentota+Turtle+Hatchery+Sri+Lanka",
+      "isActive": true,
+      "lat": 6.4251,
+      "lng": 79.9981
+    },
+    {
+      "name": "Kalametiya Bird Sanctuary",
+      "district": "Hambantota",
+      "placeType": "wildlife",
+      "description": "Sri Lanka's oldest coastal wetland bird sanctuary, home to over 150 species of resident and migratory water birds best explored via guided boat safari.",
+      "imageUrl": "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Kalametiya+Bird+Sanctuary+Sri+Lanka",
+      "isActive": true,
+      "lat": 6.0917,
+      "lng": 80.9389
+    },
+    {
+      "name": "Attidiya Bird Sanctuary",
+      "district": "Colombo",
+      "placeType": "wildlife",
+      "description": "An urban wetland biodiversity park situated in the Colombo suburbs, offering scenic boardwalk trails for observing indigenous marshland bird species.",
+      "imageUrl": "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Attidiya+Bird+Sanctuary+Sri+Lanka",
+      "isActive": true,
+      "lat": 6.8436,
+      "lng": 79.8903
+    },
+    {
+      "name": "Anawilundawa Wetland Sanctuary",
+      "district": "Puttalam",
+      "placeType": "wildlife",
+      "description": "A RAMSAR wetland complex comprising seven ancient man-made tanks, serving as a critical breeding ground and refuge for coastal migratory birds.",
+      "imageUrl": "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80",
+      "googleMapsUrl": "https://maps.google.com/?q=Anawilundawa+Wetland+Sanctuary+Sri+Lanka",
+      "isActive": true,
+      "lat": 7.7003,
+      "lng": 79.8039
+    }
+  ]
+]

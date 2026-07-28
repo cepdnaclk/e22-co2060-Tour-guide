@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Diyaluma Falls",
+    "district": "Badulla",
+    "placeType": "waterfall",
+    "description": "The second-highest waterfall in Sri Lanka, famous for its multiple upper natural pools where visitors can swim right on the edge of the roaring drop.",
+    "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Diyaluma+Falls+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.7214,
+    "lng": 81.0319
+  },
+  {
+    "name": "Bambarakanda Falls",
+    "district": "Badulla",
+    "placeType": "waterfall",
+    "description": "Standing at a majestic 263 meters, this is the tallest waterfall in Sri Lanka, cascading down a sheer vertical cliff surrounded by serene pine forests.",
+    "imageUrl": "https://images.unsplash.com/photo-1548786811-dd6e4b3cc57f?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Bambarakanda+Falls+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.7725,
+    "lng": 80.8328
+  },
+  {
+    "name": "Ravana Falls",
+    "district": "Badulla",
+    "placeType": "waterfall",
+    "description": "A highly popular and easily accessible multi-tier waterfall in Ella, linked to the epic Ramayana legend and offering dramatic flow during the rainy season.",
+    "imageUrl": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Ravana+Falls+Ella+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.8667,
+    "lng": 81.0544
+  },
+  {
+    "name": "Dunhinda Falls",
+    "district": "Badulla",
+    "placeType": "waterfall",
+    "description": "Known as the 'Bridal Fall' for its smoky water spray, this 63-meter cascade is reached via a scenic jungle trek near Badulla town.",
+    "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Dunhinda+Falls+Badulla+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.0264,
+    "lng": 81.0631
+  },
+  {
+    "name": "Devon Falls",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "Nicknamed the 'Veil of the Valley', this 97-meter multi-tiered waterfall cascades gracefully opposite lush tea plantations along the Hatton-Nuwara Eliya road.",
+    "imageUrl": "https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Devon+Falls+Talawakele+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9536,
+    "lng": 80.6273
+  },
+  {
+    "name": "St. Clair's Falls",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "Widely known as the 'Little Niagara of Sri Lanka', this is one of the widest waterfalls in the country, formed by the Kotmale Oya river.",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=St+Clairs+Falls+Hatton+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9508,
+    "lng": 80.6308
+  },
+  {
+    "name": "Baker's Falls",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "Located inside Horton Plains National Park, this 20-meter cascade is surrounded by misty cloud forest vegetation and wild rhododendrons.",
+    "imageUrl": "https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Bakers+Falls+Horton+Plains+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.7867,
+    "lng": 80.7858
+  },
+  {
+    "name": "Laxapana Falls",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "Standing 126 meters tall, this powerful waterfall in Maskeliya is steeped in local folklore and crucial to Sri Lanka's hydroelectric power generation.",
+    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Laxapana+Falls+Maskeliya+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9011,
+    "lng": 80.4997
+  },
+  {
+    "name": "Aberdeen Falls",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "A striking 98-meter waterfall nestled deep in Ginigathena, featuring a massive rock face and a deep natural plunge pool at its base.",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Aberdeen+Falls+Ginigathena+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9803,
+    "lng": 80.5058
+  },
+  {
+    "name": "Ramboda Falls",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "A high-altitude 109-meter waterfall split into upper and lower sections, easily viewed from the A5 highway near Pussellawa.",
+    "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Ramboda+Falls+Pussellawa+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.0546,
+    "lng": 80.7008
+  },
+  {
+    "name": "Lover's Leap Waterfall",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "A romantic 30-meter waterfall originating from Sri Lanka's highest peak (Pidurutalagala), accessible via tea estate paths near Nuwara Eliya town.",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Lovers+Leap+Waterfall+Nuwara+Eliya",
+    "isActive": true,
+    "lat": 6.9667,
+    "lng": 80.7833
+  },
+  {
+    "name": "Bomburu Ella",
+    "district": "Nuwara Eliya",
+    "placeType": "waterfall",
+    "description": "Also known as Perawella Falls, this is a vast network of multi-branching jungle cascades considered one of the widest waterfall clusters in the country.",
+    "imageUrl": "https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Bomburu+Ella+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9381,
+    "lng": 80.8286
+  },
+  {
+    "name": "Bopath Ella",
+    "district": "Ratnapura",
+    "placeType": "waterfall",
+    "description": "Named for its unique physical resemblance to a sacred Bo leaf, this 30-meter cascade in Kuruwita is a popular weekend picnic spot.",
+    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Bopath+Ella+Kuruwita+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.7861,
+    "lng": 80.3703
+  },
+  {
+    "name": "Kirindi Ella",
+    "district": "Ratnapura",
+    "placeType": "waterfall",
+    "description": "Tucked away in Pelmadulla, this 116-meter tall cascade tumbles into a deep pool surrounded by dense forest foliage.",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Kirindi+Ella+Pelmadulla+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.6433,
+    "lng": 80.5317
+  },
+  {
+    "name": "Surathali Ella",
+    "district": "Ratnapura",
+    "placeType": "waterfall",
+    "description": "A 60-meter high fall named after a famous old Sinhala movie filmed on-location, conveniently located right beside the Colombo-Batticaloa highway.",
+    "imageUrl": "https://images.unsplash.com/photo-1434394354979-a235cd36269d?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Surathali+Ella+Belihuloya+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.7358,
+    "lng": 80.8239
+  },
+  {
+    "name": "Olu Ella",
+    "district": "Kegalle",
+    "placeType": "waterfall",
+    "description": "The 6th highest waterfall in Sri Lanka (127m), dropping in multiple gentle, white steps that resemble a blooming water lily (Olu).",
+    "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Olu+Ella+Yatiyantota+Sri+Lanka",
+    "isActive": true,
+    "lat": 6.9806,
+    "lng": 80.3742
+  },
+  {
+    "name": "Asupini Ella",
+    "district": "Kegalle",
+    "placeType": "waterfall",
+    "description": "A dramatic 30-meter high waterfall near Aranayaka, linked to ancient legends of royal consorts and surrounding mountain vistas.",
+    "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Asupini+Ella+Aranayaka+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.1528,
+    "lng": 80.4481
+  },
+  {
+    "name": "Sera Ella",
+    "district": "Matale",
+    "placeType": "waterfall",
+    "description": "Hidden within the Knuckles Mountain Range, famous for a natural rock cave hidden directly behind the cascading curtain of water.",
+    "imageUrl": "https://images.unsplash.com/photo-1548786811-dd6e4b3cc57f?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Sera+Ella+Dumbara+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.5819,
+    "lng": 80.7817
+  },
+  {
+    "name": "Hunas Falls",
+    "district": "Kandy",
+    "placeType": "waterfall",
+    "description": "A picturesque 60-meter high waterfall located near Elkaduwa, originating from the Matale forest hills above a luxury resort area.",
+    "imageUrl": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Hunas+Falls+Elkaduwa+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.3972,
+    "lng": 80.6861
+  },
+  {
+    "name": "Huluganga Falls",
+    "district": "Kandy",
+    "placeType": "waterfall",
+    "description": "Located directly by the main road in Huluganga town, this 75-meter cascade plunges off massive boulders fed by streams from the Knuckles range.",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "googleMapsUrl": "https://maps.google.com/?q=Huluganga+Falls+Kandy+Sri+Lanka",
+    "isActive": true,
+    "lat": 7.3758,
+    "lng": 80.7419
+  }
+]

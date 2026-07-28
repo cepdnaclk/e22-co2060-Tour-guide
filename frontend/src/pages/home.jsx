@@ -174,9 +174,9 @@ function NearbySuggestionsPopup({
   locError,
 }) {
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
-      <div className="w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl">
-        <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-5 sm:px-6 py-4 flex items-start justify-between">
+    <div className="fixed inset-0 z-[1100] bg-black/50 flex items-center justify-center px-4">
+      <div className="w-full max-w-6xl max-h-[90vh] flex flex-col rounded-3xl bg-white shadow-2xl overflow-hidden">
+        <div className="flex-shrink-0 bg-white border-b border-gray-200 px-5 sm:px-6 py-4 flex items-start justify-between">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold">
               📍 Nearby Suggestions
@@ -188,13 +188,13 @@ function NearbySuggestionsPopup({
 
           <button
             onClick={onClose}
-            className="ml-4 text-2xl leading-none text-gray-600 hover:text-black"
+            className="ml-4 text-2xl leading-none text-gray-600 hover:text-black cursor-pointer"
           >
             ×
           </button>
         </div>
 
-        <div className="p-5 sm:p-6">
+        <div className="overflow-y-auto p-5 sm:p-6 flex-grow">
           {loading && (
             <p className="text-gray-600">Loading nearby suggestions...</p>
           )}

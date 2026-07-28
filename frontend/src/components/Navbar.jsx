@@ -44,7 +44,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-pink-100/50 bg-pink-50/90 backdrop-blur-md shadow-xs">
+    <header className="sticky top-0 z-[1050] w-full border-b border-pink-100/50 bg-pink-50/90 backdrop-blur-md shadow-xs">
       <nav className="mx-auto flex h-20 items-center justify-between px-4 sm:px-6 md:grid md:max-w-[1500px] md:grid-cols-[1fr_auto_1fr]">
         {/* LEFT: Public Links & Chat */}
         <div className="hidden items-center gap-2 md:flex justify-self-end pr-4">

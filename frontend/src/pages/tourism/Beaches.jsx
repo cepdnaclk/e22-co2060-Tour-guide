@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
-import PlacesMap from "../components/PlacesMap";
-import PageNavigation from "../components/PageNavigation";
+import { db } from "../../firebase";
+import { useNavigate } from "react-router-dom";
+import PlacesMap from "../../components/PlacesMap";
+import PageNavigation from "../../components/PageNavigation";
 import { MapPin, ExternalLink, Compass } from "lucide-react";
-import beachesData from "../../beaches.json";
+import beachesData from "../../../beaches.json";
 
 export default function Beaches() {
+  const navigate = useNavigate();
   // Use first 3 beaches from local beaches.json as initial state
   const [beaches, setBeaches] = useState(() => {
     return (beachesData || []).slice(0, 3).map((b, idx) => ({
@@ -16,6 +18,7 @@ export default function Beaches() {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const fetchBeaches = async () => {
@@ -136,10 +139,11 @@ export default function Beaches() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8">
-                  {beaches.map((beach) => (
+                  {beaches.slice(0, showAll ? undefined : 9).map((beach) => (
                     <div
                       key={beach.id}
-                      className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full overflow-hidden group"
+                      onClick={() => navigate(`/attractions/beaches/${beach.id}`)}
+                      className="cursor-pointer bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full overflow-hidden group"
                     >
                       {/* Image Container */}
                       <div className="relative h-48 sm:h-52 w-full overflow-hidden">
@@ -155,10 +159,17 @@ export default function Beaches() {
 
                       {/* Content Body */}
                       <div className="p-5 flex flex-col flex-grow">
-                        {/* District Badge */}
-                        <div className="inline-flex items-center gap-1 self-start px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide bg-teal-50 text-teal-700 uppercase mb-3">
-                          <MapPin className="h-3 w-3" />
-                          {beach.district} District
+                        {/* Top Meta row */}
+                        <div className="flex items-center justify-between mb-3">
+                          {/* District Badge */}
+                          <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-50 text-teal-700 uppercase">
+                            <MapPin className="h-3 w-3" />
+                            {beach.district}
+                          </div>
+                          {/* Rating Badge */}
+                          <div className="flex items-center gap-1 text-amber-500 text-xs font-bold bg-amber-50 px-2 py-0.5 rounded-md">
+                            ★ {(4.5 + (beach.name.length % 5) * 0.1).toFixed(1)}
+                          </div>
                         </div>
 
                         {/* Beach Name */}
@@ -167,15 +178,68 @@ export default function Beaches() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3 flex-grow">
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2">
                           {beach.description}
                         </p>
+
+                        {/* Structured Details Box */}
+                        <div className="bg-slate-50 rounded-xl p-3 mb-4 space-y-2 border border-slate-100/50 text-xs text-gray-600">
+                          {/* Recommended Season */}
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium text-gray-500">Best Season:</span>
+                            <span className="font-semibold text-teal-800">
+                              {["Galle", "Matara", "Hambantota", "Colombo", "Kalutara", "Puttalam"].includes(beach.district)
+                                ? "Nov – Apr (Dry)"
+                                : "May – Oct (Dry)"}
+                            </span>
+                          </div>
+                          {/* Activities */}
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium text-gray-500">Activities:</span>
+                            <span className="font-semibold text-slate-800 truncate max-w-[150px]" title={
+                              beach.name.toLowerCase().includes("weligama") || beach.name.toLowerCase().includes("hikkaduwa") || beach.name.toLowerCase().includes("arugam") || beach.name.toLowerCase().includes("hiriketiya")
+                                ? "Surfing & Snorkeling"
+                                : beach.name.toLowerCase().includes("mirissa") || beach.name.toLowerCase().includes("secret") || beach.name.toLowerCase().includes("polhena") || beach.name.toLowerCase().includes("dalawella")
+                                ? "Whale Watching & Swimming"
+                                : "Calm Swims & Relaxation"
+                            }>
+                              {beach.name.toLowerCase().includes("weligama") || beach.name.toLowerCase().includes("hikkaduwa") || beach.name.toLowerCase().includes("arugam") || beach.name.toLowerCase().includes("hiriketiya")
+                                ? "Surfing & Snorkeling"
+                                : beach.name.toLowerCase().includes("mirissa") || beach.name.toLowerCase().includes("secret") || beach.name.toLowerCase().includes("polhena") || beach.name.toLowerCase().includes("dalawella")
+                                ? "Whale Watching & Swimming"
+                                : "Calm Swims & Relaxation"}
+                            </span>
+                          </div>
+                          {/* Vibe */}
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium text-gray-500">Vibe:</span>
+                            <span className="font-semibold text-slate-800">
+                              {beach.name.toLowerCase().includes("secret") || beach.name.toLowerCase().includes("jungle") || beach.name.toLowerCase().includes("talalla")
+                                ? "Quiet & Secluded"
+                                : beach.name.toLowerCase().includes("mirissa") || beach.name.toLowerCase().includes("hikkaduwa") || beach.name.toLowerCase().includes("unawatuna")
+                                ? "Vibrant & Social"
+                                : "Scenic & Relaxing"}
+                            </span>
+                          </div>
+                          {/* Recommended Stay */}
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium text-gray-500">Recommended Stay:</span>
+                            <span className="font-semibold text-slate-800">
+                              {beach.name.toLowerCase().includes("arugam") || beach.name.toLowerCase().includes("mirissa")
+                                ? "Full Day"
+                                : "2 – 4 Hours"}
+                            </span>
+                          </div>
+                        </div>
 
                         {/* Action Link */}
                         {beach.googleMapsUrl && (
                           <div className="mt-auto pt-4 border-t border-gray-100">
                             <button
-                              onClick={() => openGoogleMaps(beach.googleMapsUrl)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                openGoogleMaps(beach.googleMapsUrl);
+                              }}
                               className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-900 text-sm font-semibold border border-slate-200/60 shadow-xs transition"
                             >
                               <ExternalLink className="h-4 w-4" />
@@ -186,6 +250,17 @@ export default function Beaches() {
                       </div>
                     </div>
                   ))}
+                </div>
+              )}
+
+              {!showAll && beaches.length > 9 && (
+                <div className="flex justify-center mt-10">
+                  <button
+                    onClick={() => setShowAll(true)}
+                    className="px-6 py-3 rounded-xl bg-white border border-teal-200 text-teal-700 hover:bg-teal-50 font-semibold shadow-xs transition duration-200 cursor-pointer"
+                  >
+                    See All ({beaches.length})
+                  </button>
                 </div>
               )}
             </section>

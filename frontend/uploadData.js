@@ -23,14 +23,53 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// 3. Read beaches.json
-let beaches;
+// 3. Read JSON datasets
+let beaches = [];
 try {
   beaches = JSON.parse(readFileSync("./beaches.json", "utf8"));
   console.log(`Loaded ${beaches.length} beach records from beaches.json`);
 } catch (error) {
-  console.error("Error reading beaches.json:", error.message);
-  process.exit(1);
+  console.warn("Error reading beaches.json, skipping:", error.message);
+}
+
+let mountains = [];
+try {
+  mountains = JSON.parse(readFileSync("./mountains.json", "utf8"));
+  console.log(`Loaded ${mountains.length} mountain records from mountains.json`);
+} catch (error) {
+  console.warn("Error reading mountains.json, skipping:", error.message);
+}
+
+let heritage = [];
+try {
+  heritage = JSON.parse(readFileSync("./heritage.json", "utf8"));
+  console.log(`Loaded ${heritage.length} heritage records from heritage.json`);
+} catch (error) {
+  console.warn("Error reading heritage.json, skipping:", error.message);
+}
+
+let wildlife = [];
+try {
+  wildlife = JSON.parse(readFileSync("./wildlife.json", "utf8"));
+  console.log(`Loaded ${wildlife.length} wildlife records from wildlife.json`);
+} catch (error) {
+  console.warn("Error reading wildlife.json, skipping:", error.message);
+}
+
+let waterfalls = [];
+try {
+  waterfalls = JSON.parse(readFileSync("./waterfalls.json", "utf8"));
+  console.log(`Loaded ${waterfalls.length} waterfall records from waterfalls.json`);
+} catch (error) {
+  console.warn("Error reading waterfalls.json, skipping:", error.message);
+}
+
+let city = [];
+try {
+  city = JSON.parse(readFileSync("./city.json", "utf8"));
+  console.log(`Loaded ${city.length} city records from city.json`);
+} catch (error) {
+  console.warn("Error reading city.json, skipping:", error.message);
 }
 
 // 4. Authenticate script
@@ -64,24 +103,129 @@ async function authenticate() {
 async function uploadData() {
   await authenticate();
   
-  console.log("Starting bulk upload to Firestore subcollection: Tourism/Beaches/Places");
-  
-  for (const beach of beaches) {
-    try {
-      // Create a readable slug for the document ID (e.g. "Mirissa Beach" -> "mirissa")
-      const docId = beach.name
-        .toLowerCase()
-        .replace(/ beach$/i, '')
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '');
+  if (beaches.length > 0) {
+    console.log("Starting bulk upload to Firestore subcollection: Tourism/Beaches/Places");
+    for (const beach of beaches) {
+      try {
+        const docId = beach.name
+          .toLowerCase()
+          .replace(/ beach$/i, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+          
+        console.log(`Uploading beach: "${beach.name}" as document "${docId}"...`);
         
-      console.log(`Uploading: "${beach.name}" as document "${docId}"...`);
-      
-      const docRef = doc(db, "Tourism", "Beaches", "Places", docId);
-      await setDoc(docRef, beach);
-      console.log(`--> Success! Document created at path: Tourism/Beaches/Places/${docId}`);
-    } catch (error) {
-      console.error(`--> Error uploading "${beach.name}":`, error.message);
+        const docRef = doc(db, "Tourism", "Beaches", "Places", docId);
+        await setDoc(docRef, beach);
+        console.log(`--> Success! Document created at path: Tourism/Beaches/Places/${docId}`);
+      } catch (error) {
+        console.error(`--> Error uploading "${beach.name}":`, error.message);
+      }
+    }
+  }
+
+  if (mountains.length > 0) {
+    console.log("Starting bulk upload to Firestore subcollection: Tourism/Mountains/Places");
+    for (const mt of mountains) {
+      try {
+        const docId = mt.name
+          .toLowerCase()
+          .replace(/ mountain$/i, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+          
+        console.log(`Uploading mountain: "${mt.name}" as document "${docId}"...`);
+        
+        const docRef = doc(db, "Tourism", "Mountains", "Places", docId);
+        await setDoc(docRef, mt);
+        console.log(`--> Success! Document created at path: Tourism/Mountains/Places/${docId}`);
+      } catch (error) {
+        console.error(`--> Error uploading "${mt.name}":`, error.message);
+      }
+    }
+  }
+
+  if (heritage.length > 0) {
+    console.log("Starting bulk upload to Firestore subcollection: Tourism/Heritage/Places");
+    for (const h of heritage) {
+      try {
+        const docId = h.name
+          .toLowerCase()
+          .replace(/ (fort|temple|city)$/i, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+          
+        console.log(`Uploading heritage: "${h.name}" as document "${docId}"...`);
+        
+        const docRef = doc(db, "Tourism", "Heritage", "Places", docId);
+        await setDoc(docRef, h);
+        console.log(`--> Success! Document created at path: Tourism/Heritage/Places/${docId}`);
+      } catch (error) {
+        console.error(`--> Error uploading "${h.name}":`, error.message);
+      }
+    }
+  }
+
+  if (wildlife.length > 0) {
+    console.log("Starting bulk upload to Firestore subcollection: Tourism/Wildlife/Places");
+    for (const w of wildlife) {
+      try {
+        const docId = w.name
+          .toLowerCase()
+          .replace(/ (national park|park)$/i, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+          
+        console.log(`Uploading wildlife: "${w.name}" as document "${docId}"...`);
+        
+        const docRef = doc(db, "Tourism", "Wildlife", "Places", docId);
+        await setDoc(docRef, w);
+        console.log(`--> Success! Document created at path: Tourism/Wildlife/Places/${docId}`);
+      } catch (error) {
+        console.error(`--> Error uploading "${w.name}":`, error.message);
+      }
+    }
+  }
+
+  if (waterfalls.length > 0) {
+    console.log("Starting bulk upload to Firestore subcollection: Tourism/Waterfalls/Places");
+    for (const wf of waterfalls) {
+      try {
+        const docId = wf.name
+          .toLowerCase()
+          .replace(/ (falls|waterfall)$/i, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+          
+        console.log(`Uploading waterfall: "${wf.name}" as document "${docId}"...`);
+        
+        const docRef = doc(db, "Tourism", "Waterfalls", "Places", docId);
+        await setDoc(docRef, wf);
+        console.log(`--> Success! Document created at path: Tourism/Waterfalls/Places/${docId}`);
+      } catch (error) {
+        console.error(`--> Error uploading "${wf.name}":`, error.message);
+      }
+    }
+  }
+
+  if (city.length > 0) {
+    console.log("Starting bulk upload to Firestore subcollection: Tourism/City/Places");
+    for (const c of city) {
+      try {
+        const docId = c.name
+          .toLowerCase()
+          .replace(/ (market|arcade|centre)$/i, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+          
+        console.log(`Uploading city: "${c.name}" as document "${docId}"...`);
+        
+        const docRef = doc(db, "Tourism", "City", "Places", docId);
+        await setDoc(docRef, c);
+        console.log(`--> Success! Document created at path: Tourism/City/Places/${docId}`);
+      } catch (error) {
+        console.error(`--> Error uploading "${c.name}":`, error.message);
+      }
     }
   }
   
