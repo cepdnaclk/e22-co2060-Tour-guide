@@ -5,6 +5,7 @@ import Home from "./pages/home.jsx";
 import About from "./pages/about.jsx";
 import Contact from "./pages/contact.jsx";
 import Tourism from "./pages/tourism.jsx";
+import Beaches from "./pages/Beaches.jsx";
 import Explore from "./pages/Explore.jsx";
 import TripPlan from "./pages/tripplan.jsx";
 import LoginPage from "./pages/LoginPage";
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/tourism" element={<ProtectedRoute><Tourism /></ProtectedRoute>} />
+        <Route path="/tourism/beaches" element={<ProtectedRoute><Beaches /></ProtectedRoute>} />
         <Route path="/explore" element={<ProtectedRoute><Explore /></ProtectedRoute>} />
         <Route path="/tripplan" element={<ProtectedRoute><TripPlan /></ProtectedRoute>} />
         <Route path="/login" element={<LoginPage />} />

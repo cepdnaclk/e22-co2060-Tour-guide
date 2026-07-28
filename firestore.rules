@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Existing rules for places and chats collections
+    match /places/{document} {
+      allow read, write: if request.auth != null;
+    }
+    
+    match /chats/{document} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Rule to allow authenticated users to read and write to the Tourism beaches path
+    match /Tourism/{document}/Places/{placeId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Default fallback rule (deny everything else)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

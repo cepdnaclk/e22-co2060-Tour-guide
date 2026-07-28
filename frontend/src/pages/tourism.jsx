@@ -83,12 +83,8 @@ export default function Tourism() {
                 All
               </button>
               <button
-                onClick={() => setActiveCategory("beach")}
-                className={`px-4 sm:px-5 py-2 rounded-xl text-sm sm:text-base font-semibold border transition ${
-                  activeCategory === "beach"
-                    ? "bg-white text-black border-white"
-                    : "bg-white/10 text-white border-white/30 hover:bg-white/20"
-                }`}
+                onClick={() => navigate("/tourism/beaches")}
+                className="px-4 sm:px-5 py-2 rounded-xl text-sm sm:text-base font-semibold border transition bg-white/10 text-white border-white/30 hover:bg-white/20"
               >
                 Beaches
               </button>
@@ -130,7 +126,13 @@ export default function Tourism() {
           {categories.map((c) => (
             <button
               key={c.key}
-              onClick={() => setActiveCategory(c.key)}
+              onClick={() => {
+                if (c.key === "beach") {
+                  navigate("/tourism/beaches");
+                } else {
+                  setActiveCategory(c.key);
+                }
+              }}
               className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition text-left bg-white ${
                 activeCategory === c.key ? "ring-2 ring-black" : ""
               }`}
