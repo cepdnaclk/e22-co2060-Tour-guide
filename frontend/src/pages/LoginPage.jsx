@@ -3,10 +3,14 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { auth } from "../firebase";
+import { useRateLimit } from "../hooks/useRateLimit";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Custom rate-limiting hook (5 attempts max, 180 seconds / 3 mins lockout)
+  const { isLocked, formattedTime, recordFailedAttempt } = useRateLimit("login", 5, 180);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -33,6 +37,12 @@ const Login = () => {
     setSuccess("");
     setResetMessage("");
 
+    // Block submission if currently locked out
+    if (isLocked) {
+      setError(`Too many failed attempts. Please try again in ${formattedTime}.`);
+      return;
+    }
+
     if (!formData.email || !formData.password) {
       setError("Please enter both email and password.");
       return;
@@ -42,27 +52,34 @@ const Login = () => {
       setLoading(true);
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       setSuccess("Login successful.");
+      
       const from = location.state?.from?.pathname || "/";
       navigate(from, { replace: true });
     } catch (err) {
+      // Record failed attempt and check remaining limit
+      const remaining = recordFailedAttempt();
+
+      if (remaining <= 0) {
+        setError("Too many failed attempts. Login is temporarily locked.");
+        return;
+      }
+
       switch (err.code) {
         case "auth/invalid-email":
-          setError("Invalid email address.");
+          setError(`Invalid email address. (${remaining} attempts remaining)`);
           break;
         case "auth/user-not-found":
-          setError("No account found with this email.");
+          setError(`No account found with this email. (${remaining} attempts remaining)`);
           break;
         case "auth/wrong-password":
-          setError("Incorrect password.");
-          break;
         case "auth/invalid-credential":
-          setError("Invalid email or password.");
+          setError(`Invalid email or password. (${remaining} attempts remaining)`);
           break;
         case "auth/too-many-requests":
           setError("Too many attempts. Please try again later.");
           break;
         default:
-          setError("Failed to log in. Please try again.");
+          setError(`Failed to log in. Please try again. (${remaining} attempts remaining)`);
       }
     } finally {
       setLoading(false);
@@ -128,20 +145,27 @@ const Login = () => {
           </div>
         )}
 
+        {isLocked && (
+          <div className="mb-4 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-amber-700 text-sm font-medium text-center">
+            ⏳ Account locked. Try again in {formattedTime}
+          </div>
+        )}
+
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Email
             </label>
-            <div className="flex items-center border border-gray-300 rounded-xl px-3 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500">
+            <div className="flex items-center border border-gray-300 rounded-xl px-3 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 bg-white">
               <Mail size={18} className="text-gray-400 mr-2" />
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                disabled={isLocked}
                 placeholder="Enter your email"
-                className="w-full py-3 outline-none bg-transparent text-gray-800"
+                className="w-full py-3 outline-none bg-transparent text-gray-800 disabled:bg-transparent"
               />
             </div>
           </div>
@@ -150,20 +174,22 @@ const Login = () => {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Password
             </label>
-            <div className="flex items-center border border-gray-300 rounded-xl px-3 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500">
+            <div className="flex items-center border border-gray-300 rounded-xl px-3 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 bg-white">
               <Lock size={18} className="text-gray-400 mr-2" />
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
+                disabled={isLocked}
                 placeholder="Enter your password"
-                className="w-full py-3 outline-none bg-transparent text-gray-800"
+                className="w-full py-3 outline-none bg-transparent text-gray-800 disabled:bg-transparent"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword((prev) => !prev)}
-                className="text-gray-500 hover:text-gray-700 transition"
+                disabled={isLocked}
+                className="text-gray-500 hover:text-gray-700 transition disabled:opacity-50"
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
@@ -174,7 +200,7 @@ const Login = () => {
             <button
               type="button"
               onClick={handleForgotPassword}
-              disabled={resetLoading}
+              disabled={resetLoading || isLocked}
               className="text-sm font-medium text-blue-600 hover:text-blue-700 transition disabled:opacity-60"
             >
               {resetLoading ? "Sending reset email..." : "Forgot Password?"}
@@ -183,10 +209,14 @@ const Login = () => {
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || isLocked}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition disabled:opacity-70"
           >
-            {loading ? "Logging in..." : "Login"}
+            {isLocked
+              ? `Locked (${formattedTime})`
+              : loading
+              ? "Logging in..."
+              : "Login"}
           </button>
         </form>
 
