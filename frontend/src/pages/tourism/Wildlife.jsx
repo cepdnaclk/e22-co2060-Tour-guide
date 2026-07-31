@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import PlacesMap from "../../components/PlacesMap";
-import PageNavigation from "../../components/PageNavigation";
 import { MapPin, ExternalLink, Compass, Trees } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import wildlifeData from "../../../wildlife.json";
@@ -88,8 +87,6 @@ export default function Wildlife() {
 
       {/* MAIN CONTENT */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-        {/* Navigation Breadcrumb */}
-        <PageNavigation className="mb-6" />
 
         {/* LOADING STATE */}
         {loading && (

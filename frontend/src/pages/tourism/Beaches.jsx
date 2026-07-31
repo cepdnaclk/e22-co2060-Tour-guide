@@ -3,7 +3,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import PlacesMap from "../../components/PlacesMap";
-import PageNavigation from "../../components/PageNavigation";
 import { MapPin, ExternalLink, Compass } from "lucide-react";
 import beachesData from "../../../beaches.json";
 
@@ -88,8 +87,7 @@ export default function Beaches() {
 
       {/* MAIN CONTENT */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-        {/* Navigation Breadcrumb */}
-        <PageNavigation className="mb-6" />
+       
 
         {/* LOADING STATE */}
         {loading && (

@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { Map, Compass } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
-import PageNavigation from "../components/PageNavigation";
+
 
 function getPlaceImage(place) {
   return place.imageUrl || "/kandy.jpg";
@@ -88,6 +88,8 @@ function CategoryRow({
     new Set(places.map((p) => normalizeDistrictSlug(p)).filter(Boolean))
   ).sort();
 
+  const [visibleCount, setVisibleCount] = useState(8);
+
   return (
     <section className="mb-10">
       <div className="flex items-center justify-between gap-4 mb-4 flex-wrap">
@@ -128,10 +130,20 @@ function CategoryRow({
       </div>
 
       <div className="flex gap-4 overflow-x-auto pb-2">
-        {places.map((place, index) => (
+        {places.slice(0, visibleCount).map((place, index) => (
           <PlaceCard key={place.id || index} place={place} />
         ))}
       </div>
+
+       {places.length > visibleCount && (
+            <div className="mt-4 flex justify-end">
+                <button
+                    onClick={() => setVisibleCount(visibleCount + 8)}
+                    className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                    See More
+                </button>
+            </div>
+        )}
     </section>
   );
 }
@@ -313,7 +325,7 @@ export default function ExplorePage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
-        <PageNavigation className="mb-6" />
+        
 
         <div className="relative rounded-2xl overflow-hidden shadow-xl">
           <img

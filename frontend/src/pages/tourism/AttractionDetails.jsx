@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { attractions } from "./attractionsData";
-import PageNavigation from "../../components/PageNavigation";
 import {
   MapPin,
   ExternalLink,
@@ -299,11 +298,6 @@ export default function AttractionDetails() {
 
       {/* DETAILED CONTENT AREA */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 -mt-8 relative z-20">
-        
-        {/* Navigation Breadcrumb */}
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl p-4 shadow-sm border border-slate-100 mb-6">
-          <PageNavigation />
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           

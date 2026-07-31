@@ -445,14 +445,14 @@ export default function HomePage() {
               <span className="bg-green-500 w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold">
                 ✓
               </span>
-              <span>Secure payment</span>
+              <span>Feel Good Trip </span>
             </div>
 
             <div className="flex items-center justify-center gap-2">
               <span className="bg-green-500 w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold">
                 ✓
               </span>
-              <span>Support in approx. 30s</span>
+              <span>Safe Plan & Low Cost</span>
             </div>
           </div>
 

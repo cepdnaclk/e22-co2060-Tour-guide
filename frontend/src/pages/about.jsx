@@ -1,7 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import PageNavigation from "../components/PageNavigation";
-
 
 
 export default function AboutPage() {
@@ -92,7 +90,6 @@ export default function AboutPage() {
     <>
       {/* ABOUT SECTION */}
       <section className="py-20 px-4 flex flex-col items-center gap-6 relative">
-        <PageNavigation className="mb-6" />
 
         <span className="px-3 py-1 bg-teal-50 border border-teal-100 text-teal-700 text-[11px] font-bold uppercase tracking-wider rounded-full">
           Features

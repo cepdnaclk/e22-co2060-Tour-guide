@@ -3,7 +3,6 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import PlacesMap from "../components/PlacesMap";
-import PageNavigation from "../components/PageNavigation";
 import { Map } from "lucide-react";
 
 
@@ -303,8 +302,6 @@ export default function DistrictPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-         
-          <PageNavigation className="mb-6" />
 
         
         <div className="bg-white rounded-2xl shadow p-4 sm:p-5 mb-6">
