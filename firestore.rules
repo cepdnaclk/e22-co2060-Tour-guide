@@ -11,9 +11,15 @@ service cloud.firestore {
       allow read, write: if request.auth != null;
     }
     
-    // Rule to allow authenticated users to read and write to the Tourism beaches path
+    // Allow authenticated users to read/write to the Tourism subcollections
     match /Tourism/{document}/Places/{placeId} {
       allow read, write: if request.auth != null;
+    }
+
+    // Allow permissions for districts collection and its subcollections
+    match /districts/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
     }
 
     // Default fallback rule (deny everything else)

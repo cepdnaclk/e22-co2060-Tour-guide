@@ -71,9 +71,9 @@ function distanceKm(aLat, aLng, bLat, bLng) {
   const s1 =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(toRad(aLat)) *
-      Math.cos(toRad(bLat)) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
+    Math.cos(toRad(bLat)) *
+    Math.sin(dLng / 2) *
+    Math.sin(dLng / 2);
 
   const c = 2 * Math.atan2(Math.sqrt(s1), Math.sqrt(1 - s1));
   return R * c;
@@ -436,9 +436,8 @@ export default function HomePage() {
         <img
           src={heroImages[heroIndex]}
           alt="Trip Banner"
-          className={`w-full h-[520px] sm:h-[460px] md:h-[420px] object-cover transition-opacity duration-700 ${
-            fade ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-[520px] sm:h-[460px] md:h-[420px] object-cover transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"
+            }`}
         />
 
         <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
