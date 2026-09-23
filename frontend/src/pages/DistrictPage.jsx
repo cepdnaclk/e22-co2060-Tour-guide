@@ -4,6 +4,9 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import PlacesMap from "../components/PlacesMap";
 import { Map } from "lucide-react";
+import ColomboPage from "./ColomboPage";
+import GampahaPage from "./GampahaPage";
+import KalutaraPage from "./KalutaraPage";
 
 
 function formatDistrictName(slug) {
@@ -57,30 +60,38 @@ function PlaceCard({ place }) {
   };
 
   return (
-    <div className="min-w-[240px] max-w-[240px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden flex-shrink-0">
+    <div className="min-w-[250px] max-w-[250px] h-[340px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden flex-shrink-0 flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-md">
       <img
         src={getPlaceImage(place)}
         alt={place.name}
         onError={(e) => {
           e.currentTarget.src = "/kandy.jpg";
         }}
-        className="w-full h-[150px] object-cover"
+        className="w-full h-[140px] object-cover flex-shrink-0"
       />
 
-      <div className="p-4 relative min-h-[110px]">
-        <h3 className="font-bold text-base line-clamp-1">{place.name}</h3>
+      <div className="p-4 relative flex-1 flex flex-col justify-between overflow-hidden">
+        <div>
+          <h3 className="font-bold text-sm text-gray-900 leading-snug line-clamp-2 pr-6">{place.name}</h3>
 
-        <p className="text-sm text-gray-600 mt-1 capitalize">
-          {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
-        </p>
+          <p className="text-xs text-blue-600 font-medium mt-1 capitalize">
+            {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
+          </p>
+
+          {place.description && (
+            <p className="text-xs text-gray-500 mt-1.5 line-clamp-3 leading-relaxed">
+              {place.description}
+            </p>
+          )}
+        </div>
 
         <button
-  onClick={openDirections}
-  title="View on map"
-  className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
->
-  <Map size={20} />
-</button>
+          onClick={openDirections}
+          title="View on map"
+          className="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center cursor-pointer"
+        >
+          <Map size={18} />
+        </button>
       </div>
     </div>
   );
@@ -127,6 +138,15 @@ function CategorySection({
 
 export default function DistrictPage() {
   const { slug } = useParams();
+  if (slug === "colombo") {
+    return <ColomboPage />;
+  }
+  if (slug === "gampaha") {
+    return <GampahaPage />;
+  }
+  if (slug === "kalutara" || slug === "kaluthara") {
+    return <KalutaraPage />;
+  }
   const districtName = formatDistrictName(slug);
 
   const [places, setPlaces] = useState([]);
@@ -161,7 +181,7 @@ export default function DistrictPage() {
 
         const snapshot = await getDocs(collection(db, "places"));
 
-        const data = snapshot.docs
+        let data = snapshot.docs
           .map((doc) => ({ id: doc.id, ...doc.data() }))
           .filter((p) => {
             const district = String(p.district || p.districtName || "")
@@ -171,6 +191,38 @@ export default function DistrictPage() {
 
             return district === slug;
           });
+
+        if (data.length === 0) {
+          // Import local JSON fallbacks
+          const beachesData = (await import("../../beaches.json")).default || [];
+          const mountainsData = (await import("../../mountains.json")).default || [];
+          const heritageData = (await import("../../heritage.json")).default || [];
+          const wildlifeData = (await import("../../wildlife.json")).default || [];
+          const waterfallsData = (await import("../../waterfalls.json")).default || [];
+          const cityData = (await import("../../city.json")).default || [];
+
+          const allLocal = [
+            ...beachesData,
+            ...mountainsData,
+            ...heritageData,
+            ...wildlifeData,
+            ...waterfallsData,
+            ...cityData
+          ];
+
+          data = allLocal
+            .filter((p) => {
+              const d = String(p.district || "")
+                .toLowerCase()
+                .trim()
+                .replace(/\s+/g, "-");
+              return d === slug;
+            })
+            .map((item, idx) => ({
+              id: `local-${slug}-${idx}`,
+              ...item
+            }));
+        }
 
         setPlaces(data);
       } catch (error) {

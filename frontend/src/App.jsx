@@ -18,6 +18,9 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import DistrictPage from "./pages/DistrictPage";
 import Chat from "./pages/chat.jsx";
+import ColomboPage from "./pages/ColomboPage.jsx";
+import GampahaPage from "./pages/GampahaPage.jsx";
+import KalutaraPage from "./pages/KalutaraPage.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
@@ -29,6 +32,14 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/colombo" element={<ColomboPage />} />
+        <Route path="/tourism/colombo" element={<ColomboPage />} />
+        <Route path="/gampaha" element={<GampahaPage />} />
+        <Route path="/tourism/gampaha" element={<GampahaPage />} />
+        <Route path="/kalutara" element={<KalutaraPage />} />
+        <Route path="/kaluthara" element={<KalutaraPage />} />
+        <Route path="/tourism/kalutara" element={<KalutaraPage />} />
+        <Route path="/tourism/kaluthara" element={<KalutaraPage />} />
         <Route path="/tourism" element={<ProtectedRoute><Tourism /></ProtectedRoute>} />
         <Route path="/tourism/beaches" element={<ProtectedRoute><Beaches /></ProtectedRoute>} />
         <Route path="/tourism/mountains" element={<ProtectedRoute><Mountains /></ProtectedRoute>} />

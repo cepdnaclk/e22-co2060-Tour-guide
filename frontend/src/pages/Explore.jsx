@@ -38,35 +38,43 @@ function PlaceCard({ place }) {
   };
 
   return (
-    <div className="min-w-[240px] max-w-[240px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden flex-shrink-0 hover:shadow-md transition">
+    <div className="min-w-[250px] max-w-[250px] h-[340px] rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden flex-shrink-0 flex flex-col hover:shadow-md transition">
       <img
         src={getPlaceImage(place)}
         alt={place.name}
         onError={(e) => {
           e.currentTarget.src = "/kandy.jpg";
         }}
-        className="w-full h-[150px] object-cover"
+        className="w-full h-[140px] object-cover flex-shrink-0"
       />
 
-      <div className="p-4 relative min-h-[125px]">
-        <h3 className="font-bold text-base line-clamp-1">{place.name}</h3>
+      <div className="p-4 relative flex-1 flex flex-col justify-between overflow-hidden">
+        <div>
+          <h3 className="font-bold text-sm text-gray-900 leading-snug line-clamp-2 pr-6">{place.name}</h3>
 
-        <p className="text-sm text-gray-600 mt-1 capitalize">
-          {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
-        </p>
-
-        {(place.districtName || place.district) && (
-          <p className="text-sm text-gray-500 mt-1 capitalize">
-            {String(place.districtName || place.district).replaceAll("-", " ")}
+          <p className="text-xs text-blue-600 font-medium mt-1 capitalize">
+            {(place.placeType || place.placetype || place.category || "place").replaceAll("_", " ")}
           </p>
-        )}
+
+          {(place.districtName || place.district) && (
+            <p className="text-xs text-gray-500 mt-1 capitalize">
+              📍 {String(place.districtName || place.district).replaceAll("-", " ")}
+            </p>
+          )}
+
+          {place.description && (
+            <p className="text-xs text-gray-500 mt-1.5 line-clamp-3 leading-relaxed">
+              {place.description}
+            </p>
+          )}
+        </div>
 
         <button
           onClick={openDirections}
           title="View on map"
-          className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center"
+          className="absolute bottom-3 right-3 w-9 h-9 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 shadow-sm hover:bg-blue-600 hover:text-white transition flex items-center justify-center cursor-pointer"
         >
-          <Map size={20} />
+          <Map size={18} />
         </button>
       </div>
     </div>

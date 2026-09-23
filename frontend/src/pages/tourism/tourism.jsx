@@ -183,8 +183,8 @@ export default function Tourism() {
                 <img src={a.image} alt={a.name} className="w-full h-full object-cover hover:scale-105 transition duration-500" />
               </div>
               <div className="p-4 flex flex-col flex-grow">
-                <div className="font-bold text-lg text-gray-900 line-clamp-1">{a.name}</div>
-                <div className="text-sm text-gray-600 mt-1 flex items-center justify-between">
+                <div className="font-bold text-lg text-gray-900 leading-snug line-clamp-2">{a.name}</div>
+                <div className="text-sm text-gray-600 mt-2 flex items-center justify-between">
                   <span>⏱ {a.time}</span>
                   <span className="flex items-center gap-0.5 text-amber-500 font-bold bg-amber-50 px-2 py-0.5 rounded">
                     ★ {a.rating}
