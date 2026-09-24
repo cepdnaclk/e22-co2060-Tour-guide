@@ -1,6 +1,8 @@
 {
+  "type": "module",
   "dependencies": {
     "express": "^5.2.1",
+    "firebase": "^12.10.0",
     "react-router-dom": "^7.13.0"
   }
 }
