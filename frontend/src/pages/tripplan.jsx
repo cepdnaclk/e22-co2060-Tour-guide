@@ -11,8 +11,8 @@ import { TripOptimizationEngine, VEHICLE_RATES } from '../services/TripEngine';
 import { attractions } from './tourism/attractionsData';
 
 // --- STYLES & UTILS ---
-const glassmorphismClass = "bg-white/85 backdrop-blur-md border border-white/50 shadow-xl rounded-3xl";
-const gradientTextClass = "bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent";
+const glassmorphismClass = "bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] border border-gray-100";
+const gradientTextClass = "text-gray-900";
 
 // --- QUICK DEMO PROMPTS ---
 const QUICK_PROMPTS = [
@@ -50,25 +50,35 @@ const INTEREST_OPTIONS = [
 
 // --- SUB-COMPONENTS ---
 
-const ChatBubble = ({ message, isAI }) => {
+const ChatBubble = ({ message, isAI, isWelcome }) => {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className={`flex w-full mb-4 ${isAI ? 'justify-start' : 'justify-end'}`}
+      initial={{ opacity: 0, y: 15, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ type: "spring", stiffness: 250, damping: 25 }}
+      className={`flex w-full mb-6 ${isAI ? 'justify-start' : 'justify-end'}`}
     >
-      <div className={`flex max-w-[85%] md:max-w-[75%] items-end gap-2 ${isAI ? 'flex-row' : 'flex-row-reverse'}`}>
+      <div className={`flex max-w-[85%] md:max-w-[75%] items-end gap-3 ${isAI ? 'flex-row' : 'flex-row-reverse'}`}>
         {isAI && (
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
-            <Sparkles className="w-4 h-4 text-white" />
+          <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 border border-gray-200 shadow-sm">
+            <Sparkles className="w-4 h-4 text-gray-700" />
           </div>
         )}
-        <div className={`p-4 rounded-2xl shadow-sm text-sm leading-relaxed ${
+        <div className={`px-6 py-4 rounded-3xl text-[15px] leading-relaxed whitespace-pre-wrap ${
           isAI 
-            ? 'bg-white text-gray-800 rounded-bl-none border border-gray-100' 
-            : 'bg-indigo-600 text-white rounded-br-none'
+            ? 'bg-gray-50 text-gray-800 rounded-bl-md border border-gray-100 shadow-sm' 
+            : 'bg-gray-900 text-white rounded-br-md shadow-md'
         }`}>
-          {message}
+          {isWelcome ? (
+            <div className="flex flex-col gap-2">
+              <span className="font-extrabold text-lg text-gray-900">
+                Hi! Ready to plan your trip? ✨
+              </span>
+              <span className="text-gray-700">{message}</span>
+            </div>
+          ) : (
+            message
+          )}
         </div>
       </div>
     </motion.div>
@@ -79,49 +89,51 @@ const TripSummaryCard = ({ summary }) => (
   <motion.div 
     initial={{ opacity: 0, scale: 0.95 }}
     animate={{ opacity: 1, scale: 1 }}
-    className={`${glassmorphismClass} p-6 mb-8 mt-4 border-indigo-100`}
+    className={`${glassmorphismClass} p-6 mb-8 mt-4`}
   >
     <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
       <div>
         <h3 className="text-xl font-extrabold text-gray-800 flex items-center gap-2">
-          <MapIcon className="text-indigo-600" /> Trip Cost Breakdown
+          <MapIcon className="text-gray-700" /> Trip Cost Breakdown
         </h3>
-        <p className="text-xs text-gray-500">Realistic per-person travel expenses & fuel calculations</p>
+        <p className="text-xs text-gray-500 mt-1">Realistic per-person travel expenses & fuel calculations</p>
       </div>
       
       {/* Per Person Highlight Badge */}
-      <div className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-2 rounded-2xl shadow-md flex items-center gap-2">
-        <Users className="w-4 h-4" />
+      <div className="bg-gray-900 text-white px-5 py-2.5 rounded-2xl shadow-md flex items-center gap-3">
+        <div className="bg-white/20 p-2 rounded-full">
+          <Users className="w-4 h-4" />
+        </div>
         <div>
-          <div className="text-[10px] opacity-80 uppercase tracking-wider font-semibold">Cost Per Person</div>
-          <div className="text-lg font-black">{summary.costPerPerson} <span className="text-xs font-normal">/ person ({summary.personCount} travelers)</span></div>
+          <div className="text-[10px] opacity-90 uppercase tracking-widest font-semibold">Cost Per Person</div>
+          <div className="text-lg font-black">{summary.costPerPerson} <span className="text-xs font-medium opacity-80">/ pax</span></div>
         </div>
       </div>
     </div>
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
-      <div className="flex flex-col bg-blue-50/60 p-3 rounded-2xl border border-blue-100">
-        <span className="text-xs text-gray-500 flex items-center gap-1 mb-1 font-medium"><MapPin className="w-3.5 h-3.5 text-blue-600"/> Route & Distance</span>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+      <div className="flex flex-col bg-gray-50 p-4 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+        <span className="text-xs text-gray-500 flex items-center gap-1.5 mb-1.5 font-bold uppercase tracking-wider"><MapPin className="w-3.5 h-3.5"/> Route</span>
         <span className="font-bold text-gray-800 text-sm">{summary.origin} → {summary.destination}</span>
-        <span className="text-xs text-blue-700 font-semibold mt-1">{summary.distance}</span>
+        <span className="text-[11px] text-gray-500 font-medium mt-1">{summary.distance}</span>
       </div>
 
-      <div className="flex flex-col bg-green-50/60 p-3 rounded-2xl border border-green-100">
-        <span className="text-xs text-gray-500 flex items-center gap-1 mb-1 font-medium"><Wallet className="w-3.5 h-3.5 text-green-600"/> Total Trip Cost</span>
-        <span className="font-bold text-green-700 text-base">{summary.totalCost}</span>
-        <span className="text-xs text-gray-500">User Budget: {summary.budget}</span>
+      <div className="flex flex-col bg-gray-50 p-4 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+        <span className="text-xs text-gray-500 flex items-center gap-1.5 mb-1.5 font-bold uppercase tracking-wider"><Wallet className="w-3.5 h-3.5"/> Total Cost</span>
+        <span className="font-bold text-emerald-600 text-base">{summary.totalCost}</span>
+        <span className="text-[11px] text-gray-500 mt-1">Budget: {summary.budget}</span>
       </div>
 
-      <div className="flex flex-col bg-amber-50/60 p-3 rounded-2xl border border-amber-100">
-        <span className="text-xs text-gray-500 flex items-center gap-1 mb-1 font-medium"><Fuel className="w-3.5 h-3.5 text-amber-600"/> Vehicle & Fuel Rate</span>
+      <div className="flex flex-col bg-gray-50 p-4 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+        <span className="text-xs text-gray-500 flex items-center gap-1.5 mb-1.5 font-bold uppercase tracking-wider"><Fuel className="w-3.5 h-3.5"/> Vehicle</span>
         <span className="font-bold text-gray-800 text-sm">{summary.vehicleType} ({summary.ratePerKm})</span>
-        <span className="text-xs text-amber-700 font-semibold mt-1">Est. Fuel: {summary.fuelCost}</span>
+        <span className="text-[11px] text-gray-500 font-medium mt-1">Fuel: {summary.fuelCost}</span>
       </div>
 
-      <div className="flex flex-col bg-purple-50/60 p-3 rounded-2xl border border-purple-100">
-        <span className="text-xs text-gray-500 flex items-center gap-1 mb-1 font-medium"><Clock className="w-3.5 h-3.5 text-purple-600"/> Attraction Tickets</span>
+      <div className="flex flex-col bg-gray-50 p-4 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+        <span className="text-xs text-gray-500 flex items-center gap-1.5 mb-1.5 font-bold uppercase tracking-wider"><Clock className="w-3.5 h-3.5"/> Tickets</span>
         <span className="font-bold text-gray-800 text-sm">{summary.ticketCost}</span>
-        <span className="text-xs text-purple-700 font-semibold mt-1">{summary.attractionCount} Stops En-Route</span>
+        <span className="text-[11px] text-gray-500 font-medium mt-1">{summary.attractionCount} Stops En-Route</span>
       </div>
     </div>
   </motion.div>
@@ -266,7 +278,7 @@ const Timeline = ({ stops, onRemove }) => (
 
 export default function TripPlanner() {
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hello 👋 \n\nTell me about your trip", isAI: true }
+    { id: 1, text: "I'm your Smart Travel Assistant.\n\nTell me about your dream trip! E.g. 'I want to go from Colombo to Kandy, I have Rs 15,000, and there are 4 of us traveling by car.'", isAI: true, isWelcome: true }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -439,11 +451,11 @@ export default function TripPlanner() {
     setItinerary(null);
     setBudgetWarning(null);
     setTripContext({});
-    setMessages([{ id: 1, text: "Hello 👋 I'm your Smart Travel Assistant powered by Firebase Firestore & Per-Person Cost Engine.\n\nTell me about your trip, or select quick interactive buttons below!", isAI: true }]);
+    setMessages([{ id: 1, text: "I'm your Smart Travel Assistant.\n\nTell me about your dream trip! E.g. 'I want to go from Colombo to Kandy, I have Rs 15,000, and there are 4 of us traveling by car.'", isAI: true, isWelcome: true }]);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-slate-50 to-blue-50 font-sans text-gray-800 pb-16">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-16">
       
       <main className="max-w-4xl mx-auto p-4 md:p-8">
         
@@ -458,18 +470,22 @@ export default function TripPlanner() {
               className={`${glassmorphismClass} flex flex-col h-[78vh] overflow-hidden`}
             >
               {/* Chat Header */}
-              <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-white/40">
+              <div className="px-8 py-5 border-b border-gray-100 flex items-center justify-between bg-white rounded-t-[2rem]">
                 <div className="flex items-center gap-3"> 
+                  <div className="w-10 h-10 bg-gray-100 text-gray-800 rounded-xl flex items-center justify-center border border-gray-200 shadow-sm">
+                    <MapPin className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h2 className="font-bold text-gray-800">Trip Plan</h2>
+                    <h2 className="font-extrabold text-gray-900 text-lg leading-tight">Trip Planner</h2>
+                    <p className="text-[11px] text-gray-500 font-medium">Powered by AI Itinerary Engine</p>
                   </div>
                 </div>
               </div>
 
               {/* Quick Preset Prompts */}
-              <div className="px-6 py-3 bg-indigo-50/50 border-b border-indigo-100/50 flex items-center gap-2 overflow-x-auto text-xs scrollbar-none">
-                <span className="font-semibold text-indigo-900 flex items-center gap-1 whitespace-nowrap">
-                  <Zap className="w-3.5 h-3.5 text-amber-500" /> Quick Presets:
+              <div className="px-8 py-3 bg-gray-50 border-b border-gray-100 flex items-center gap-3 overflow-x-auto text-xs scrollbar-none">
+                <span className="font-bold text-gray-400 flex items-center gap-1 whitespace-nowrap uppercase tracking-widest text-[10px]">
+                  Suggestions
                 </span>
                 {QUICK_PROMPTS.map((pill, idx) => (
                   <button
@@ -478,7 +494,7 @@ export default function TripPlanner() {
                       setTripContext(pill.context);
                       handleGenerateTrip(pill.context);
                     }}
-                    className="bg-white hover:bg-indigo-600 hover:text-white text-indigo-700 border border-indigo-200 px-3 py-1.5 rounded-full font-medium transition-all shadow-sm whitespace-nowrap flex-shrink-0"
+                    className="bg-white hover:bg-gray-100 text-gray-700 border border-gray-200 hover:border-gray-300 px-4 py-2 rounded-full font-semibold transition-colors shadow-sm whitespace-nowrap flex-shrink-0"
                   >
                     {pill.label}
                   </button>
@@ -486,25 +502,25 @@ export default function TripPlanner() {
               </div>
 
               {/* Chat Messages Container */}
-              <div className="flex-1 overflow-y-auto p-6 scroll-smooth bg-gray-50/30">
+              <div className="flex-1 overflow-y-auto p-6 md:p-8 scroll-smooth bg-white">
                 {messages.map((msg) => (
-                  <ChatBubble key={msg.id} message={msg.text} isAI={msg.isAI} />
+                  <ChatBubble key={msg.id} message={msg.text} isAI={msg.isAI} isWelcome={msg.isWelcome} />
                 ))}
 
                 {/* --- DYNAMIC INTERACTIVE ACTION BUTTONS --- */}
                 
                 {/* 1. Vehicle Mode Selector */}
                 {(!tripContext.vehicleType && tripContext.origin && tripContext.destination && tripContext.budget) && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 p-4 bg-white rounded-3xl border border-indigo-100 shadow-sm">
-                    <p className="text-xs font-bold text-gray-600 mb-3 flex items-center gap-1">
-                      <Car className="w-4 h-4 text-indigo-600" /> Select Mode of Travel:
+                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 p-5 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm">
+                    <p className="text-sm font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <Car className="w-4 h-4 text-gray-700" /> Select Mode of Travel
                     </p>
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                       {VEHICLE_OPTIONS.map(v => (
                         <button
                           key={v.id}
                           onClick={() => handleSelectVehicle(v.id)}
-                          className="flex flex-col items-center p-3 rounded-2xl border border-gray-200 hover:border-indigo-500 hover:bg-indigo-50/60 transition-all text-center"
+                          className="flex flex-col items-center p-3 rounded-2xl border border-gray-200 hover:border-gray-400 hover:bg-white bg-white transition-all text-center shadow-sm hover:shadow-md"
                         >
                           <span className="font-bold text-sm text-gray-800">{v.label}</span>
                           <span className="text-[10px] text-gray-500 mt-1">{v.desc}</span>
@@ -516,16 +532,16 @@ export default function TripPlanner() {
 
                 {/* 2. Person Count Selector */}
                 {(tripContext.vehicleType && tripContext.vehicleType !== "Bike" && !tripContext.personCount && tripContext.origin && tripContext.destination) && (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 p-4 bg-white rounded-3xl border border-indigo-100 shadow-sm">
-                    <p className="text-xs font-bold text-gray-600 mb-3 flex items-center gap-1">
-                      <Users className="w-4 h-4 text-indigo-600" /> How many people are traveling in your {tripContext.vehicleType}?
+                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-6 p-5 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm">
+                    <p className="text-sm font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <Users className="w-4 h-4 text-gray-700" /> Travelers in your {tripContext.vehicleType}?
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {PERSON_OPTIONS.map(num => (
                         <button
                           key={num}
                           onClick={() => handleSelectPersons(num)}
-                          className="px-4 py-2.5 bg-indigo-50 hover:bg-indigo-600 hover:text-white border border-indigo-200 text-indigo-700 font-bold rounded-2xl text-sm transition-all"
+                          className="px-5 py-3 bg-white hover:bg-gray-900 hover:text-white border border-gray-200 text-gray-700 font-bold rounded-2xl text-sm transition-colors shadow-sm"
                         >
                           {num} {num === 1 ? 'Person' : 'Persons'}
                         </button>
@@ -576,39 +592,48 @@ export default function TripPlanner() {
 
                 {(isTyping || isGenerating) && (
                   <motion.div 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="flex justify-start w-full mb-4"
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    className="flex justify-start w-full mb-6"
                   >
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-sm border border-gray-100 text-xs text-gray-600 font-medium">
-                      <div className="flex gap-1">
-                        <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce"></span>
-                        <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></span>
-                        <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></span>
+                    <div className="flex max-w-[85%] md:max-w-[75%] items-end gap-3">
+                      <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 border border-gray-200 shadow-sm">
+                        <Sparkles className="w-4 h-4 text-gray-700" />
                       </div>
-                      <span>{isGenerating ? "Routing highway corridor & computing per-person expenses..." : "Thinking..."}</span>
+                      <div className="flex flex-col gap-1">
+                        <div className="bg-gray-50 px-5 py-4 rounded-3xl rounded-bl-md border border-gray-100 flex items-center gap-2">
+                          <div className="flex gap-1.5">
+                            <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                            <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.15s" }}></span>
+                            <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.3s" }}></span>
+                          </div>
+                        </div>
+                        {isGenerating && (
+                          <span className="text-[10px] text-gray-500 font-medium ml-2 uppercase tracking-wide mt-1">Calculating Route...</span>
+                        )}
+                      </div>
                     </div>
                   </motion.div>
                 )}
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Chat Text Input */}
-              <div className="p-4 bg-white/60 border-t border-gray-100">
+              {/* Chat Text Input (Clean Minimalist Pill) */}
+              <div className="p-4 bg-white border-t border-gray-100 rounded-b-[2rem]">
                 <form onSubmit={handleSendMessage} className="relative flex items-center">
                   <input 
                     type="text" 
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="Type trip details... e.g., 'Batticaloa to Galle, budget 10000, 4 people by car'" 
-                    className="w-full bg-white border border-gray-200 rounded-full py-3.5 pl-6 pr-14 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm text-sm"
+                    placeholder="Type trip details... e.g., 'Batticaloa to Galle, budget 10000'" 
+                    className="w-full bg-gray-50 border border-gray-200 rounded-full py-4 pl-6 pr-14 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:bg-white text-[15px] transition-colors text-gray-800 placeholder-gray-400 shadow-inner"
                   />
                   <button 
                     type="submit"
                     disabled={!inputValue.trim() || isTyping || isGenerating}
-                    className="absolute right-2 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white disabled:bg-gray-300 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors shadow-sm"
+                    className="absolute right-2 w-10 h-10 bg-gray-900 hover:bg-black rounded-full flex items-center justify-center text-white disabled:bg-gray-200 disabled:text-gray-400 hover:shadow-md hover:scale-105 active:scale-95 transition-all"
                   >
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4 h-4 ml-0.5" />
                   </button>
                 </form>
               </div>
