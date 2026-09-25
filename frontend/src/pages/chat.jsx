@@ -2,13 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   addDoc,
   collection,
+  doc,
   onSnapshot,
   orderBy,
   query,
   serverTimestamp,
+  setDoc,
 } from "firebase/firestore";
 import { Send, MessageCircle } from "lucide-react";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
+import { useAuth } from "../context/AuthContext";
 
 const Chat = () => {
   const [rooms, setRooms] = useState([]);
@@ -20,7 +23,7 @@ const Chat = () => {
   const [sending, setSending] = useState(false);
 
   const messagesEndRef = useRef(null);
-  const user = auth.currentUser;
+  const { currentUser: user } = useAuth();
 
   // Load chat rooms
   useEffect(() => {
@@ -29,10 +32,22 @@ const Chat = () => {
 
     const unsubscribe = onSnapshot(
       roomsQuery,
-      (snapshot) => {
-        const loadedRooms = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
+      async (snapshot) => {
+        if (snapshot.empty && user) {
+          // Auto-seed default rooms if collection is completely empty
+          try {
+            await setDoc(doc(db, "chats", "general"), { name: "General Community" });
+            await setDoc(doc(db, "chats", "colombo"), { name: "Colombo" });
+            await setDoc(doc(db, "chats", "kandy"), { name: "Kandy" });
+            await setDoc(doc(db, "chats", "galle"), { name: "Galle" });
+          } catch (e) {
+            console.error("Error seeding default rooms:", e);
+          }
+        }
+
+        const loadedRooms = snapshot.docs.map((d) => ({
+          id: d.id,
+          ...d.data(),
         }));
 
         setRooms(loadedRooms);
@@ -50,7 +65,7 @@ const Chat = () => {
     );
 
     return () => unsubscribe();
-  }, [selectedRoom]);
+  }, [user, selectedRoom]);
 
   // Load messages for selected room
   useEffect(() => {
@@ -116,7 +131,7 @@ const Chat = () => {
       setNewMessage("");
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message.");
+      alert(`Failed to send message: ${error.message || error}`);
     } finally {
       setSending(false);
     }
