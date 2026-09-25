@@ -10,7 +10,7 @@ const Login = () => {
   const location = useLocation();
 
   // Custom rate-limiting hook (5 attempts max, 180 seconds / 3 mins lockout)
-  const { isLocked, formattedTime, recordFailedAttempt } = useRateLimit("login", 5, 180);
+  const { isLocked, formattedTime, recordFailedAttempt } = useRateLimit("login", 3, 180);
 
   const [formData, setFormData] = useState({
     email: "",
