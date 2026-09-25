@@ -12,7 +12,7 @@ export const KALUTARA_CATEGORIZED_PLACES = {
       district: "Kalutara",
       placeType: "Sacred Shrine",
       description: "Sacred Buddhist complex featuring an ancient sacred Bo tree and the world's only hollow stupa with interior murals.",
-      imageUrl: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://www.srilankanexpeditions.com/images/sri-lanka-travel-guide/history-archaeology-sri-lanka/ancient-temple/kalutara-bodhiya/kalutara-bodhiya-03.jpg",
       lat: 6.5867,
       lng: 79.9603
     },
@@ -22,7 +22,7 @@ export const KALUTARA_CATEGORIZED_PLACES = {
       district: "Kalutara",
       placeType: "Historic Castle",
       description: "Grand Edwardian mansion built in 1900 with 99 doors, teak carvings, and surrounding fruit orchards.",
-      imageUrl: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://tse4.mm.bing.net/th/id/OIP.W7MnK0GWmaN1Dsz8BcyK8gHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 6.5989,
       lng: 79.9881
     },
@@ -52,7 +52,7 @@ export const KALUTARA_CATEGORIZED_PLACES = {
       district: "Kalutara",
       placeType: "Temple",
       description: "Historic 18th-century mountain temple featuring one of the tallest seated Buddha statues in the world.",
-      imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://tse2.mm.bing.net/th/id/OIP.s_Wo3fT6IGEgIUNn5t7hbwHaFx?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 6.4419,
       lng: 80.0078
     },

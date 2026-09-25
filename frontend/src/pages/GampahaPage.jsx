@@ -52,7 +52,7 @@ export const GAMPAHA_CATEGORIZED_PLACES = {
       district: "Gampaha",
       placeType: "Cultural Market",
       description: "Bustling open-air fish market by the lagoon where fishermen land daily catches of tuna, crab, and prawns.",
-      imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://tse4.mm.bing.net/th/id/OIP.15dLvQa-MRMn0Lv-CR8rFAHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 7.2039,
       lng: 79.8336
     },
@@ -82,7 +82,7 @@ export const GAMPAHA_CATEGORIZED_PLACES = {
       district: "Gampaha",
       placeType: "Temple",
       description: "Historic rock temple complex built among granite boulder outcrops, dating back to King Valagamba's era.",
-      imageUrl: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://th.bing.com/th/id/OIP.ggss6ADyuJz20ocMr4LwIQHaE8?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 7.0983,
       lng: 80.0811
     },
@@ -92,7 +92,7 @@ export const GAMPAHA_CATEGORIZED_PLACES = {
       district: "Gampaha",
       placeType: "Temple",
       description: "Sacred ancient temple associated with King Sri Sangabo, featuring a circular vatadage shrine.",
-      imageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://tse2.mm.bing.net/th/id/OIP.g6ccy8wo3lPh09kAFYEVJwHaEh?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 7.1081,
       lng: 80.1286
     },
@@ -102,7 +102,7 @@ export const GAMPAHA_CATEGORIZED_PLACES = {
       district: "Gampaha",
       placeType: "Temple",
       description: "High mountain temple peak offering panoramic views of Gampaha District, forest ponds, and rock stupa.",
-      imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://thumbs.dreamstime.com/z/maligawila-ancient-rajamaha-viharaya-sri-lanka-locate-monaragala-district-very-valuable-place-has-large-250671611.jpg?w=768",
       lat: 7.0381,
       lng: 80.0711
     },
@@ -818,7 +818,7 @@ export const GAMPAHA_CATEGORIZED_PLACES = {
       district: "Gampaha",
       placeType: "Fuel Station",
       description: "24/7 petrol & diesel filling station located in Gampaha town centre.",
-      imageUrl: "https://images.unsplash.com/photo-1527018601619-a508a2be00ce?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://tse2.mm.bing.net/th/id/OIP.QAdEWJ9aqDc-ZLHi7huToQHaE_?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 7.0917,
       lng: 79.9961
     },
@@ -968,7 +968,7 @@ export const GAMPAHA_CATEGORIZED_PLACES = {
       district: "Gampaha",
       placeType: "Fuel Station",
       description: "High-capacity fuel station serving Biyagama industrial zone.",
-      imageUrl: "https://images.unsplash.com/photo-1527018601619-a508a2be00ce?auto=format&fit=crop&w=800&q=80",
+      imageUrl: "https://tse2.mm.bing.net/th/id/OIP.QAdEWJ9aqDc-ZLHi7huToQHaE_?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       lat: 6.9467,
       lng: 79.9781
     },
