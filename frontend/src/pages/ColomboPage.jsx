@@ -12,7 +12,7 @@ export const COLOMBO_CATEGORIZED_PLACES = {
       district: "Colombo",
       placeType: "Attraction",
       description: "Standing at 350 meters, the Lotus Tower is South Asia's tallest self-supported tower featuring a 360-degree observation deck.",
-      imageUrl: "/images/colombo images/lotus-tower.jpg",
+      imageUrl: "/images/colombo images/lotus-tower.jpeg",
       lat: 6.9272,
       lng: 79.8578
     },
@@ -22,7 +22,7 @@ export const COLOMBO_CATEGORIZED_PLACES = {
       district: "Colombo",
       placeType: "Temple",
       description: "Iconic Buddhist temple near Beira Lake featuring museum relics, sacred Bodhi tree, and lotus shrine architecture.",
-      imageUrl: "/images/colombo images/gangaramaya.jpg",
+      imageUrl: "/images/colombo images/gangaramaya.jpeg",
       lat: 6.9168,
       lng: 79.8564
     },
@@ -32,7 +32,7 @@ export const COLOMBO_CATEGORIZED_PLACES = {
       district: "Colombo",
       placeType: "Attraction",
       description: "A 500-meter oceanfront urban park along the Indian Ocean, famous for evening sunsets and street food.",
-      imageUrl: "/images/colombo images/galle-face.jpg",
+      imageUrl: "/images/colombo images/galle-face.jpeg",
       lat: 6.9272,
       lng: 79.8428
     },
@@ -42,7 +42,7 @@ export const COLOMBO_CATEGORIZED_PLACES = {
       district: "Colombo",
       placeType: "Monument",
       description: "National monument celebrating Sri Lankan independence from British rule, surrounded by manicured lawns.",
-      imageUrl: "/images/colombo images/independence-memorial.jpg",
+      imageUrl: "/images/colombo images/independance.jpeg",
       lat: 6.9042,
       lng: 79.8678
     },
@@ -52,7 +52,7 @@ export const COLOMBO_CATEGORIZED_PLACES = {
       district: "Colombo",
       placeType: "Museum",
       description: "Established in 1877, housing royal thrones, crowns, ancient jewelry, and Kandyan monarch relics.",
-      imageUrl: "/images/colombo images/red-mosque.jpg",
+      imageUrl: "/images/colombo images/colombo museum.jpeg",
       lat: 6.9103,
       lng: 79.8608
     },
@@ -62,7 +62,7 @@ export const COLOMBO_CATEGORIZED_PLACES = {
       district: "Colombo",
       placeType: "Mosque",
       description: "Famous candy-striped red-and-white brick mosque built in 1908 in the heart of Pettah bazaar.",
-      imageUrl: "/images/colombo images/lotus-tower.jpg",
+      imageUrl: "/images/colombo images/red.jpeg",
       lat: 6.9389,
       lng: 79.8519
     },
