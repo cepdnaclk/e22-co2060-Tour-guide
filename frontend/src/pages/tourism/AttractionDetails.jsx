@@ -254,7 +254,7 @@ export default function AttractionDetails() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50/50 text-slate-800 pb-20">
+    <div className="min-h-screen bg-transparent text-slate-800 pb-20">
       {/* PREMIUM HEADER HERO */}
       <header className="relative w-full h-[400px] sm:h-[500px] overflow-hidden">
         <img

@@ -3,22 +3,36 @@
 @theme {
   --font-serif: "Inter", "Playfair Display", Georgia, serif;
   --font-sans: "Inter", sans-serif;
-  --color-warm-beige: #F8FAFC;
+  --color-warm-beige: #F4FBF7;
   --color-warm-accent: #FFFFFF;
-  --color-earth-dark: #0F172A;
-  --color-earth-medium: #475569;
-  --color-earth-light: #94A3B8;
-  --color-brand-teal: #3B82F6;
-  --color-brand-teal-light: #E0F2FE;
+  --color-earth-dark: #0F291E;
+  --color-earth-medium: #334155;
+  --color-earth-light: #64748B;
+  --color-brand-teal: #059669;
+  --color-brand-teal-light: #D1FAE5;
+}
+
+:root {
+  --green: #159957;
+  --green-light: #dff5e8;
+  --green-soft: #effaf4;
+  --white: #ffffff;
 }
 
 @layer base {
 
   html,
   body {
-    background-color: var(--color-warm-beige) !important;
-    color: var(--color-earth-dark) !important;
+    margin: 0;
+    min-height: 100vh;
+    color: #172033 !important;
     font-family: var(--font-sans);
+    background-color: #FFFFFF !important;
+    background-image: url('/bg-leaves.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
   }
 
   h1,
@@ -33,34 +47,45 @@
   }
 }
 
-/* Global utility overrides to map standard colors to our warm minimalist theme */
+/* Global utility overrides to map standard colors to our Fresh Tropical Emerald Green & White theme */
 
 /* Backgrounds */
 .bg-white {
-  background-color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .bg-gray-50,
 .bg-slate-50,
 .bg-gray-100,
 .bg-slate-100 {
-  background-color: #F8FAFC !important;
+  background-color: transparent !important;
+}
+
+/* Chip buttons, inputs, and small badges using light background */
+button.bg-gray-100,
+button.bg-slate-100,
+input.bg-gray-100,
+input.bg-slate-100 {
+  background-color: #E2F5EA !important;
 }
 
 .bg-black {
-  background-color: #0F172A !important;
+  background-color: #0F291E !important;
 }
 
 .bg-blue-600,
-.bg-indigo-600 {
-  background-color: #0D9488 !important;
+.bg-indigo-600,
+.bg-teal-600,
+.bg-emerald-600 {
+  background-color: #059669 !important;
 }
 
 .hover\:bg-gray-800:hover,
 .hover\:bg-gray-200:hover,
 .hover\:bg-blue-700:hover,
-.hover\:bg-indigo-700:hover {
-  background-color: #0F766E !important;
+.hover\:bg-indigo-700:hover,
+.hover\:bg-emerald-700:hover {
+  background-color: #047857 !important;
 }
 
 /* Text Colors */
@@ -68,7 +93,7 @@
 .text-gray-800,
 .text-black,
 .text-slate-900 {
-  color: #0F172A !important;
+  color: #0F291E !important;
 }
 
 .text-gray-700,
@@ -76,18 +101,21 @@
 .text-gray-500,
 .text-slate-700,
 .text-slate-600 {
-  color: #475569 !important;
+  color: #334155 !important;
 }
 
 .text-blue-600,
-.text-indigo-600 {
-  color: #0D9488 !important;
+.text-indigo-600,
+.text-teal-600,
+.text-emerald-600 {
+  color: #059669 !important;
 }
 
 .hover\:text-blue-700:hover,
 .hover\:text-indigo-700:hover,
-.hover\:text-blue-600:hover {
-  color: #0F766E !important;
+.hover\:text-blue-600:hover,
+.hover\:text-emerald-700:hover {
+  color: #047857 !important;
 }
 
 /* Borders */
@@ -95,10 +123,10 @@
 .border-slate-100,
 .border-gray-100,
 .border-slate-200 {
-  border-color: #F1F5F9 !important;
+  border-color: #E2F5EA !important;
 }
 
-/* Component Overrides for Perfect Guide project */
+/* Component Overrides for Tour Guide project */
 @layer components {
   .flex-between {
     @apply flex justify-between items-center;
@@ -106,12 +134,12 @@
 
   .home {
     min-height: 100vh;
-    background-color: var(--color-warm-beige) !important;
+    background-color: transparent !important;
     color: var(--color-earth-dark) !important;
   }
 
   .hero {
-    @apply relative w-full overflow-hidden border-b border-slate-100;
+    @apply relative w-full overflow-hidden border-b border-emerald-100;
   }
 
   .heroImage {
@@ -121,9 +149,9 @@
   .heroOverlay {
     @apply absolute inset-0 flex flex-col justify-center gap-3 px-8;
     background: linear-gradient(to right,
-        rgba(248, 250, 252, 0.95),
-        rgba(248, 250, 252, 0.7),
-        rgba(248, 250, 252, 0.2));
+        rgba(244, 251, 247, 0.95),
+        rgba(244, 251, 247, 0.75),
+        rgba(244, 251, 247, 0.25));
   }
 
   .heroTitle {
@@ -136,7 +164,13 @@
   }
 
   .heroBtn {
-    @apply bg-brand-teal text-white px-5 py-2.5 rounded-full font-medium hover:bg-teal-700 transition;
+    background-color: #059669 !important;
+    color: #FFFFFF !important;
+    @apply px-5 py-2.5 rounded-full font-medium transition shadow-sm hover:shadow-md;
+  }
+
+  .heroBtn:hover {
+    background-color: #047857 !important;
   }
 
   .districtSection {
@@ -149,8 +183,14 @@
 
   .districtCard {
     background-color: #FFFFFF !important;
-    border: 1px solid #F1F5F9;
-    @apply rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition transform hover:-translate-y-1 cursor-pointer;
+    border: 1px solid #E2F5EA !important;
+    box-shadow: 0 4px 15px -2px rgba(5, 150, 105, 0.08);
+    @apply rounded-2xl overflow-hidden transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer;
+  }
+
+  .districtCard:hover {
+    border-color: #A7F3D0 !important;
+    box-shadow: 0 14px 28px -4px rgba(5, 150, 105, 0.18) !important;
   }
 
   .districtImage {
@@ -159,14 +199,14 @@
 
   .districtLabel {
     font-family: var(--font-sans);
-    color: #0F172A;
+    color: #0F291E;
     @apply p-4 text-lg font-bold;
   }
 
   .footer {
     background-color: #FFFFFF !important;
-    border-top: 1px solid #F1F5F9 !important;
-    color: #475569 !important;
+    border-top: 1px solid #E2F5EA !important;
+    color: #334155 !important;
     @apply text-center py-6;
   }
 }
@@ -189,8 +229,8 @@
 }
 
 .spinner {
-  border: 6px solid var(--color-warm-accent);
-  border-top: 6px solid var(--color-brand-teal);
+  border: 6px solid #E2F5EA;
+  border-top: 6px solid #059669;
   border-radius: 50%;
   width: 50px;
   height: 50px;

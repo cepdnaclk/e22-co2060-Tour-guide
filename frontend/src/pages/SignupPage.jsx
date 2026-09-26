@@ -69,24 +69,37 @@ export default function SignupPage() {
 
       const user = userCredential.user;
 
-      await setDoc(doc(db, "users", user.uid), {
-        uid: user.uid,
-        name: formData.name,
-        email: formData.email,
-        createdAt: new Date(),
-      });
+      // Try setting Firestore user document, log warning if write fails (AuthContext auto-sync will retry)
+      try {
+        await setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
+          name: formData.name,
+          email: formData.email,
+          createdAt: new Date(),
+        });
+      } catch (dbErr) {
+        console.warn("Firestore profile doc creation delayed, AuthContext will handle it:", dbErr);
+      }
 
       if (formData.name.trim()) {
-        await updateProfile(userCredential.user, {
-          displayName: formData.name.trim(),
-        });
+        try {
+          await updateProfile(userCredential.user, {
+            displayName: formData.name.trim(),
+          });
+        } catch (pErr) {
+          console.warn("Profile displayName update error:", pErr);
+        }
       }
 
       const from = location.state?.from?.pathname || "/";
       navigate(from, { replace: true });
     } catch (err) {
       console.error("Signup failed:", err);
-      handleFailure(err.message || "Failed to create account.");
+      if (err.code === "auth/email-already-in-use") {
+        setError("This email is already registered. Please click 'Login' below to sign in.");
+      } else {
+        handleFailure(err.message || "Failed to create account.");
+      }
     } finally {
       setLoading(false);
     }
