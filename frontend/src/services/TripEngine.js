@@ -300,7 +300,10 @@ export const TripOptimizationEngine = {
     const roundTripDistance = oneWayDistance * 2;
     const estFuelCost = Math.round(roundTripDistance * ratePerKm);
     
-    const userBudget = parseInt(context.budget, 10) || 5000;
+    let userBudget = parseInt(context.budget, 10) || 5000;
+    if (context.isPerPersonBudget) {
+      userBudget = userBudget * personCount;
+    }
 
     // --- BUDGET FEASIBILITY GUARD ---
     if (estFuelCost > userBudget && !context.allowOverBudget) {

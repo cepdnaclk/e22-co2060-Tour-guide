@@ -30,6 +30,7 @@ export const GeminiService = {
       - origin (string, or null if unknown)
       - destination (string, or null if unknown)
       - budget (number, e.g. 5000, or null if unknown)
+      - isPerPersonBudget (boolean, true if the budget is explicitly mentioned as per person or for one person, false otherwise)
       - vehicleType (string, e.g., bike, car, bus, or null if unknown)
       - interests (array of strings, e.g., ["Historical", "Nature"], or empty array)
       
@@ -40,7 +41,7 @@ export const GeminiService = {
       
       Instructions:
       1. Carefully analyze the conversation and the Current Extracted Context.
-      2. If the user mentions a budget, extract the number. Ignore currency symbols.
+      2. If the user mentions a budget, extract the number. Ignore currency symbols. Also check if the budget is meant per person (isPerPersonBudget: true).
       3. Merge any newly extracted details with the Current Extracted Context. If the user explicitly provides a new route (e.g., "A to B" or "from A to B"), update both origin and destination accordingly.
       4. Check if we have ALL mandatory fields: origin, destination, budget, and vehicleType.
       5. If any mandatory field is missing (null or undefined), ask a short conversational question to get ONE of the missing fields. Do not ask for everything at once.
@@ -53,6 +54,7 @@ export const GeminiService = {
           "origin": "string or null", 
           "destination": "string or null", 
           "budget": 2000, 
+          "isPerPersonBudget": false,
           "vehicleType": "string or null", 
           "interests": [] 
         },
@@ -156,6 +158,7 @@ export const GeminiService = {
         if (lastMsg.includes(`${budgetMatch[1]}k`)) val *= 1000;
         if (val >= 100) {
           newContext.budget = val;
+          newContext.isPerPersonBudget = lastMsg.includes("per person") || lastMsg.includes("for one");
         }
       }
     }
