@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../firebase";
 import { useRateLimit } from "../hooks/useRateLimit";
 
 export default function SignupPage() {
@@ -43,6 +42,9 @@ export default function SignupPage() {
     e.preventDefault();
     setError("");
 
+    // Process එක යන අතරතුර නැවත Request එකක් යෑම වළක්වයි
+    if (loading) return;
+
     if (isLocked) {
       setError(`Account creation locked. Please wait ${formattedTime}.`);
       return;
@@ -61,6 +63,7 @@ export default function SignupPage() {
     try {
       setLoading(true);
 
+      // 1. User Authentication
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         formData.email.trim(),
@@ -68,6 +71,13 @@ export default function SignupPage() {
       );
 
       const user = userCredential.user;
+
+
+      // 2. User Profile Display Name Update
+      if (formData.name.trim()) {
+        await updateProfile(user, {
+          displayName: formData.name.trim(),
+        });
 
       // Try setting Firestore user document, log warning if write fails (AuthContext auto-sync will retry)
       try {
@@ -89,16 +99,43 @@ export default function SignupPage() {
         } catch (pErr) {
           console.warn("Profile displayName update error:", pErr);
         }
+
       }
 
+      // 3. Firestore Document Creation
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        createdAt: new Date(),
+      });
+
+      // 4. Redirect User
       const from = location.state?.from?.pathname || "/";
       navigate(from, { replace: true });
     } catch (err) {
       console.error("Signup failed:", err);
+
+
+      // Firebase Errors නිවැරදිව Handle කිරීම
+      switch (err.code) {
+        case "auth/email-already-in-use":
+          handleFailure("This email is already registered. Please login instead.");
+          break;
+        case "auth/invalid-email":
+          handleFailure("Invalid email address format.");
+          break;
+        case "auth/weak-password":
+          handleFailure("Password is too weak. Choose a stronger one.");
+          break;
+        default:
+          handleFailure(err.message || "Failed to create account.");
+
       if (err.code === "auth/email-already-in-use") {
         setError("This email is already registered. Please click 'Login' below to sign in.");
       } else {
         handleFailure(err.message || "Failed to create account.");
+
       }
     } finally {
       setLoading(false);
@@ -133,7 +170,7 @@ export default function SignupPage() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              disabled={isLocked}
+              disabled={isLocked || loading}
               required
               className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
               placeholder="Enter your name"
@@ -147,7 +184,7 @@ export default function SignupPage() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              disabled={isLocked}
+              disabled={isLocked || loading}
               required
               className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
               placeholder="Enter your email"
@@ -161,7 +198,7 @@ export default function SignupPage() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              disabled={isLocked}
+              disabled={isLocked || loading}
               required
               className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
               placeholder="Create a password"
@@ -175,7 +212,7 @@ export default function SignupPage() {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              disabled={isLocked}
+              disabled={isLocked || loading}
               required
               className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
               placeholder="Confirm your password"
@@ -185,9 +222,13 @@ export default function SignupPage() {
           <button
             type="submit"
             disabled={loading || isLocked}
-            className="w-full rounded-xl bg-blue-600 text-white py-3 font-semibold hover:bg-blue-700 transition disabled:opacity-60"
+            className="w-full rounded-xl bg-blue-600 text-white py-3 font-semibold hover:bg-blue-700 transition disabled:opacity-60 flex items-center justify-center"
           >
-            {isLocked ? `Locked (${formattedTime})` : loading ? "Creating account..." : "Sign Up"}
+            {isLocked
+              ? `Locked (${formattedTime})`
+              : loading
+              ? "Creating account..."
+              : "Sign Up"}
           </button>
         </form>
 
