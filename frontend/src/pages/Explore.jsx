@@ -209,12 +209,14 @@ export default function ExplorePage() {
       const name = String(p.name || "").toLowerCase();
       const district = String(p.districtName || p.district || "").toLowerCase();
       const type = getType(p);
+      const desc = String(p.description || "").toLowerCase();
 
       const matchesSearch =
         !searchTerm ||
         name.includes(searchTerm) ||
         district.includes(searchTerm) ||
-        type.includes(searchTerm);
+        type.includes(searchTerm) ||
+        desc.includes(searchTerm);
 
       if (!matchesSearch) return false;
 
@@ -333,20 +335,18 @@ export default function ExplorePage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
-        
-
-        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl min-h-[420px] sm:min-h-[380px] flex items-center">
           <img
             src="/lagoon.jpeg"
             alt="Explore Sri Lanka"
-            className="w-full h-[420px] sm:h-[360px] md:h-[300px] object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             onError={(e) => {
               e.currentTarget.src = "/kandy.jpg";
             }}
           />
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-black/55 pointer-events-none" />
 
-          <div className="absolute inset-0 flex flex-col justify-center px-5 sm:px-8 text-white">
+          <div className="relative z-10 w-full flex flex-col justify-center p-6 sm:p-10 text-white">
             <div className="flex items-center gap-3">
               <Compass className="h-8 w-8" />
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -358,13 +358,27 @@ export default function ExplorePage() {
               Discover food, stay, transport, fuel, rentals, repairs, and essential services across Sri Lanka.
             </p>
 
-            <div className="mt-4 w-full max-w-full sm:max-w-2xl">
+            <div className="mt-5 w-full max-w-2xl relative">
               <input
+                type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search all categories..."
-                className="w-full px-4 sm:px-5 py-3 rounded-xl outline-none text-black text-base sm:text-lg border border-gray-200 focus:ring-2 focus:ring-black"
+                placeholder="Search all categories, places, districts..."
+                className="w-full px-5 py-3.5 pl-12 rounded-xl outline-none text-gray-900 bg-white placeholder-gray-500 text-base sm:text-lg border-2 border-transparent focus:border-blue-500 focus:ring-4 focus:ring-blue-500/30 shadow-lg transition-all"
               />
+              <svg
+                className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
             </div>
 
             <div className="flex gap-2 sm:gap-3 mt-4 flex-wrap">
@@ -381,7 +395,7 @@ export default function ExplorePage() {
                 <button
                   key={item.key}
                   onClick={() => setActiveCategory(item.key)}
-                  className={`px-4 sm:px-5 py-2 rounded-xl text-sm sm:text-base font-semibold border transition ${
+                  className={`px-4 sm:px-5 py-2 rounded-xl text-sm sm:text-base font-semibold border transition cursor-pointer ${
                     activeCategory === item.key
                       ? "bg-white text-black border-white"
                       : "bg-white/10 text-white border-white/30 hover:bg-white/20"
@@ -484,7 +498,7 @@ export default function ExplorePage() {
                 title="Hospitals"
                 icon="🏥"
                 places={groupedPlaces.hospitals}
-                categoryKey="emergency"
+                categoryKey="hospitals"
                 onDistrictSelect={handleDistrictSelect}
                 searchValue={categorySearch.hospitals}
                 onSearchChange={handleCategorySearchChange}
@@ -494,7 +508,7 @@ export default function ExplorePage() {
                 title="Pharmacies"
                 icon="💊"
                 places={groupedPlaces.pharmacies}
-                categoryKey="emergency"
+                categoryKey="pharmacies"
                 onDistrictSelect={handleDistrictSelect}
                 searchValue={categorySearch.pharmacies}
                 onSearchChange={handleCategorySearchChange}
@@ -504,7 +518,7 @@ export default function ExplorePage() {
                 title="Police Stations"
                 icon="👮"
                 places={groupedPlaces.police}
-                categoryKey="emergency"
+                categoryKey="police"
                 onDistrictSelect={handleDistrictSelect}
                 searchValue={categorySearch.police}
                 onSearchChange={handleCategorySearchChange}

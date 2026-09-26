@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
+import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
+import { auth, db } from "../firebase";
 
 const AuthContext = createContext(null);
 
@@ -9,8 +10,40 @@ export function AuthProvider({ children }) {
   const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user || null);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setCurrentUser(user);
+
+        // Auto-ensure user document exists in Firestore 'users' collection
+        try {
+          const userRef = doc(db, "users", user.uid);
+          const userSnap = await getDoc(userRef);
+
+          if (!userSnap.exists()) {
+            await setDoc(
+              userRef,
+              {
+                uid: user.uid,
+                name: user.displayName || user.email?.split("@")[0] || "User",
+                email: user.email || "",
+                createdAt: serverTimestamp(),
+                lastLoginAt: serverTimestamp(),
+              },
+              { merge: true }
+            );
+          } else {
+            await setDoc(
+              userRef,
+              { lastLoginAt: serverTimestamp() },
+              { merge: true }
+            );
+          }
+        } catch (err) {
+          console.error("Error syncing user profile to Firestore:", err);
+        }
+      } else {
+        setCurrentUser(null);
+      }
       setAuthLoading(false);
     });
 
