@@ -278,7 +278,7 @@ const Timeline = ({ stops, onRemove }) => (
 
 export default function TripPlanner() {
   const [messages, setMessages] = useState([
-    { id: 1, text: "I'm your Smart Travel Assistant.\n\nTell me about your dream trip! E.g. 'I want to go from Colombo to Kandy, I have Rs 15,000, and there are 4 of us traveling by car.'", isAI: true, isWelcome: true }
+    { id: 1, text: "I'm your Smart Travel Assistant.\n\nTell me about your dream trip! E.g. 'I want to go from Colombo to Kandy, I have Rs 15,000 total (or Rs 5000 per person), and there are 4 of us traveling by car.'", isAI: true, isWelcome: true }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -451,13 +451,13 @@ export default function TripPlanner() {
     setItinerary(null);
     setBudgetWarning(null);
     setTripContext({});
-    setMessages([{ id: 1, text: "I'm your Smart Travel Assistant.\n\nTell me about your dream trip! E.g. 'I want to go from Colombo to Kandy, I have Rs 15,000, and there are 4 of us traveling by car.'", isAI: true, isWelcome: true }]);
+    setMessages([{ id: 1, text: "I'm your Smart Travel Assistant.\n\nTell me about your dream trip! E.g. 'I want to go from Colombo to Kandy, I have Rs 15,000 total (or Rs 5000 per person), and there are 4 of us traveling by car.'", isAI: true, isWelcome: true }]);
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-16">
+    <div className="min-h-screen bg-gray-50 px-4 py-6 font-sans text-gray-800">
       
-      <main className="max-w-4xl mx-auto p-4 md:p-8">
+      <main className="max-w-7xl mx-auto">
         
         <AnimatePresence mode="wait">
           {!itinerary ? (
@@ -467,10 +467,10 @@ export default function TripPlanner() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className={`${glassmorphismClass} flex flex-col h-[78vh] overflow-hidden`}
+              className="bg-white rounded-2xl shadow-md flex flex-col h-[80vh] overflow-hidden"
             >
               {/* Chat Header */}
-              <div className="px-8 py-5 border-b border-gray-100 flex items-center justify-between bg-white rounded-t-[2rem]">
+              <div className="px-8 py-5 border-b border-gray-200 flex items-center justify-between bg-white">
                 <div className="flex items-center gap-3"> 
                   <div className="w-10 h-10 bg-gray-100 text-gray-800 rounded-xl flex items-center justify-center border border-gray-200 shadow-sm">
                     <MapPin className="w-5 h-5" />
@@ -619,13 +619,13 @@ export default function TripPlanner() {
               </div>
 
               {/* Chat Text Input (Clean Minimalist Pill) */}
-              <div className="p-4 bg-white border-t border-gray-100 rounded-b-[2rem]">
+              <div className="p-4 bg-white border-t border-gray-200">
                 <form onSubmit={handleSendMessage} className="relative flex items-center">
                   <input 
                     type="text" 
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="Type trip details... e.g., 'Batticaloa to Galle, budget 10000'" 
+                    placeholder="Type trip details... e.g., 'Batticaloa to Galle, total budget 10000 or 5000 per person'" 
                     className="w-full bg-gray-50 border border-gray-200 rounded-full py-4 pl-6 pr-14 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:bg-white text-[15px] transition-colors text-gray-800 placeholder-gray-400 shadow-inner"
                   />
                   <button 
