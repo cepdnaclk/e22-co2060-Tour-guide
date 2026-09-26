@@ -1,57 +1,56 @@
-___
-# DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
-___
+# PERFECT GUIDE – Tourism & Travel Recommendation Engine
 
-# eYY-co2060-project-template
+[![Live Application](https://img.shields.io/badge/Live_Demo-Netlify-brightgreen?style=for-the-badge&logo=netlify)](https://travel-guide-webapp.netlify.app/)
+[![React Version](https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![Firebase](https://img.shields.io/badge/Firebase-v11-orange?style=for-the-badge&logo=firebase)](https://firebase.google.com/)
+[![Course](https://img.shields.io/badge/Course-CO2060-purple?style=for-the-badge)](https://projects.ce.pdn.ac.lk)
 
-This is a sample repository you can use for your Software Systems Design Project. Once you followed these instructions, remove the text and add a brief introduction to here.
+---
 
-### Enable GitHub Pages
+## 📌 Project Overview
+**PERFECT GUIDE** is a modern, single-page web application engineered to revolutionize domestic and international travel planning across Sri Lanka[cite: 1, 2]. Built using React 19, Vite, Tailwind CSS v4, and Firebase, the platform combines interactive map exploration, AI conversational assistance, deterministic trip-planning algorithms, and real-time community engagement into a cohesive user experience[cite: 1, 2].
 
-You can put the things to be shown in GitHub pages into the _docs/_ folder. Both html and md file formats are supported. You need to go to settings and enable GitHub pages and select _main_ branch and _docs_ folder from the dropdowns, as shown in the below image.
+The application addresses common tourist challenges—such as budget mismanagement, fragmented destination information, and isolated real-time updates—by delivering centralized district data, automated route pacing, cost transparency, and regional live chatrooms[cite: 1, 2].
 
-![image](https://user-images.githubusercontent.com/11540782/98789936-028d3600-2429-11eb-84be-aaba665fdc75.png)
+---
 
-### Special Configurations
+## ✨ Key Features
 
-These projects will be automatically added into [https://projects.ce.pdn.ac.lk](). If you like to show more details about your project on this site, you can fill the parameters in the file, _/docs/index.json_
+* 🗺️ **District-Based Navigation & Dynamic Maps:** Interactive geographic visualization powered by Leaflet and OpenStreetMap, featuring district-wise filtering and custom map pins for 36+ locations across Sri Lanka[cite: 1, 2].
+* 🤖 **AI-Powered Travel Assistant:** Conversational travel helper utilizing Google Gemini 1.5 Flash API with built-in regular expression NLP fallback parsing for offline resilience.
+* 🧠 **Smart Algorithmic Trip Planner:** Deterministic itinerary engine using the **Haversine formula** to calculate distance, pace day-by-day travel schedules, and enforce budget constraints with fuel cost estimations.
+* 💬 **Real-Time Community Chatrooms:** District-segregated live messaging channels built on Cloud Firestore for peer-to-peer travel advice and local updates[cite: 1, 2].
+* 🛠️ **Essential Infrastructure Directory:** Location-aware spatial search for accommodations, fuel stations, vehicle repair centers, food/dining, and medical facilities[cite: 1, 2].
+* 🔐 **Authentication & Route Guarding:** Secure account creation, login, and protected route access managed via Firebase Authentication and custom React route wrappers.
 
-```
-{
-  "title": "This is the title of the project",
-  "team": [
-    {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    }
-  ],
-  "supervisors": [
-    {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
-    }
-  ],
-  "tags": ["Web", "Software Systems", "CO2060"]
-}
-```
+---
 
-Once you filled this _index.json_ file, please verify the syntax is correct. (You can use [this](https://jsonlint.com/) tool).
+## 🛠️ Technology Stack
 
-### Page Theme
+| Domain | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend Framework** | React 19 + Vite 7 | Component-driven UI architecture with fast module reloading[cite: 1, 2] |
+| **Styling & UI** | Tailwind CSS v4 + Framer Motion | Utility-first responsive styling and micro-interactions[cite: 1, 2] |
+| **Maps & GIS** | Leaflet / React-Leaflet | Open-source interactive maps, polyline routes, and custom markers[cite: 1, 2] |
+| **AI Integration** | `@google/generative-ai` | Gemini 1.5 Flash API integration for natural language intent parsing |
+| **Backend & Auth** | Firebase Auth + Cloud Firestore | User session management and real-time NoSQL cloud database |
 
-A custom theme integrated with this GitHub Page, which is based on [github.com/cepdnaclk/eYY-project-theme](https://github.com/cepdnaclk/eYY-project-theme). If you like to remove this default theme, you can remove the file, _docs/\_config.yml_ and use HTML based website.
+---
+
+## 📁 Repository & Codebase Structure
+
+```text
+frontend/
+├── src/
+│   ├── assets/              # District images, static media, and banners
+│   ├── components/          # Reusable UI components (Navbar, PlacesMap, ProtectedRoute)
+│   ├── context/             # Global state providers (AuthContext.jsx)
+│   ├── hooks/               # Custom React hooks (useUserLocation, useRateLimit)
+│   ├── pages/               # Primary view routes (tripplan, chat, Explore, District pages)
+│   ├── services/            # Core business logic (TripEngine.js, GeminiService.js)
+│   ├── firebase.js          # Firebase SDK initialization & handle exports
+│   ├── main.jsx             # React DOM entry point & Router provider
+│   └── App.jsx              # Master route registry & access controls
+├── uploadData.js            # Node.js script for Firestore database seeding
+├── firestore.rules          # Firestore database security rules
+└── package.json             # Project metadata and dependencies
